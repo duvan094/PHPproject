@@ -70,7 +70,7 @@ h3{
 
 main{
 	max-width: 960px;
-	margin:88px auto 88px auto;
+	margin:110px auto 88px auto;
 }
 
 #home{
@@ -90,7 +90,7 @@ main{
 
 /*Would you rather cards*/
 #card-container{
-	margin:22px auto;
+	margin:22px auto 11px auto;
 	overflow: hidden;
 	position: relative;
 }
@@ -161,7 +161,8 @@ main{
 main>#user{
 	font-size: 12px;
 	text-align: right;
-	margin-bottom:22px;
+	margin-bottom:44px;
+	color:#AAA;
 }
 
 main>#user>a{

@@ -188,6 +188,28 @@ main>#user>a:hover{
 
 }
 
+
+/* LOGIN IN POP UP */
+
+#logincontainer {
+	max-width: 300px;
+	height: 200px;
+	background:rgba(255,255,255, 0.8);
+	border-radius: 3px;
+	margin: auto;
+	padding: 20px;
+}
+
+#logincontainer p, h3 {
+	color: black;
+}
+
+/* LOGIN IN POP UP -END */
+
+
+
+/*FOOTER*/
+
 footer {
 	text-align: center;
 	margin-top: 50px;
@@ -202,13 +224,16 @@ footer a {
 footer img {
 	width: 50px;
 	margin-top: 5px;
-	transition: width 1s, height 1s, transform 1s;
+	transition: 0.4s;
+	opacity: 0.1;
 }
 
 footer img:hover {
-	width: 100px;
-	transform: rotate(340deg);
+	width: 60px;
+	opacity: 1;
 }
+
+/* FOOTER -END */
 
 @media(min-width:500px){
 

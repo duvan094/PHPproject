@@ -55,17 +55,17 @@ main{
 	margin-top: 88px;
 }
 
-
+/*Would you rather cards*/
 #card-container{
 	max-width: 960px;
 	margin:22px auto;
 	overflow: hidden;
+	position: relative;
 }
 
 #card-container>li{
 	list-style: none;
-	float:left;
-	width:50%;
+	width:100%;
 	box-sizing: border-box;
 	padding:5px;
 }
@@ -88,11 +88,34 @@ main{
 }
 
 #card-container>li:first-child>button{
-	background:#e73130;
+	background:#E63231;
 }
 
 #card-container>li:last-child>button{
-	background:#60c3ec;
+	background:#46B4E0;
+}
+
+#card-container::before{
+  text-align: center;
+  color:#FFF;
+  font-size: 18px;
+  content:"or";
+  position: absolute;
+  z-index: 10;
+  bottom:50%;
+  margin-bottom: -27.5px;
+  display: inline-block;
+  border-radius: 35px;
+  right:50%;
+  margin-right: -27.5px;
+  width:55px;
+  height:55px;
+  line-height: 55px;
+  background: #222222;
+  box-shadow: 0 0 0pt 4pt rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+  border: solid #000 1px;
+  cursor:default;
 }
 
 #card-container>li>button:hover{
@@ -101,10 +124,20 @@ main{
   box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
   cursor:pointer;
 }
+/*Would you rather cards -END*/
 
 
 footer {
 	text-align: center;
 	position: absolute;
 	bottom: 0;
+}
+
+@media(min-width:500px){
+
+
+	#card-container>li{
+		float:left;
+		width:50%;
+	}
 }

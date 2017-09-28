@@ -155,8 +155,14 @@ footer a {
 }
 
 footer img {
-	max-width: 50px;
+	width: 50px;
 	margin-top: 5px;
+	transition: width 1s, height 1s, transform 1s;
+}
+
+footer img:hover {
+	width: 100px;
+	transform: rotate(340deg);
 }
 
 @media(min-width:500px){

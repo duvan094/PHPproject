@@ -14,7 +14,8 @@
         </svg>
       </a>
       <ul>
-        <li><a href="#">Log in</a></li>
+        <li><a href="#">Log In</a></li>
         <li><a href="#">Profile</a></li>
+        <li><a href="#">Add Cards</a></li>
       </ul>
     </nav>

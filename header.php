@@ -3,5 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Would you rather!</title>
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>

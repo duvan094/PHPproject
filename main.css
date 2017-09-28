@@ -50,10 +50,13 @@ body p, h1, h3 {
 
 h3{
 	text-align: center;
+	text-shadow: 2px 2px #000000;
+	font-weight: 400;
 }
 
 main{
-	margin-top: 88px;
+	max-width: 960px;
+	margin:88px auto 88px auto;
 }
 
 #home{
@@ -73,7 +76,6 @@ main{
 
 /*Would you rather cards*/
 #card-container{
-	max-width: 960px;
 	margin:22px auto;
 	overflow: hidden;
 	position: relative;
@@ -117,7 +119,7 @@ main{
   font-size: 18px;
   content:"or";
   position: absolute;
-  z-index: 10;
+  z-index: 5;
   bottom:50%;
   margin-bottom: -27.5px;
   display: inline-block;

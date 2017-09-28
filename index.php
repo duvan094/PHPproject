@@ -6,5 +6,7 @@
         <li><button>This?</button></li>
         <li><button>That?</button></li>
       </ul>
+      <p>Made by <a href="#">steffe94</a></p>
+
     </main>
     <?php  include "footer.php"?>

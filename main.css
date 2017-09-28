@@ -44,6 +44,20 @@ nav>ul>li>a:hover{
 	background:rgba(0, 0, 0, 0.5);
 }
 
+#searchBar>input{
+	border:solid 1px #5A5A5C;
+	border-radius: 22px;
+	padding:5px 11px;
+	background:#3A3A3C;
+	font-size: 12px;
+	line-height: 18px;
+	width:200px;
+	color:#FFF;
+	outline:none;
+	margin-top:18px;
+	margin-right:88px;
+}
+
 body p, h1, h3 {
 	color: white;
 }
@@ -164,6 +178,7 @@ main>#user>a:hover{
 #commentContainer{
 	background:#FFF;
 	border-radius: 5px;
+	padding:44px 0;
 }
 
 #commentContainer>.commentField>a{
@@ -173,7 +188,7 @@ main>#user>a:hover{
 }
 
 #commentContainer>.commentField{
-	padding:22px;
+	padding:22px 44px;
 	border-bottom: 1px solid #CCC;
 	list-style: none;
 }

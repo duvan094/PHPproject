@@ -17,5 +17,10 @@
         <li><a href="#">Log In</a></li>
         <li><a href="#">Profile</a></li>
         <li><a href="#">Add Cards</a></li>
+        <li>
+          <form id="searchBar" action="index.html" method="GET">
+            <input type="text" name="searchField" placeholder="Search Users or Questions..."value="">
+          </form>
+        </li>
       </ul>
     </nav>

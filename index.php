@@ -8,5 +8,31 @@
       </ul>
       <p id="user">Made by <a href="#">steffe94</a></p>
 
+      <ul id="commentContainer">
+        <li class="commentField">
+            <a href="#">joppeBoii</a>
+            <p><i>2017-09-28</i></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. </p>
+        </li>
+        <li class="commentField">
+            <a href="#">robben55</a>
+            <p><i>2017-09-28</i></p>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum. </p>
+        </li>
+        <li class="commentField">
+            <a href="#">joppeBoii</a>
+            <p><i>2017-09-28</i></p>
+            <p>Sed do eiusmod tempor incididunt ut. </p>
+        </li>
+        <li class="commentField">
+            <a href="#">oveMann</a>
+            <p><i>2017-09-29</i></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+              abore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </li>
+      </ul>
     </main>
     <?php  include "footer.php"?>

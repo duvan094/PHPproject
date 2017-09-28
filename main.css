@@ -200,7 +200,7 @@ main>#user>a:hover{
 	padding: 20px;
 }
 
-#logincontainer p, h3 {
+#logincontainer p,#logincontainer h3 {
 	color: black;
 }
 

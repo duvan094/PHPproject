@@ -144,6 +144,20 @@ main{
 }
 /*Would you rather cards -END*/
 
+main>#user{
+	font-size: 12px;
+	float:right;
+}
+
+main>#user>a{
+	text-decoration: none;
+	color:#46B4E0;
+}
+
+main>#user>a:hover{
+	text-decoration: none;
+	color:#2694C0;
+}
 
 footer {
 	text-align: center;

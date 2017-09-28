@@ -2,7 +2,15 @@ body {
 	background-color: #1A1A1C;
 }
 
-
 nav>ul>li{
 	float:left;
+}
+
+body p, h1 {
+	color: white;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
 }

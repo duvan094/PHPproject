@@ -8,12 +8,14 @@
 	<h3>Log In</h3>
 
 	<form>
-		<input type="text" name="username"> <br>
-		<input type="password" name="password"> <br>
-		<input type="submit" name="SIGN IN">
+		<p>USERNAME</p>
+		<input id="forminput" type="text" name="username"> <br>
+		<p>PASSWORD</p>
+		<input id="forminput" type="password" name="password"> <br>
+		<input id="submit" type="submit" name="SIGN IN" value="SIGN IN">
 	</form>
 
-	<p>Don't have an account? <a href="">Sign Up</a> for free!</p>
+	<p id="formp">Don't have an account? <a href="">Sign Up</a> for free!</p>
 
 </div>
    

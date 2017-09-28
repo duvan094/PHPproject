@@ -209,16 +209,61 @@ main>#user>a:hover{
 
 #logincontainer {
 	max-width: 300px;
-	height: 200px;
+	height: 250px;
 	background:rgba(255,255,255, 0.8);
 	border-radius: 3px;
 	margin: auto;
 	padding: 20px;
 }
 
-#logincontainer p,#logincontainer h3 {
+#logincontainer p, #logincontainer h3 {
 	color: black;
+	text-shadow: none;
+	color: #9895A1;
 }
+
+#logincontainer form {
+	display: block;
+	margin: 20px 40px;
+}
+
+#logincontainer form p {
+	font-size: 8px;
+	padding-top: 20px;
+}
+
+#logincontainer #forminput {
+	border: none;
+	border-bottom: 1px solid #9895A1;
+	background-color: transparent;
+	width: 220px;
+}
+
+#logincontainer #submit {
+	width: 220px;
+	margin-top: 40px;
+	border: none;
+	background-color: #46B4E0;
+	padding: 8px;
+	border-radius: 10px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.09);
+}
+
+#logincontainer #forminput:focus {
+	outline: 0;
+}
+
+#logincontainer #submit:focus {
+	outline: 0;
+}
+
+#logincontainer #formp {
+	font-size: 10px;
+	text-align: center;
+	padding-top: 15px;
+}
+
+
 
 /* LOGIN IN POP UP -END */
 

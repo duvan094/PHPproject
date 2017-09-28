@@ -4,7 +4,7 @@
 
       <ul id="card-container">
         <li><button>This?</button></li>
-        <li><button>This?</button></li>
+        <li><button>That?</button></li>
       </ul>
     </main>
     <?php  include "footer.php"?>

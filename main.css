@@ -36,6 +36,7 @@ nav>ul>li>a{
 		text-decoration: none;
 		color:#FFF;
 		padding:22px 11px;
+		line-height: 22px;
 		display:block;
 }
 
@@ -54,6 +55,21 @@ h3{
 main{
 	margin-top: 88px;
 }
+
+#home{
+	padding:11px 22px 6px 22px;
+	height:44px;
+	width:44px;
+	display: block;
+	float:left;
+}
+
+#home>svg{
+	height:100%;
+	width:100%;
+}
+
+
 
 /*Would you rather cards*/
 #card-container{

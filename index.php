@@ -9,6 +9,7 @@
       <p id="user">Made by <a href="#">steffe94</a></p>
 
       <ul id="commentContainer">
+        <li><h4>4 comments</h4></li>
         <li class="commentField">
             <a href="#">joppeBoii</a>
             <p><i>2017-09-28</i></p>

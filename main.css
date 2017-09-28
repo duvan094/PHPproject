@@ -169,6 +169,7 @@ main>#user>a{
 	text-decoration: none;
 	color:#46B4E0;
 	text-shadow: 2px 2px #000000;
+	margin-right: 5px;
 }
 
 main>#user>a:hover{
@@ -179,7 +180,24 @@ main>#user>a:hover{
 #commentContainer{
 	background:#FFF;
 	border-radius: 5px;
-	padding:44px 0;
+	padding:22px 0;
+	margin:5px;
+}
+
+#commentContainer>li{
+	list-style: none;
+}
+
+#commentContainer>li:first-child>h4{
+	margin-left: 44px;
+	font-weight: 600;
+	color:#6c6c6c;
+	font-size: 14px;
+}
+
+#commentContainer>li:first-child{
+	border-bottom: solid 3px #CCC;
+	padding-bottom: 11px;
 }
 
 #commentContainer>.commentField>a{

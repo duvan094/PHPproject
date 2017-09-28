@@ -1,6 +1,6 @@
     <?php include "header.php" ?>
     <main>
-      <h3>Would You Rather?</h1>
+      <h3>Would You Rather?</h3>
 
       <ul id="card-container">
         <li><button>This?</button></li>

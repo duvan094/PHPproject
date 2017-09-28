@@ -152,6 +152,7 @@ main>#user{
 main>#user>a{
 	text-decoration: none;
 	color:#46B4E0;
+	text-shadow: 2px 2px #000000;
 }
 
 main>#user>a:hover{

@@ -8,8 +8,8 @@
   <body>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
         <li><a href="#">Log in</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Home</a></li>
       </ul>
     </nav>

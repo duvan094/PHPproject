@@ -2,7 +2,7 @@
     <main>
       <h3>Would You Rather?</h3>
 
-      <ul id="card-container">
+      <ul class="card-container">
         <li><button>This?</button></li>
         <li><button>That?</button></li>
       </ul>

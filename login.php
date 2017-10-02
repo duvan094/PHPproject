@@ -3,21 +3,21 @@
 <main>
 
 
-<div id="logincontainer">
-	
-	<h3>Log In</h3>
+	<div id="logincontainer">
 
-	<form>
-		<p>USERNAME</p>
-		<input id="forminput" type="text" name="username"> <br>
-		<p>PASSWORD</p>
-		<input id="forminput" type="password" name="password"> <br>
-		<input id="submit" type="submit" name="SIGN IN" value="SIGN IN">
-	</form>
+		<h3>Log In</h3>
 
-	<p id="formp">Don't have an account? <a href="">Sign Up</a> for free!</p>
+		<form>
+			<p>USERNAME</p>
+			<input type="text" name="username"> <br>
+			<p>PASSWORD</p>
+			<input type="password" name="password"> <br>
+			<input type="submit" name="SIGN IN" value="SIGN IN">
+		</form>
+		<p class = "textWithLink">Don't have an account? <a href="">Sign Up</a> for free!</p>
 
-</div>
-   
+	</div>
+
+</main>
 
 <?php  include "footer.php"?>

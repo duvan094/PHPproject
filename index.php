@@ -6,7 +6,7 @@
         <li><button>This?</button></li>
         <li><button>That?</button></li>
       </ul>
-      <p id="user">Made by <a href="#">steffe94</a></p>
+      <p class="textWithLink">Made by <a href="#">steffe94</a></p>
 
       <ul id="commentContainer">
         <li><h4>4 comments</h4></li>

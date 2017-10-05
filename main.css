@@ -328,7 +328,7 @@ main#userProfile>ul>li{
 
 footer {
 	text-align: center;
-	margin-top: 50px;
+	margin: 20px 0px;
 	width: 100%;
 }
 
@@ -337,17 +337,6 @@ footer a {
 	color: white;
 }
 
-footer img {
-	width: 50px;
-	margin-top: 5px;
-	transition: 0.4s all ease-in;
-	opacity: 0.1;
-}
-
-footer img:hover {
-	width: 60px;
-	opacity: 1;
-}
 
 /* FOOTER -END */
 

@@ -24,17 +24,17 @@ nav{
 	box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
 }
 
-nav>ul{
+nav>div>ul{
 	overflow: hidden;
 	padding-right: 22px;
 }
 
-nav>ul>li{
+nav>div>ul>li{
 	float:right;
 	list-style: none;
 }
 
-nav>ul>li>a{
+nav>div>ul>li>a{
 		text-decoration: none;
 		color:#FFF;
 		padding:22px 11px;
@@ -45,9 +45,14 @@ nav>ul>li>a{
 		color:#DDD;
 }
 
-nav>ul>li>a:hover{
+nav>div>ul>li>a:hover{
 	background:rgba(0, 0, 0, 0.2);
 	color:#FFF;
+}
+
+nav>.navWrapper{
+	max-width: 960px;
+	margin:auto;
 }
 
 #searchBar>input{
@@ -422,6 +427,7 @@ main#userProfile>ul>li{
 
 .searchMenuWrapper>p,.searchMenuWrapper>button{
 	float:left;
+	font-size: 14px;
 }
 .searchMenuWrapper{
 	overflow: hidden;
@@ -439,8 +445,9 @@ main#userProfile>ul>li{
 #searchMenu>.searchMenuWrapper>button:hover{
 	color:#46B4E0;
 }
-#searchMenu>.searchMenuWrapper>button:nth-child(2){
-	border-bottom: 4px solid #46B4E0;;
+
+#searchMenu>.searchMenuWrapper>button:first-child{
+	border-bottom: 4px solid #46B4E0;
 }
 
 

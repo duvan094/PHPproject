@@ -38,7 +38,7 @@
           <form class="" action="index.html" method="post">
             <textarea name="" rows="8" cols="80" placeholder="Write a comment."></textarea>
             <br>
-            <input type="submit" name="" value="Comment">
+            <input type="submit" name="" value="Post Your Comment">
           </form>
         </li>
       </ul>

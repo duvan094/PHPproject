@@ -233,15 +233,33 @@ main{
 	font-size: 12px;
 }
 
-.comment>form>input,.comment>form>textarea{
+.comment>form>textarea{
 	width:100%;
-	box-sizing: border-box;
 	padding:11px;
 }
 
-.comment>form>input[type="submit"]{
-	padding:22px;
+.comment>form>textarea{
+	resize: none;
 }
+
+.comment>form>input[type="submit"]{
+	margin-top: 11px;
+	padding:11px;
+	background:#2694C0;
+	-webkit-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
+	-moz-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
+	box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
+	border: none;
+	color:#FFF;
+}
+
+.comment>form>input[type="submit"]:hover{
+	-webkit-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
+	-moz-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
+	box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
+	cursor:pointer;
+}
+
 
 /* LOGIN IN POP UP */
 

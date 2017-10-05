@@ -228,7 +228,7 @@ main{
 
 /* LOGIN IN POP UP */
 
-#logincontainer {
+.logincontainer {
 	max-width: 300px;
 	height: 250px;
 	background: #b0b7ba;
@@ -238,31 +238,31 @@ main{
 	margin-top: 100px;
 }
 
-#logincontainer>.textWithLink{
+.logincontainer>.textWithLink{
 	padding-top: 11px;
 	font-size: 14px;
 	color: white;
 	text-align: center;
 }
 
-#logincontainer p, #logincontainer h3 {
+.logincontainer p, .logincontainer h3 {
 	color: black;
 	text-shadow: none;
 	color: black;
 
 }
 
-#logincontainer form {
+.logincontainer form {
 	display: block;
 	margin: 20px 40px;
 }
 
-#logincontainer form p {
+.logincontainer form p {
 	font-size: 8px;
 	padding-top: 20px;
 }
 
-#logincontainer>form>input[type=text],#logincontainer>form>input[type=password] {
+.logincontainer>form>input[type=text],.logincontainer>form>input[type=password] {
 	border: none;
 	border-bottom: 1px solid #9895A1;
 	background-color: transparent;
@@ -271,7 +271,7 @@ main{
 	box-sizing: border-box;
 }
 
-#logincontainer>form>input[type=submit]{
+.logincontainer>form>input[type=submit]{
 	width: 220px;
 	margin-top: 40px;
 	border: none;
@@ -291,14 +291,14 @@ main{
 	border-radius: 5px;
 }
 
-#logincontainer>form>input[type=submit]:hover{
+.logincontainer>form>input[type=submit]:hover{
 -webkit-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
 -moz-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
 box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
 cursor:pointer;
 }
 
-#logincontainer>form>input[type=text],#logincontainer>form>input[type=password],input[type=submit]{
+.logincontainer>form>input[type=text],.logincontainer>form>input[type=password],input[type=submit]{
 	outline: none;
 }
 

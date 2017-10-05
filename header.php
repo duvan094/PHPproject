@@ -30,7 +30,7 @@
 
 <div id=loginWrapper>
 
-  <div id="logincontainer">
+  <div class="logincontainer">
 
     <h3>Log In</h3>
 
@@ -46,9 +46,9 @@
   </div>
 </div>
 
-<div id=loginWrapper>
+<div id=signupWrapper>
 
-  <div id="logincontainer">
+  <div class="logincontainer">
 
     <h3>Log In</h3>
 
@@ -76,7 +76,8 @@
 
   document.querySelector("#signupShow").addEventListener("click", function(event) {
       event.preventDefault();
-      document.getElementById("loginWrapper").style.display = "block";
+      document.getElementById("loginWrapper").style.display = "none";
+      document.getElementById("signupWrapper").style.display = "block";
     },
   false);
 

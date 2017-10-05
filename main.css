@@ -295,7 +295,7 @@ main{
 	box-sizing: border-box;
 }
 
-#signupcontainer>form>input[type=text],#logincontainer>form>input[type=password] {
+#signupcontainer>form>input[type=text],#signupcontainer>form>input[type=password] {
 	border: none;
 	border-bottom: 1px solid #9895A1;
 	background-color: transparent;

@@ -61,7 +61,7 @@
       <input type="password" name="password"> <br>
       <input type="submit" id="newmember" name="SIGN UP" value="SIGN UP">
     </form>
-    
+
   </div>
 </div>
 

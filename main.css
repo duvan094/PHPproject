@@ -8,7 +8,7 @@
 }
 
 body {
-	background: #1A1A1C;
+	background: #1D1D1F;
 	height: 100%;
 	position: relative;
 }
@@ -18,7 +18,7 @@ nav{
 	position: fixed;
 	z-index: 10;
 	top:0;
-	background: #2A2A2C;
+	background: #1A1A1C;
 	-webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
@@ -40,24 +40,33 @@ nav>ul>li>a{
 		padding:22px 11px;
 		line-height: 22px;
 		display:block;
+		font-size: 12px;
+		font-weight: 600;
+		color:#DDD;
 }
 
 nav>ul>li>a:hover{
-	background:rgba(0, 0, 0, 0.5);
+	background:rgba(0, 0, 0, 0.2);
+	color:#FFF;
 }
 
 #searchBar>input{
-	border:solid 1px #5A5A5C;
-	border-radius: 22px;
-	padding:5px 11px;
+	/*border:solid 1px #5A5A5C;*/
+	border: none;
+	border-radius: 5px;
+	padding:6px 11px;
 	background:#3A3A3C;
 	font-size: 12px;
 	line-height: 18px;
-	width:200px;
+	width:250px;
 	color:#FFF;
 	outline:none;
 	margin-top:18px;
 	margin-right:88px;
+}
+
+#searchBar>input:focus{
+	background: #404042;
 }
 
 body p, h1, h3 {
@@ -253,7 +262,7 @@ main{
 	border-radius: 3px;
 	margin: auto;
 	padding: 22px 0;
-	margin-top: 100px;	
+	margin-top: 100px;
 }
 
 .logincontainer>.textWithLink{
@@ -375,6 +384,10 @@ main#userProfile>ul>li{
 	 list-style: none;
 }
 
+#searchPage>ul>li{
+	margin-bottom:44px;
+}
+
 #searchMenu{
 	border-bottom: 1px solid #46B4E0;
 }
@@ -384,8 +397,16 @@ main#userProfile>ul>li{
 	margin: auto;
 }
 
-#searchMenu>.searchMenuWrapper>h4{
+#searchMenu>.searchMenuWrapper>p{
 	color:#FFF;
+	padding:11px 22px;
+}
+
+.searchMenuWrapper>p,.searchMenuWrapper>button{
+	float:left;
+}
+.searchMenuWrapper{
+	overflow: hidden;
 }
 
 #searchMenu>.searchMenuWrapper>button{

@@ -2,9 +2,9 @@
 <main id="searchPage">
   <div id="searchMenu">
     <div class="searchMenuWrapper">
-      <h4>4 results for <i>Nyan Cat</i></h4>
       <button type="button" name="button">Cards</button>
       <button type="button" name="button">Users</button>
+      <p>3 card results for <i>Nyan Cat</i></p>
     </div>
   </div>
   <ul>

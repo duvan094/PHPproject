@@ -356,6 +356,50 @@ main#userProfile>ul>li{
 
 /*Profile page-END*/
 
+/*Search page*/
+#searchPage{
+	max-width: none;
+}
+
+#searchPage>ul{
+	max-width: 960px;
+	 margin: 66px auto 0 auto;
+	 list-style: none;
+}
+
+#searchMenu{
+	border-bottom: 1px solid #46B4E0;
+}
+
+#searchMenu>.searchMenuWrapper{
+	max-width: 960px;
+	margin: auto;
+}
+
+#searchMenu>.searchMenuWrapper>h4{
+	color:#FFF;
+}
+
+#searchMenu>.searchMenuWrapper>button{
+	padding:11px 22px;
+	background: none;
+	border: none;
+	outline: none;
+	color:#FFF;
+	cursor: pointer;
+}
+
+#searchMenu>.searchMenuWrapper>button:hover{
+	color:#46B4E0;
+}
+#searchMenu>.searchMenuWrapper>button:nth-child(2){
+	border-bottom: 4px solid #46B4E0;;
+}
+
+
+
+/*Search page end*/
+
 /*FOOTER*/
 
 footer {

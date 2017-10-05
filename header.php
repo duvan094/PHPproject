@@ -19,7 +19,7 @@
         <li><a href="topcards.php">Top Cards</a></li>
         <li><a href="#">+ Add Cards</a></li>
         <li>
-          <form id="searchBar" action="index.html" method="GET">
+          <form id="searchBar" action="searchResults.php" method="GET">
             <input type="text" name="searchField" placeholder="Search Users or Questions..."value="">
           </form>
         </li>

@@ -69,19 +69,39 @@
 
 
 <script>
+  //Makes it possible to close the modal by clicking on the transparent area.
+  document.querySelector("#signupWrapper").addEventListener("click", function(event){
+    document.getElementById("signupWrapper").style.display = "none";
+  }, false);
+
+  //This prevents the modal from closing when the user clicks on elements within the modal.
+  document.querySelector("#signupWrapper").children[0].addEventListener('click', function(e) {
+      e.stopPropagation();
+  }, false);
+
+  //Makes it possible to close the modal by clicking on the transparent area.
+  document.querySelector("#loginWrapper").addEventListener("click", function(event){
+    document.getElementById("loginWrapper").style.display = "none";
+  }, false);
+
+  //This prevents the modal from closing when the user clicks on elements within the modal.
+  document.querySelector("#loginWrapper").children[0].addEventListener('click', function(e) {
+      e.stopPropagation();
+  }, false);
+
 
   document.querySelector("#loginShow").addEventListener("click", function(event) {
       event.preventDefault();
       document.getElementById("loginWrapper").style.display = "block";
-    },
-  false);
+    }, false);
+
+
 
   document.querySelector("#signupShow").addEventListener("click", function(event) {
       event.preventDefault();
       document.getElementById("loginWrapper").style.display = "none";
       document.getElementById("signupWrapper").style.display = "block";
-    },
-  false);
+    }, false);
 
 
 </script>

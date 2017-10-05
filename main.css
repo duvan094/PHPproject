@@ -356,6 +356,10 @@ cursor:pointer;
 	outline: none;
 }
 
+.logincontainer{
+	z-index: 201;
+}
+
 #loginWrapper,#signupWrapper{
 	display: none;
 	position: fixed;

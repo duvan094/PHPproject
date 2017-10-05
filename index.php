@@ -34,9 +34,9 @@
               abore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </li>
-        <li class="commentField">
+        <li class="commentField comment">
           <form class="" action="index.html" method="post">
-            <input type="textarea" name="" placeholder="Write comment.">
+            <textarea name="" rows="8" cols="80" placeholder="Write a comment."></textarea>
             <br>
             <input type="submit" name="" value="Comment">
           </form>

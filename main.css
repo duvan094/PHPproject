@@ -222,9 +222,17 @@ main{
 #commentContainer>.commentField>p{
 	color:#000;
 	font-size: 12px;
-
 }
 
+.comment>form>input,.comment>form>textarea{
+	width:100%;
+	box-sizing: border-box;
+	padding:11px;
+}
+
+.comment>form>input[type="submit"]{
+	padding:22px;
+}
 
 /* LOGIN IN POP UP */
 

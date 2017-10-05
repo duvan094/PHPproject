@@ -123,11 +123,11 @@ main{
 
 
 .card-container>li:first-child>button{
-	background:#EFF268;
+	background:#E63231;
 }
 
 .card-container>li:last-child>button{
-	background:#13C29E;
+	background:#46B4E0;
 }
 
 .card-container::before{

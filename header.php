@@ -16,6 +16,7 @@
       <ul>
         <li><a href="login.php">Log In</a></li>
         <li><a href="profile.php">Profile</a></li>
+        <li><a href="topcards.php">Top Cards</a></li>
         <li><a href="#">+ Add Cards</a></li>
         <li>
           <form id="searchBar" action="index.html" method="GET">

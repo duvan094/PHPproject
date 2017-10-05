@@ -241,12 +241,15 @@ main{
 #logincontainer>.textWithLink{
 	padding-top: 11px;
 	font-size: 14px;
+	color: white;
+	text-align: center;
 }
 
 #logincontainer p, #logincontainer h3 {
 	color: black;
 	text-shadow: none;
 	color: black;
+
 }
 
 #logincontainer form {

@@ -238,6 +238,16 @@ main{
 	margin-top: 100px;
 }
 
+#signupWrapper>.logincontainer {
+	max-width: 300px;
+	height: 320px;
+	background: #b0b7ba;
+	border-radius: 3px;
+	margin: auto;
+	padding: 22px 0;
+	margin-top: 100px;	
+}
+
 .logincontainer>.textWithLink{
 	padding-top: 11px;
 	font-size: 14px;
@@ -291,6 +301,10 @@ main{
 	border-radius: 5px;
 }
 
+.logincontainer>form>#newmember {
+	background: #46B4E0;
+}
+
 .logincontainer>form>input[type=submit]:hover{
 -webkit-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
 -moz-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
@@ -302,7 +316,7 @@ cursor:pointer;
 	outline: none;
 }
 
-#loginWrapper{
+#loginWrapper,#signupWrapper{
 	display: none;
 	position: fixed;
 	z-index: 200;

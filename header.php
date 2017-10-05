@@ -50,7 +50,7 @@
 
   <div class="logincontainer">
 
-    <h3>Log In</h3>
+    <h3>Sign Up</h3>
 
     <form>
       <p>USERNAME</p>
@@ -59,7 +59,7 @@
       <input type="password" name="password"> <br>
       <p>CONFIRM PASSWORD</p>
       <input type="password" name="password"> <br>
-      <input type="submit" name="SIGN UP" value="SIGN UP">
+      <input type="submit" id="newmember" name="SIGN UP" value="SIGN UP">
     </form>
     
   </div>

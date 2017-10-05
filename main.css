@@ -9,6 +9,8 @@
 
 body {
 	background: #1A1A1C;
+	height: 100%;
+	position: relative;
 }
 
 nav{
@@ -229,10 +231,11 @@ main{
 #logincontainer {
 	max-width: 300px;
 	height: 250px;
-	background:rgba(255,255,255, 0.8);
+	background: #b0b7ba;
 	border-radius: 3px;
 	margin: auto;
 	padding: 22px 0;
+	margin-top: 100px;
 }
 
 #logincontainer>.textWithLink{
@@ -296,7 +299,14 @@ cursor:pointer;
 	outline: none;
 }
 
-
+#loginWrapper{
+	position: fixed;
+	z-index: 200;
+	width: 100%;
+	height:100%;
+	background:rgba(0, 0, 0, 0.5);
+	top: 0;
+}
 /* LOGIN IN POP UP -END */
 
 /*Profile page*/
@@ -328,7 +338,7 @@ main#userProfile>ul>li{
 
 footer {
 	text-align: center;
-	margin-top: 50px;
+	margin: 20px 0px;
 	width: 100%;
 }
 
@@ -337,17 +347,6 @@ footer a {
 	color: white;
 }
 
-footer img {
-	width: 50px;
-	margin-top: 5px;
-	transition: 0.4s all ease-in;
-	opacity: 0.1;
-}
-
-footer img:hover {
-	width: 60px;
-	opacity: 1;
-}
 
 /* FOOTER -END */
 

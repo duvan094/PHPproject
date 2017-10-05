@@ -1,7 +1,4 @@
-<?php include "header.php" ?>
-
-<main>
-
+<div id=loginWrapper>
 
 	<div id="logincontainer">
 
@@ -17,7 +14,12 @@
 		<p class = "textWithLink">Don't have an account? <a href="">Sign Up</a> for free!</p>
 
 	</div>
+</div>
 
+
+<?php include "header.php" ?>
+
+<main>
 </main>
 
 <?php  include "footer.php"?>

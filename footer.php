@@ -1,8 +1,6 @@
 <footer>
 
-	<p><a href="https://www.facebook.com/jacob.duvander?ref=br_rs" target="_blank">Like us on Facebook</a></p>
-
-	<a href="https://www.facebook.com/jacob.duvander?ref=br_rs" target="_blank"> <img src="img/JayD.png"> </a>
+	<p><a href="https://www.facebook.com/jacob.duvander?ref=br_rs" target="_blank">Life isn't about finding yourself. Life is about creating yourself.</a></p>
 
 </footer>
 

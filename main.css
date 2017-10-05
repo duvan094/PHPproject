@@ -246,7 +246,7 @@ main{
 #logincontainer p, #logincontainer h3 {
 	color: black;
 	text-shadow: none;
-	color: #9895A1;
+	color: black;
 }
 
 #logincontainer form {
@@ -300,6 +300,7 @@ cursor:pointer;
 }
 
 #loginWrapper{
+	display: none;
 	position: fixed;
 	z-index: 200;
 	width: 100%;
@@ -307,7 +308,11 @@ cursor:pointer;
 	background:rgba(0, 0, 0, 0.5);
 	top: 0;
 }
+
 /* LOGIN IN POP UP -END */
+
+
+
 
 /*Profile page*/
 main#userProfile>h1{

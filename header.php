@@ -14,7 +14,7 @@
         </svg>
       </a>
       <ul>
-        <li><a href="login.php">Log In</a></li>
+        <li><a id="loginShow" href="">Log In</a></li>
         <li><a href="profile.php">Profile</a></li>
         <li><a href="topcards.php">Top Cards</a></li>
         <li><a href="#">+ Add Cards</a></li>
@@ -25,3 +25,35 @@
         </li>
       </ul>
     </nav>
+
+
+
+<div id=loginWrapper>
+
+  <div id="logincontainer">
+
+    <h3>Log In</h3>
+
+    <form>
+      <p>USERNAME</p>
+      <input type="text" name="username"> <br>
+      <p>PASSWORD</p>
+      <input type="password" name="password"> <br>
+      <input type="submit" name="SIGN IN" value="SIGN IN">
+    </form>
+    <p class = "textWithLink">Don't have an account? <a href="">Sign Up</a> for free!</p>
+
+  </div>
+</div>
+
+
+
+<script>
+
+  document.querySelector("#loginShow").addEventListener("click", function(event) {
+      event.preventDefault();
+      document.getElementById("loginWrapper").style.display = "block";
+    },
+  false);
+
+</script>

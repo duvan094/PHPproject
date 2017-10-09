@@ -6,6 +6,11 @@
         <li><button>This?</button></li>
         <li><button>That?</button></li>
       </ul>
+      <p class="textWithLink">Made by <a href="#">steffe94</a>, 32 days ago.</p>
+      <ul id="nextPrevButtons">
+        <li><button>Previous Question</button></li>
+        <li><button>Next Question</button></li>
+      </ul>
 
       <ul id="commentContainer">
         <li><h4>4 comments</h4></li>

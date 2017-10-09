@@ -17,6 +17,7 @@
           </svg>
         </a>
         <ul>
+          <li><a id="signupShow1" href="">Sign Up</a></li>
           <li><a id="loginShow" href="">Log In</a></li>
           <li><a href="profile.php">Profile</a></li>
           <li><a href="topcards.php">Top Cards</a></li>
@@ -45,7 +46,7 @@
       <input type="password" name="password"> <br>
       <input type="submit" name="SIGN IN" value="SIGN IN">
     </form>
-    <p class = "textWithLink">Don't have an account? <a href="" id="signupShow">Sign Up</a> for free!</p>
+    <p class = "textWithLink">Don't have an account? <a href="" id="signupShow2">Sign Up</a> for free!</p>
 
   </div>
 </div>
@@ -99,11 +100,17 @@
 
 
 
-  document.querySelector("#signupShow").addEventListener("click", function(event) {
+  document.querySelector("#signupShow1").addEventListener("click", function(event) {
       event.preventDefault();
       document.getElementById("loginWrapper").style.display = "none";
       document.getElementById("signupWrapper").style.display = "block";
     }, false);
+
+    document.querySelector("#signupShow2").addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("loginWrapper").style.display = "none";
+        document.getElementById("signupWrapper").style.display = "block";
+      }, false);
 
 
 </script>

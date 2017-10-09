@@ -1,12 +1,13 @@
     <?php include "header.php" ?>
     <main>
-      <h3>Would You Rather?</h3>
+      <h1>Would You Rather?</h1>
 
       <ul class="card-container">
         <li><button>This?</button></li>
         <li><button>That?</button></li>
       </ul>
       <p class="textWithLink">Made by <a href="#">steffe94</a>, 32 days ago.</p>
+
       <ul id="nextPrevButtons">
         <li><button>Previous Question</button></li>
         <li><button>Next Question</button></li>

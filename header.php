@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Would you rather!</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  	<meta name="viewport" content="width=devide-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>

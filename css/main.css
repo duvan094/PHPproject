@@ -36,7 +36,6 @@ nav>div>ul>li{
 
 nav>div>ul>li>a{
 		text-decoration: none;
-		color:#FFF;
 		padding:22px 11px;
 		line-height: 22px;
 		display:block;
@@ -174,10 +173,41 @@ main{
 }
 /*Would you rather cards -END*/
 
+
+#nextPrevButtons{
+	overflow: hidden;
+	padding: 0 5px;
+	box-sizing: border-box;
+}
+
+#nextPrevButtons>li{
+	float:left;
+	width: 50%;
+	list-style: none;
+}
+
+#nextPrevButtons>li>button{
+	width: 100%;
+	padding:11px;
+	color:#DDD;
+	font-weight: 400;
+	font-size: 14px;
+	outline: none;
+	border:1px solid #4A4A4C;
+	background: #3A3A3C;
+	text-shadow: 4px 4px 4px rgba(0,0,0,0.4);
+}
+
+#nextPrevButtons>li>button:hover{
+	cursor:pointer;
+	background: #1A1A1C;
+	color:#FFF;
+}
+
 .textWithLink{
 	font-size: 12px;
 	text-align: right;
-	margin-bottom:44px;
+	margin-bottom:22px;
 	color:#AAA;
 }
 
@@ -196,8 +226,8 @@ main{
 #commentContainer{
 	background:#FFF;
 	border-radius: 5px;
-	padding:22px 0;
-	margin:5px;
+	padding:0 0 22px 0;
+	margin:0 5px;
 }
 
 #commentContainer>li{
@@ -212,8 +242,14 @@ main{
 }
 
 #commentContainer>li:first-child{
-	border-bottom: solid 3px #CCC;
-	padding-bottom: 11px;
+	border-bottom: 1px #CCC solid;
+	background: rgba(227,227,227,1);
+background: -moz-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(227,227,227,1)), color-stop(47%, rgba(255,255,255,1)), color-stop(100%, rgba(242,242,242,1)));
+background: -webkit-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);
+background: -o-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);
+background: -ms-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);
+background: linear-gradient(to bottom, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);	padding: 11px 0;
 }
 
 #commentContainer>.commentField>a{

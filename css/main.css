@@ -202,12 +202,17 @@ main>h1{
 	border:1px solid #4A4A4C;
 	background: #3A3A3C;
 	text-shadow: 4px 4px 4px rgba(0,0,0,0.4);
-	transition: padding 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
 }
 
 #nextPrevButtons>li>button:hover{
 	cursor:pointer;
 	background: #1A1A1C;
+	color:#FFF;
+}
+
+#nextPrevButtons>li>button:active{
+	background: #0A0A0C;
 	color:#FFF;
 }
 

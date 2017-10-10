@@ -11,7 +11,7 @@
         <li><p>0</p></li>
         <li><button class="like-button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></i></button></li>
       </ul>
-      <p class="textWithLink">Made by <a href="#">steffe94</a>, 32 days ago.</p>
+      <p class="textWithLink">Made by <a href="profile.php">steffe94</a>, 32 days ago.</p>
 
       <ul id="nextPrevButtons">
         <li><button>Previous Question</button></li>

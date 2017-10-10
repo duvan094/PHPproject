@@ -179,6 +179,10 @@ main>h1{
 /*Would you rather cards -END*/
 
 /*Like-button*/
+.upvote-container{
+	padding-left: 5px;
+}
+
 .upvote-container>li{
 	float:left;
 	list-style: none;
@@ -215,23 +219,24 @@ main>h1{
 .like-button::after{
 	content:'';
 	display: none;
-	border:solid 10px transparent;
-	border-bottom-color:rgba(0,0,0,0.4);
+	border:solid 6px transparent;
+	border-bottom-color:  rgba(0,0,0,0.5);
 	width: 0;
 	height:0;
 	position: absolute;
-	margin-top: -10px;
+	margin-top: -2px;
 }
 
 .like-button::before{
 	content:"";
 	display: none;
-	padding:5px;
+	padding:8px 5px;
 	border-radius: 3px;
 	position: absolute;
-	background: rgba(0,0,0,0.4);
+	background: rgba(0,0,0,0.5);
 	color:#FFF;
-	font-size: 12px;
+	font-size: 11px;
+	z-index: 50;
 	margin-top: 32px;
 	left:50%;
 	margin-left:-22px;

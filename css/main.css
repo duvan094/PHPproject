@@ -178,6 +178,34 @@ main>h1{
 
 /*Would you rather cards -END*/
 
+/*Like-button*/
+.upvote-container>li{
+	float:left;
+	list-style: none;
+}
+
+.upvote-container>li>p{
+	padding:0 11px;
+	line-height: 28px;
+}
+
+.like-button{
+	background: none;
+	border:none;
+	cursor: pointer;
+	outline: none;
+}
+
+.like-button:hover>i{
+	color:#FFF;
+}
+
+.like-button>i{
+	font-size: 28px;
+	color:#CCC;
+}
+
+/*Like-button end*/
 
 #nextPrevButtons{
 	overflow: hidden;
@@ -219,7 +247,7 @@ main>h1{
 .textWithLink{
 	font-size: 12px;
 	text-align: right;
-	margin-bottom:22px;
+	margin-bottom:44px;
 	color:#AAA;
 }
 

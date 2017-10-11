@@ -13,6 +13,53 @@ body {
 	position: relative;
 }
 
+/*Hamburger menu*/
+#hamburgerButton{
+	display: block;
+	width: 44px;
+	height: 32px;
+	background: none;
+	outline: none;
+	border: none;
+	position: relative;
+	cursor: pointer;
+	float:right;
+	margin:22px;
+}
+
+#hamburgerButton>span{
+	width:100%;
+	height:3px;
+	background: #CCC;
+	display:block;
+	position: absolute;
+	top:0;
+}
+
+#hamburgerButton>span:last-child{
+	top:100%;
+}
+
+
+#hamburgerButton>span:nth-child(1){
+	top:50%;
+}
+
+nav>div>ul{
+	height:0;
+	overflow: hidden;
+	width: 100%;
+	transition:height 0.4s ease-in-out;
+}
+
+nav>div>ul.expanded{
+	height: 420px;
+}
+
+
+/*hamburger menu end*/
+
+
 nav{
 	width: 100%;
 	position: fixed;
@@ -26,11 +73,10 @@ nav{
 
 nav>div>ul{
 	overflow: hidden;
-	padding-right: 22px;
+	width: 100%;
 }
 
 nav>div>ul>li{
-	float:right;
 	list-style: none;
 }
 
@@ -42,6 +88,7 @@ nav>div>ul>li>a{
 		font-size: 12px;
 		font-weight: 600;
 		color:#DDD;
+		text-align: center;
 }
 
 nav>div>ul>li>a:hover{
@@ -54,6 +101,10 @@ nav>.navWrapper{
 	margin:auto;
 }
 
+#searchBar{
+	padding:11px 22px 22px 22px;
+}
+
 #searchBar>input{
 	/*border:solid 1px #5A5A5C;*/
 	border: none;
@@ -62,11 +113,12 @@ nav>.navWrapper{
 	background:#3A3A3C;
 	font-size: 12px;
 	line-height: 18px;
-	width:250px;
+	width:100%;
 	color:#FFF;
 	outline:none;
 	margin-top:18px;
 	margin-right:88px;
+	box-sizing: border-box;
 }
 
 #searchBar>input:focus{
@@ -98,6 +150,7 @@ main>h1{
 	width:88px;
 	display: block;
 	float:left;
+	margin-left: 22px;
 }
 
 .home>svg{
@@ -630,11 +683,36 @@ footer>#copyright{
 }
 /* FOOTER -END */
 
-@media(min-width:500px){
+@media(min-width:420px){
+	#hamburgerButton{
+		display:none;
+	}
 
+	nav>div>ul{
+		padding-right: 22px;
+		width:auto;
+		height:auto;
+	}
+
+	nav>div>ul>li{
+		float:right;
+	}
+
+	#searchBar>input{
+		width:250px;
+	}
+
+
+	#searchBar{
+		padding:0;
+	}
 
 	.card-container>li{
 		float:left;
 		width:50%;
+	}
+
+	.home{
+		margin-left: 0;
 	}
 }

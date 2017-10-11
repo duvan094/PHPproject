@@ -37,7 +37,7 @@
 <div id=loginWrapper>
 
   <div class="logincontainer">
-
+    <button id="close-button1" class="close-button" type="button" name="button"><i class="fa fa-window-close" aria-hidden="true"></i></button>
     <h3>Log In</h3>
 
     <form>
@@ -55,7 +55,7 @@
 <div id=signupWrapper>
 
   <div class="logincontainer">
-
+    <button id="close-button2" class="close-button" type="button" name="button"><i class="fa fa-window-close" aria-hidden="true"></i></button>
     <h3>Sign Up</h3>
 
     <form>
@@ -84,6 +84,11 @@
   }, false);
 
   //Makes it possible to close the modal by clicking on the transparent area.
+  document.querySelector("#close-button2").addEventListener("click", function(event){
+    document.getElementById("signupWrapper").style.display = "none";
+  }, false);
+
+  //Makes it possible to close the modal by clicking on the transparent area.
   document.querySelector("#loginWrapper").addEventListener("click", function(event){
     document.getElementById("loginWrapper").style.display = "none";
   }, false);
@@ -91,6 +96,11 @@
   //This prevents the modal from closing when the user clicks on elements within the modal.
   document.querySelector("#loginWrapper").children[0].addEventListener('click', function(e) {
       e.stopPropagation();
+  }, false);
+
+  //Makes it possible to close the modal by clicking on the transparent area.
+  document.querySelector("#close-button1").addEventListener("click", function(event){
+    document.getElementById("loginWrapper").style.display = "none";
   }, false);
 
 

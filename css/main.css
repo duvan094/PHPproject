@@ -409,6 +409,27 @@ background: linear-gradient(to bottom, rgba(227,227,227,1) 0%, rgba(255,255,255,
 	margin: auto;
 	padding: 22px 0;
 	margin-top: 100px;
+	position: relative;
+}
+
+.close-button{
+	background:none;
+	border:none;
+	outline:0;
+	cursor:pointer;
+	position: absolute;
+	top:0;
+	right:0;
+	margin:11px;
+}
+
+.close-button>i{
+	font-size: 24px;
+	color:#AA0000;
+}
+
+.close-button:hover>i{
+	color:#FF0000;
 }
 
 #signupWrapper>.logincontainer {

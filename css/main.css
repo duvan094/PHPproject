@@ -92,15 +92,15 @@ main>h1{
 	text-align: center;
 }
 
-#home{
-	padding:11px 22px 6px 22px;
-	height:44px;
-	width:44px;
+.home{
+	/*padding:11px 22px 6px 22px;*/
+	height:66px;
+	width:66px;
 	display: block;
 	float:left;
 }
 
-#home>svg{
+.home>svg{
 	height:100%;
 	width:100%;
 }
@@ -631,8 +631,6 @@ footer>#copyright{
 	color:#A1A1A3;
 	font-size: 12px;
 }
-
-
 /* FOOTER -END */
 
 @media(min-width:500px){

@@ -426,6 +426,7 @@ background: linear-gradient(to bottom, rgba(227,227,227,1) 0%, rgba(255,255,255,
 .close-button>i{
 	font-size: 24px;
 	color:#AA0000;
+	transition: 0.2s ease-in-out color;
 }
 
 .close-button:hover>i{

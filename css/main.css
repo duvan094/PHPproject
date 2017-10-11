@@ -34,14 +34,35 @@ body {
 	display:block;
 	position: absolute;
 	top:0;
+	transition: top 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
-#hamburgerButton>span:last-child{
+#hamburgerButton>span:nth-child(1){
+	top:0;
+}
+
+
+#hamburgerButton>span:nth-child(2){
 	top:100%;
 }
 
+#hamburgerButton>span:nth-child(3){
+	top:50%;
+}
 
-#hamburgerButton>span:nth-child(1){
+#hamburgerButton.clicked>span:nth-child(1){
+	transform: rotate(-135deg);
+	top:50%;
+}
+
+
+#hamburgerButton.clicked>span:nth-child(2){
+	top:50%;
+	transform: rotate(135deg);
+}
+
+#hamburgerButton.clicked>span:nth-child(3){
+	transform: rotate(-135deg);
 	top:50%;
 }
 
@@ -52,7 +73,7 @@ nav>div>ul{
 	transition:height 0.4s ease-in-out;
 }
 
-nav>div>ul.expanded{
+nav>div>ul.clicked{
 	height: 420px;
 }
 

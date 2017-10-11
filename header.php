@@ -129,7 +129,8 @@
     /*Hamburger button*/
     document.querySelector("#hamburgerButton").addEventListener("click", function(event) {
             event.preventDefault();
-            document.querySelector("nav>div>ul").classList.toggle("expanded");
+            document.querySelector("nav>div>ul").classList.toggle("clicked");
+            document.querySelector("#hamburgerButton").classList.toggle("clicked");
     }, false);
 
 

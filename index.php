@@ -10,7 +10,7 @@
         <li><button class="like-button"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button></li>
         <li><p>0</p></li>
         <li><button class="like-button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></i></button></li>
-      </ul>
+      </ul>      
       <p class="textWithLink">Made by <a href="profile.php">steffe94</a>, 32 days ago.</p>
 
       <ul id="nextPrevButtons">

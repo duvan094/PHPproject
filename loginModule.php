@@ -5,9 +5,9 @@
     <h3>Log In</h3>
 
     <form>
-      <p>USERNAME</p>
+      <p>Username</p>
       <input type="text" name="username"> <br>
-      <p>PASSWORD</p>
+      <p>Password</p>
       <input type="password" name="password"> <br>
       <input type="submit" name="SIGN IN" value="SIGN IN">
     </form>
@@ -23,11 +23,11 @@
     <h3>Sign Up</h3>
 
     <form>
-      <p>USERNAME</p>
+      <p>Username</p>
       <input type="text" name="username"> <br>
-      <p>PASSWORD</p>
+      <p>Password</p>
       <input type="password" name="password"> <br>
-      <p>CONFIRM PASSWORD</p>
+      <p>Confirm Password</p>
       <input type="password" name="password"> <br>
       <input type="submit" id="newmember" name="SIGN UP" value="SIGN UP">
     </form>

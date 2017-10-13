@@ -416,12 +416,12 @@ main>h1{
 #commentContainer>li:first-child{
 	border-bottom: 1px #CCC solid;
 	background: rgba(227,227,227,1);
-background: -moz-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(227,227,227,1)), color-stop(47%, rgba(255,255,255,1)), color-stop(100%, rgba(242,242,242,1)));
-background: -webkit-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);
-background: -o-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);
-background: -ms-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);
-background: linear-gradient(to bottom, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);	padding: 11px 0;
+	background: -moz-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(227,227,227,1)), color-stop(47%, rgba(255,255,255,1)), color-stop(100%, rgba(242,242,242,1)));
+	background: -webkit-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);
+	background: -o-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);
+	background: -ms-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);
+	background: linear-gradient(to bottom, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 47%, rgba(242,242,242,1) 100%);	padding: 11px 0;
 }
 
 #commentContainer>.commentField>a{
@@ -541,8 +541,10 @@ background: linear-gradient(to bottom, rgba(227,227,227,1) 0%, rgba(255,255,255,
 }
 
 .logincontainer form p {
-	font-size: 8px;
+	font-size: 12px;
 	padding-top: 20px;
+	color:#000;
+	font-weight: 600;
 }
 
 .logincontainer>form>input[type=text],.logincontainer>form>input[type=password] {

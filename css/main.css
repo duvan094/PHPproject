@@ -50,6 +50,10 @@ body {
 	top:50%;
 }
 
+#hamburgerButton.clicked>span{
+	/*background: #db6e60;*/
+}
+
 #hamburgerButton.clicked>span:nth-child(1){
 	transform: rotate(-135deg);
 	top:50%;

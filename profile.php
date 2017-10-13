@@ -3,7 +3,6 @@
 <main id="userProfile">
 
 	<h1>steffe94</h1>
-
 	<ul>
 
 		<li>

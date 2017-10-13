@@ -42,11 +42,11 @@
           <span></span>
         </button>
         <ul>
-          <li><a id="signupShow1" href="">Sign Up</a></li>
-          <li><a id="loginShow" href="">Log In</a></li>
+          <li><a id="signupShow1" href="">Sign&nbsp;Up</a></li>
+          <li><a id="loginShow" href="">Log&nbsp;In</a></li>
           <li><a href="profile.php">Profile</a></li>
-          <li><a href="topcards.php">Top Cards</a></li>
-          <li><a href="addCards.php">+ Add Cards</a></li>
+          <li><a href="topcards.php">Top&nbsp;Cards</a></li>
+          <li><a href="addCards.php">+Add&nbsp;Cards</a></li>
           <li>
             <form id="searchBar" action="searchResults.php" method="GET">
               <input type="text" name="searchField" placeholder="Search Users or Questions..."value="">

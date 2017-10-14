@@ -93,14 +93,16 @@ nav>div>ul.clicked{
 nav>div>ul::after{
 	content:'';
 	top:0;
-	left:-200%;
+	right:-100%;
 	background: rgba(0,0,0,0.6);
 	height:100vh;
 	width:200%;
 	position: absolute;
 }
 
-
+nav>div>ul.clicked::after{
+	right:100%;
+}
 /*hamburger menu end*/
 
 
@@ -745,8 +747,13 @@ footer>#copyright{
 		display:none;
 	}
 
-	nav>div>ul{
+	nav{
+		padding-left:22px;
 		padding-right: 22px;
+		box-sizing: border-box;
+	}
+
+	nav>div>ul{
 		width:auto;
 		height:auto;
 		padding-top: 0;

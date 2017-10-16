@@ -7,6 +7,7 @@
   	<meta name="viewport" content="width=devide-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css">
     <script src="https://use.fontawesome.com/8718023d1d.js"></script>
+    <?php include "config.php" ?>
   </head>
   <body>
     <nav>

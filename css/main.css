@@ -635,8 +635,46 @@ cursor:pointer;
 
 /* LOGIN IN POP UP -END */
 
+/*Top cards*/
+#topList{
+	margin: 22px 11px;
+	text-align: left;
+  border-collapse: collapse;
+	color: #000;
+	box-sizing: border-box;
+	-webkit-box-shadow: 0px 10px 44px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 10px 44px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 44px 0px rgba(0,0,0,0.75);
+	resize:both;
+}
 
 
+#topList>tBody>tr{
+	height: 44px;
+	background: #FFF;
+	width: 100%;
+	border: solid 1px #CCC;
+}
+
+#topList>tBody>tr>td:first-child,#topList>tBody>tr>th:first-child{
+	padding-left: 11px;
+}
+
+
+#topList>tBody>tr>td:last-child,#topList>tBody>tr>th:last-child{
+	padding-right: 11px;
+}
+
+#topList>tBody>tr>td>a{
+	text-decoration: none;
+	color:#1694C0;
+}
+
+#topList>tBody>tr:nth-child(2n+2){
+	background: #EEE;
+}
+
+/*Top cards END*/
 
 /*Profile page*/
 main#userProfile>h1{
@@ -736,6 +774,16 @@ footer>#copyright{
 }
 /* FOOTER -END */
 @media(min-width:420px){
+	#topListContainer{
+		padding:0 22px;
+		box-sizing: border-box;
+	}
+
+	#topList{
+		width: 100%;
+		margin: 22px 0;
+	}
+
 	.card-container>li{
 		float:left;
 		width:50%;

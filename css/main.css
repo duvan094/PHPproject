@@ -137,6 +137,11 @@ nav>div>ul>li>a:hover{
 	color:#FFF;
 }
 
+nav>div>ul>li>a.active {
+	background:rgba(0, 0, 0, 0.8);
+	color:#46B4E0;
+}
+
 nav>.navWrapper{
 	max-width: 960px;
 	margin:auto;
@@ -742,7 +747,7 @@ footer>#copyright{
 
 }
 
-@media(min-width:780px){
+@media(min-width:835px){
 	#hamburgerButton{
 		display:none;
 	}

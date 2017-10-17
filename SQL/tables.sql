@@ -5,11 +5,32 @@ Create table Countries(
   Primary key(countryId)
 )engine = innodb;
 
+/*Please add more countries*/
+Insert into Countries (countryName) values
+("Sweden"),("Norway"),("Finland"),("Denmark"),
+("Island"),("Germany"),("Uruguay"),("Japan"),
+("Somalia"),("Mexico"),("France"),("Australia"),
+("UK"),("Bulgaria"),("Belgium"),("Canada"),("Egypt"),
+("Greece"),("Hungary"),("Russia"),("Switzerland"),
+("Latvia"),("Lithuania"),("Luxembourg"),("Monaco"),
+("Moldova"),("Romania"),("Poland"),("Netherlands"),
+("Nigeria"),("Singapore"),("Slovakia"),("Syria"),
+("Tunisia"),("Slovenia"),("Portugal"),("Spain"),
+("Morocco"),("United Kingdom"),("Lebanon"),("Austria"),
+("Albania"),("Andorra"),("Armenia"),("Argentina"),
+("Chile"),("China"),("Other")
+;
+
+
 Create table Categories(
   categoryID INT NOT NULL AUTO_INCREMENT,
   categoryName varchar(50) NOT NULL,
   Primary Key(categoryID,categoryName)
 )engine = innodb;
+
+Insert into Categories (categoryName) values
+("18+"),("Serious"),("Friends & Family"),("Casual"),("Mixed"),("Other")
+;
 
 Create table Users(
   userId INT NOT NULL AUTO_INCREMENT,

@@ -8,7 +8,7 @@ $strings = explode('/', $url);
 
 $current_page = end($strings);
 
-$dbname = 'wouldYouRatherLib';//Name your database library this in PHPmyAdmin
+$dbname = 'wouldYouRatherDB';//Name your database library this in PHPmyAdmin
 $dbuser = 'root';
 $dbpass = '';
 $dbserver = 'localhost';

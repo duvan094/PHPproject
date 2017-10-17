@@ -2,18 +2,28 @@
 
 <main>
 
+	<h2>Our Most Popular Cards</h2>
 
-<?php
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Rating</th>
+		</tr>
+		<ol>
+		<tr>
+    		<td>Hitler without a mustasche</td>
+    		<td>Buksmilet420</td>
+    		<td>346</td>
+  		</tr>
+  		<tr>
+    		<td>Exploding kittens or dogs</td>
+    		<td>Oatmeal</td>
+    		<td>263</td>
+  		</tr>
+	</table>
 
-echo '<table class="topcardslist" cellpadding="6">';
-echo '<tr><b><td>Title</td> <td>Author</td> <td>Rating</td> </b> </tr>';
 
-
-
-echo '</table>'
-
-
-?>
 
 
 

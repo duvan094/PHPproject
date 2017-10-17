@@ -29,7 +29,7 @@ Create table Categories(
 )engine = innodb;
 
 Insert into Categories (categoryName) values
-("18+"),("Serious"),("Friends & Family"),("Casual"),("Mixed"),("Other")
+("None"),("18+"),("Serious"),("Friends & Family"),("Casual"),("Mixed"),("Other")
 ;
 
 Create table Users(
@@ -41,6 +41,12 @@ Create table Users(
   Primary Key(userId)
 )engine = innodb;
 
+Insert into Users (username,password,countryId) values
+("jacobi94","asdf","1"/*Sweden*/),
+("draggen93","1234","1"/*Sweden*/),
+("emmereck","asdf","2"/*Norway*/),
+("mirre95","asdf","1"/*Sweden*/)
+;
 
 Create table Cards(
   cardId INT NOT NULL AUTO_INCREMENT,
@@ -50,26 +56,51 @@ Create table Cards(
   alt1Count INT DEFAULT 0,
   alt2Count INT DEFAULT 0,
   rating INT DEFAULT 0,
-  categoryId INT,
-  dateAdded DATE NOT NULL,
+  categoryId INT DEFAULT 1,
+  dateAdded DATETIME DEFAULT CURRENT_TIMESTAMP,
   Foreign Key(userId) References Users(userId),
   Foreign Key(categoryId) References Categories(categoryID),
   Primary Key(cardId)
 )engine = innodb;
+
+
+Insert into Cards (alt1,alt2,userId,categoryID) values
+("Eat a dick","Suck a toe",1,5),
+("Kill Hitler","Slap Hitler",1,5)
+;
+
+/*
+Create table UserCards(
+  cardId INT NOT NULL,
+  userId INT NOT NULL,
+  Foreign Key (cardId) References Cards(cardId),
+  Foreign Key (userId) References Users(userId),
+  Primary Key(cardId,userId)
+)engine = innodb;
+*/
 
 Create table Comments(
   commentId INT NOT NULL AUTO_INCREMENT,
   cardId INT NOT NULL,
   comment varchar(200) NOT NULL,
   userId INT NOT NULL,
-  dateAdded DATE NOT NULL,
+  dateAdded DATETIME DEFAULT CURRENT_TIMESTAMP,
   Foreign Key(userId) References Users(userId),
   Foreign Key(cardId) References Cards(cardId),
   Primary Key(commentId)
 )engine = innodb;
+
+Insert into Comments (cardId,comment,userId) values
+(1,"This is a comment. OR IS IT?!",1),
+(1,"This is another comment. And I concur with the previous statement ;)",2)
+;
 
 Create table Admins(
   userId INT NOT NULL,
   Foreign Key(userId) References Users(userId),
   Primary Key(userId)
 )engine = innodb;
+
+
+Insert into Admins (userId) values
+(1/*jacobi94*/);

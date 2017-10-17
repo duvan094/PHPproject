@@ -7,6 +7,11 @@
 	font-family: 'Montserrat', sans-serif;
 }
 
+::selection {/*Used to change the color of a text selection*/
+    background: #333;
+    color: #FFF;
+}
+
 body {
 	background: #2A2A2C;
 	height: 100%;

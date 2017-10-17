@@ -137,8 +137,12 @@ nav>div>ul>li>a:hover{
 	color:#FFF;
 }
 
-nav>div>ul>li>a.active {
-	background:rgba(0, 0, 0, 0.8);
+nav>div>ul>li>.active{
+	color:#46B4E0;
+}
+
+nav>div>ul>li>.active:hover{
+	background:rgba(0, 0, 0, 0.2);
 	color:#46B4E0;
 }
 

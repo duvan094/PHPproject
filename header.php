@@ -1,3 +1,4 @@
+<?php include "config.php" ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,7 +8,6 @@
   	<meta name="viewport" content="width=devide-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css">
     <script src="https://use.fontawesome.com/8718023d1d.js"></script>
-    <?php include "config.php" ?>
   </head>
   <body>
     <nav>
@@ -21,14 +21,14 @@
           <span></span>
           <span></span>
         </button>
-        
+
         <ul>
           <li><a id="signupShow1" href="">Sign&nbsp;Up</a></li>
           <li><a id="loginShow" href="">Log&nbsp;In</a></li>
           <li><a class="<?php echo $current_page == 'profile.php' ? 'active' : NULL ?>" href="profile.php">Profile</a></li>
           <li><a class="<?php echo $current_page == 'topcards.php' ? 'active' : NULL ?>" href="topcards.php">Top&nbsp;Cards</a></li>
           <li><a class="<?php echo $current_page == 'addCards.php' ? 'active' : NULL ?>" href="addCards.php">+Add&nbsp;Cards</a></li>
-          <li><a class="<?php echo ($current_page == 'index.php' || $current_page == "") ? 'active' : NULL ?>" href="index.php">Home</a></li>
+          <li><a class="<?php echo ($current_page == 'index.php' || $current_page == '') ? 'active' : NULL ?>" href="index.php">Home</a></li>
           <li>
             <form id="searchBar" action="searchResults.php" method="GET">
               <input type="text" name="searchField" placeholder="Search Users or Questions..."value="">

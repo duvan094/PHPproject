@@ -50,6 +50,7 @@ Insert into Users (username,password,countryId) values
 
 Create table Cards(
   cardId INT NOT NULL AUTO_INCREMENT,
+  title varchar(50) NOT NULL,
   alt1 varchar(200) NOT NULL,
   alt2 varchar(200) NOT NULL,
   userId INT NOT NULL,
@@ -64,9 +65,9 @@ Create table Cards(
 )engine = innodb;
 
 
-Insert into Cards (alt1,alt2,userId,categoryID) values
-("Eat a dick","Suck a toe",1,5),
-("Kill Hitler","Slap Hitler",1,5)
+Insert into Cards (title,alt1,alt2,userId,categoryID) values
+("Dick or Toe","Eat a dick","Suck a toe",1,5),
+("Naughty Hitler","Kill Hitler","Slap Hitler",1,5)
 ;
 
 /*
@@ -95,6 +96,7 @@ Insert into Comments (cardId,comment,userId) values
 (1,"This is another comment. And I concur with the previous statement ;)",2)
 ;
 
+
 Create table Admins(
   userId INT NOT NULL,
   Foreign Key(userId) References Users(userId),
@@ -104,3 +106,30 @@ Create table Admins(
 
 Insert into Admins (userId) values
 (1/*jacobi94*/);
+
+
+/*Here beneath lies examples of different SQL-selections*/
+
+/*Example how to select all the admins*/
+Select *
+From Users
+Join Admins ON Admins.userId = Users.userId;
+
+/*Select users and show their country*/
+Select Users.username, Countries.countryName
+From Users
+Join Countries ON Users.countryId = Countries.countryId;
+
+/*Example how you can select the info used for the comments on a specific card*/
+Select Cards.title, Users.username, Comments.comment, Comments.dateAdded
+from Cards
+Join Comments ON Cards.cardId = Comments.cardId
+Join Users ON Users.userId = Comments.userId
+Where Cards.cardId = 1;
+
+/*How to select all the info needed for a specific cards*/
+Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
+Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded
+from Cards
+Join Users ON Users.userId = Cards.userId
+Join Categories ON Cards.categoryID = Categories.categoryID;

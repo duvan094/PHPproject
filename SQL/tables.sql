@@ -1,7 +1,7 @@
 /*Name your database 'wouldYouRatherDB' in PHPmyAdmin for everything to work*/
 Create table Countries(
   countryId INT NOT NULL AUTO_INCREMENT,
-  countryName varchar(50) NOT NULL,
+  countryName varchar(50) NOT NULL UNIQUE,
   Primary key(countryId)
 )engine = innodb;
 
@@ -18,8 +18,9 @@ Insert into Countries (countryName) values
 ("Tunisia"),("Slovenia"),("Portugal"),("Spain"),
 ("Morocco"),("United Kingdom"),("Lebanon"),("Austria"),
 ("Albania"),("Andorra"),("Armenia"),("Argentina"),
-("Chile"),("China"),("Other")
+("Chile"),("China"),('Kosovo'),('Ukraine'),("Other")
 ;
+
 
 
 Create table Categories(
@@ -34,7 +35,7 @@ Insert into Categories (categoryName) values
 
 Create table Users(
   userId INT NOT NULL AUTO_INCREMENT,
-  username varchar(50) NOT NULL,
+  username varchar(50) NOT NULL UNIQUE,
   password varchar(50) NOT NULL,
   countryId INT,
   Foreign Key(countryId) References Countries(countryId),
@@ -91,6 +92,7 @@ Create table Comments(
   Primary Key(commentId)
 )engine = innodb;
 
+/*Example how to insert a comment*/
 Insert into Comments (cardId,comment,userId) values
 (1,"This is a comment. OR IS IT?!",1),
 (1,"This is another comment. And I concur with the previous statement ;)",2)

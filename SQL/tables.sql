@@ -113,16 +113,19 @@ Insert into Admins (userId) values
 /*Here beneath lies examples of different SQL-selections*/
 
 /*Example how to select all the admins*/
-Select *
+Create View ShowAdmins AS
+Select Users.userId, Users.username
 From Users
 Join Admins ON Admins.userId = Users.userId;
 
 /*Select users and show their country*/
-Select Users.username, Countries.countryName
+Create View ShowUserCountry AS
+Select Users.userId, Users.username, Countries.countryName
 From Users
 Join Countries ON Users.countryId = Countries.countryId;
 
 /*Example how you can select the info used for the comments on a specific card*/
+Create View CardComments AS
 Select Cards.title, Users.username, Comments.comment, Comments.dateAdded
 from Cards
 Join Comments ON Cards.cardId = Comments.cardId
@@ -131,6 +134,7 @@ Where Cards.cardId = 1;
 
 
 /*How to select all the info needed for a specific cards*/
+Create View ListCards AS
 Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
 Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded
 from Cards
@@ -138,10 +142,11 @@ Join Users ON Users.userId = Cards.userId
 Join Categories ON Cards.categoryID = Categories.categoryID;
 
 /*How to select a random card*/
+Create View RandomCard AS
 Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
 Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded
 from Cards
 Join Users ON Users.userId = Cards.userId
-Join Categories ON Cards.categoryID = Categories.categoryID;
+Join Categories ON Cards.categoryID = Categories.categoryID
 ORDER BY RAND()
 LIMIT 1;/*Remove this if you want more than one row*/

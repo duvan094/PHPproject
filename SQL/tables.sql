@@ -142,6 +142,24 @@ from Cards
 Join Users ON Users.userId = Cards.userId
 Join Categories ON Cards.categoryID = Categories.categoryID;
 
+/*Search Card example*/
+Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
+Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded
+from Cards
+Join Users ON Users.userId = Cards.userId
+Join Categories ON Cards.categoryID = Categories.categoryID
+Where Cards.title Like "%hitler%";
+
+/*Search User example*/
+Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
+Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded
+from Cards
+Join Users ON Users.userId = Cards.userId
+Join Categories ON Cards.categoryID = Categories.categoryID
+Where Users.username Like "%jacob%";
+
+
+
 /*How to select a random card*/
 Create View RandomCard AS
 Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,

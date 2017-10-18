@@ -51,7 +51,7 @@ Insert into Users (username,password,countryId) values
 
 Create table Cards(
   cardId INT NOT NULL AUTO_INCREMENT,
-  title varchar(50) NOT NULL,
+  title varchar(50) NOT NULL UNIQUE,
   alt1 varchar(200) NOT NULL,
   alt2 varchar(200) NOT NULL,
   userId INT NOT NULL,
@@ -68,7 +68,8 @@ Create table Cards(
 
 Insert into Cards (title,alt1,alt2,userId,categoryID) values
 ("Dick or Toe","Eat a dick","Suck a toe",1,5),
-("Naughty Hitler","Kill Hitler","Slap Hitler",1,5)
+("Naughty Hitler","Kill Hitler","Slap Hitler",1,5),
+("Project Management","Be a project Manager","Be a project Owner",1,5)
 ;
 
 /*

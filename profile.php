@@ -2,7 +2,8 @@
 
 <main id="userProfile">
 	<?php
-
+		/*Here we check if a specific user page is selected from the GET*/
+		if(isset($_GET['username']) && !empty($_GET['username'])){
 			$username = $_GET["username"];
 
 			@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -18,26 +19,37 @@
 	      $stmt = $db->prepare($query);
 	      $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded);
 			  $stmt->execute();
+				$stmt->store_result();
 
-				echo "<h1>" . $_GET["username"] . "</h1>";
-				echo "<ul>";
+        /*If no user with that specific username can be found the page displays an error message*/
+        if($stmt->num_rows() == 0){
+					echo "<h1>There's nothing here :(</h1>";
+		    }else{
 
-				while($stmt->fetch()){
-					echo "<li><h3>Would You Rather</h3>";
-					echo "<ul class='card-container'>";
-					echo "<li><button>$alt1</button></li>";
-					echo "<li><button>$alt2</button></li>";
+					echo "<h1>" . $_GET["username"] . "</h1>";
+					echo "<ul>";
+
+					while($stmt->fetch()){
+						echo "<li><h3>Would You Rather</h3>";
+						echo "<ul class='card-container'>";
+						echo "<li><button>$alt1</button></li>";
+						echo "<li><button>$alt2</button></li>";
+						echo "</ul>";
+						echo "<ul class='upvote-container'>";
+						echo "<li><button class='like-button'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></button></li>";
+						echo "<li><p>$rating</p></li>";
+						echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
+						echo "</ul>";
+						echo "<p class='textWithLink'>Made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
+						echo "</li>";
+					}
 					echo "</ul>";
-					echo "<ul class='upvote-container'>";
-					echo "<li><button class='like-button'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></button></li>";
-					echo "<li><p>$rating</p></li>";
-					echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
-					echo "</ul>";
-					echo "<p class='textWithLink'>Made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
-					echo "</li>";
 				}
-				echo "</ul>";
 
+		}else{
+			//If no specific user is requested the page prints out this Error message
+			echo "<h1>There's nothing here :(</h1>";
+		}
 	?>
 
 <!--

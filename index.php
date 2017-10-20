@@ -12,17 +12,28 @@
         exit();
       }
 
+      /*Here we check if a specific card is requested*/
       if(isset($_GET['cardId']) && !empty($_GET['cardId'])){
         $query = "select * from CardsView Where cardId=" . $_GET['cardId'];
         $stmt = $db->prepare($query);
         $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded, $cardId);
+        $stmt->execute();
+        $stmt->store_result();
+
+        /*If no card can be found, the page is refreshed and selects a random card.*/
+        if($stmt->num_rows() == 0){
+          echo '<meta http-equiv="refresh" content= "0; URL=index.php">';
+          exit;
+        }
+
       }else{
+        /*If no specific card is requested from the GET, a random card is selected*/
         $query = "select * from RandomCard";
         $stmt = $db->prepare($query);
         $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded, $cardId);
+        $stmt->execute();
       }
 
-      $stmt->execute();
       $stmt->fetch();
 
       echo "<ul class='card-container'>";

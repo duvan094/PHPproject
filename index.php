@@ -59,12 +59,6 @@
       </ul>
 
       <?php
-      /*Create View CardComments AS
-      Select Cards.title, Users.username, Comments.comment, Comments.dateAdded, Cards.cardId
-      from Cards
-      Join Comments ON Cards.cardId = Comments.cardId
-      Join Users ON Users.userId = Comments.userId;
-      /*Where Cards.cardId = 1;*/
 
         @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 

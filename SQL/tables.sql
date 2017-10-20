@@ -194,3 +194,10 @@ from Cards
 Join Users ON Users.userId = Cards.userId
 Join Categories ON Cards.categoryID = Categories.categoryID;
 /*Users.userId = 1*/
+
+Create View TopListView AS
+Select Cards.title, Users.username, Cards.rating, Cards.cardId
+from Cards
+Join Users ON Users.userId = Cards.userId
+ORDER BY Cards.rating DESC
+LIMIT 10;/*Remove this if you want more than one row*/

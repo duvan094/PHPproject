@@ -99,6 +99,12 @@ Insert into Comments (cardId,comment,userId) values
 (1,"This is another comment. And I concur with the previous statement ;)",2)
 ;
 
+Insert into Comments (cardId,comment,userId) values
+(2,"Hello, is there anyone here?!",3),
+(2,"Hi, my man",2),
+(2,"I also want to be a part of this",4),
+(2,"Sup",1)
+;
 
 Create table Admins(
   userId INT NOT NULL,
@@ -127,11 +133,12 @@ Join Countries ON Users.countryId = Countries.countryId;
 
 /*Example how you can select the info used for the comments on a specific card*/
 Create View CardComments AS
-Select Cards.title, Users.username, Comments.comment, Comments.dateAdded
+Select Cards.title, Users.username, Comments.comment, Comments.dateAdded, Cards.cardId
 from Cards
 Join Comments ON Cards.cardId = Comments.cardId
-Join Users ON Users.userId = Comments.userId
-Where Cards.cardId = 1;
+Join Users ON Users.userId = Comments.userId;
+/*Where Cards.cardId = 1;*/
+
 
 
 /*How to select all the info needed for a specific cards*/
@@ -159,11 +166,10 @@ Join Categories ON Cards.categoryID = Categories.categoryID
 Where Users.username Like "%jacob%";
 
 
-
 /*How to select a random card*/
 Create View RandomCard AS
 Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
-Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded
+Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded, Cards.cardId
 from Cards
 Join Users ON Users.userId = Cards.userId
 Join Categories ON Cards.categoryID = Categories.categoryID

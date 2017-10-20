@@ -30,7 +30,7 @@ Create table Categories(
 )engine = innodb;
 
 Insert into Categories (categoryName) values
-("None"),("18+"),("Serious"),("Friends & Family"),("Casual"),("Mixed"),("Other")
+("None"),("18+"),("Serious"),("Friends & Family"),("Casual"),("Mixed"),("Dark"),("Party"),("Other")
 ;
 
 Create table Users(
@@ -67,9 +67,19 @@ Create table Cards(
 
 
 Insert into Cards (title,alt1,alt2,userId,categoryID) values
-("Dick or Toe","Eat a dick","Suck a toe",1,5),
+("Dick or Toe","Eat a dick","Suck a toe",1,2),
 ("Naughty Hitler","Kill Hitler","Slap Hitler",1,5),
-("Project Management","Be a project Manager","Be a project Owner",1,5)
+("Project Management","Be a project Manager","Be a project Owner",1,5),
+("Banana Phone","Live without a phone","Live without genitals",2,5),
+("Time Travel","Live 500 years ago","Live 500 years in the future",2,5),
+("Useless Superpowes?","Be able to smell like anything","Make someone sneeze",3,5),
+("The Cake Is A Lie","Sit on a cake and eat dick","Sit on a dick and eat cake",4,2),
+("9/11 or Harambe","Revive Harambe","Prevent 9/11",4,7),
+("Trust Fall","Fail to save someone during a trust fall","Have someone fail to save you during a trust fall",4,7),
+("Alcoholic Dilemmas","RedBull Vodka","Gin & Tonic",4,8),
+("Tequila or Lonliness","Tequila Shots at 2 AM","Go home alone",4,8),
+("Mexican or Russian","Tequila without salt & lemon","Just Vodka",4,8),
+("Awkward or Sad","Bring a girl to a boys night","Go to the movies alone",4,8)
 ;
 
 /*
@@ -149,6 +159,7 @@ from Cards
 Join Users ON Users.userId = Cards.userId
 Join Categories ON Cards.categoryID = Categories.categoryID;
 
+
 /*Search Card example*/
 Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
 Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded
@@ -175,3 +186,11 @@ Join Users ON Users.userId = Cards.userId
 Join Categories ON Cards.categoryID = Categories.categoryID
 ORDER BY RAND()
 LIMIT 1;/*Remove this if you want more than one row*/
+
+Create View CardsView AS
+Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
+Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded, Cards.cardId
+from Cards
+Join Users ON Users.userId = Cards.userId
+Join Categories ON Cards.categoryID = Categories.categoryID;
+/*Users.userId = 1*/

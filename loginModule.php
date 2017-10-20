@@ -4,7 +4,7 @@
     <button id="close-button1" class="close-button" type="button" name="button"><i class="fa fa-window-close" aria-hidden="true"></i></button>
     <h3>Log In</h3>
 
-    <form method="POST" action="logincontainer">
+    <form method="POST" action="">
       <p>Username</p>
       <input type="text" name="username"> <br>
       <p>Password</p>
@@ -43,13 +43,13 @@
 
 
     echo "SELECT * FROM Users WHERE username = '{$username}' AND password = '{$password}'";
-    
+
     $query = ("SELECT * FROM Users WHERE username = '{$username}' "." AND password = '{$password}'");
-       
-    
+
+
     $stmt = $db->prepare($query);
     $stmt->execute();
-    $stmt->store_result(); 
+    $stmt->store_result();
 
     //If there is a match (login), totalcount = number of rows found. One row for one login.
     $totalcount = $stmt->num_rows();

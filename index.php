@@ -1,19 +1,27 @@
     <?php include "header.php" ?>
     <main>
       <h1>Would You Rather?</h1>
-<?php
+    <?php
+
       @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
       /*Check for connection error*/
       if ($db->connect_error) {
-          echo "could not connect: " . $db->connect_error;
-          printf("<br><a href=index.php>Return to home page </a>");
-          exit();
+        echo "could not connect: " . $db->connect_error;
+        printf("<br><a href=index.php>Return to home page </a>");
+        exit();
       }
 
-      $query = "select * from RandomCard";
-      $stmt = $db->prepare($query);
-      $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded, $cardId);
+      if(isset($_GET['cardId']) && !empty($_GET['cardId'])){
+        $query = "select * from CardsView Where cardId=" . $_GET['cardId'];
+        $stmt = $db->prepare($query);
+        $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded, $cardId);
+      }else{
+        $query = "select * from RandomCard";
+        $stmt = $db->prepare($query);
+        $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded, $cardId);
+      }
+
       $stmt->execute();
       $stmt->fetch();
 
@@ -26,7 +34,7 @@
       echo "<li><p>$rating</p></li>";
       echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
       echo  "</ul>";
-      echo  "<p class='textWithLink'>Made by <a href='profile.php?usersname=$username'>$username</a>, $dateAdded</p>";
+      echo  "<p class='textWithLink'>Made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
 
 ?>
 
@@ -80,7 +88,7 @@
         echo "<li><h4>$nbrOfComments comments</h4></li>";
         while ($stmt->fetch()) {
           echo "<li class='commentField'>";
-          echo "<a href='profile.php?usersname=$username'>$username</a>";
+          echo "<a href='profile.php?username=$username'>$username</a>";
           echo "<p><i>$dateAdded</i></p>";
           echo "<p>$comment</p>";
           echo "</li>";

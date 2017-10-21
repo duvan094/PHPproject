@@ -39,10 +39,9 @@
        echo "<li><p>$rating</p></li>";
        echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
        echo "</ul>";
-       echo "<p class='textWithLink'>Made by <a href=''>$username</a>, $dateAdded</p>";
+       echo "<p class='textWithLink'>Made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
        echo "</li>";
       }
-
     ?>
     <!--<li>
       <h3>If You Where A Cat Would You Do...</h3>

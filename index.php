@@ -65,8 +65,8 @@
       <p class="textWithLink">Made by <a href="profile.php">steffe94</a>, 32 days ago.</p>
 -->
       <ul id="nextPrevButtons">
-        <li><button>Previous Question</button></li>
-        <li><button>Next Question</button></li>
+        <li><a href="index.php?cardId=<?php echo $cardId-1; ?>">Previous Question</a></li>
+        <li><a href="index.php?cardId=<?php echo $cardId+1;?>">Next Question</a></li>
       </ul>
 
       <?php

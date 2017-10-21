@@ -380,26 +380,27 @@ main>h1{
 	list-style: none;
 }
 
-#nextPrevButtons>li>button{
+#nextPrevButtons>li>a{
+	display: block;
+	text-decoration: none;
+	text-align: center;
 	width: 100%;
 	padding:11px;
 	color:#DDD;
 	font-weight: 400;
 	font-size: 14px;
-	outline: none;
 	border:1px solid #4A4A4C;
 	background: #3A3A3C;
 	text-shadow: 4px 4px 4px rgba(0,0,0,0.4);
 	transition: background 0.2s ease-in-out;
 }
 
-#nextPrevButtons>li>button:hover{
-	cursor:pointer;
+#nextPrevButtons>li>a:hover{
 	background: #1A1A1C;
 	color:#FFF;
 }
 
-#nextPrevButtons>li>button:active{
+#nextPrevButtons>li>a:active{
 	background: #0A0A0C;
 	color:#FFF;
 }

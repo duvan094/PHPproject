@@ -15,9 +15,9 @@
 					exit();
 			}
 
-	      $query = "select * from ListCards Where username='" . $username . "'";
+	      $query = "select * from CardsView Where username='" . $username . "'";
 	      $stmt = $db->prepare($query);
-	      $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded);
+	      $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded,$cardId);
 			  $stmt->execute();
 				$stmt->store_result();
 
@@ -40,7 +40,7 @@
 						echo "<li><p>$rating</p></li>";
 						echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
 						echo "</ul>";
-						echo "<p class='textWithLink'>Made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
+						echo "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a>made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
 						echo "</li>";
 					}
 					echo "</ul>";

@@ -150,16 +150,6 @@ Join Users ON Users.userId = Comments.userId;
 /*Where Cards.cardId = 1;*/
 
 
-
-/*How to select all the info needed for a specific cards*/
-Create View ListCards AS
-Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
-Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded
-from Cards
-Join Users ON Users.userId = Cards.userId
-Join Categories ON Cards.categoryID = Categories.categoryID;
-
-
 /*Search Card example*/
 Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
 Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded
@@ -187,6 +177,7 @@ Join Categories ON Cards.categoryID = Categories.categoryID
 ORDER BY RAND()
 LIMIT 1;/*Remove this if you want more than one row*/
 
+/*Used to find a certain card or to display all the cards*/
 Create View CardsView AS
 Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
 Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded, Cards.cardId

@@ -40,7 +40,7 @@
 						echo "<li><p>$rating</p></li>";
 						echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
 						echo "</ul>";
-						echo "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a>made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
+						echo "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a> made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
 						echo "</li>";
 					}
 					echo "</ul>";

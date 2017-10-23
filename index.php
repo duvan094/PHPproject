@@ -37,7 +37,6 @@
 
         if(isset($_GET['categoryName']) && !empty($_GET['categoryName'])){
           $query = "Select * from RandomList Where categoryName='".$_GET['categoryName']."'";
-          echo $query;
         }
 
         $stmt = $db->prepare($query);

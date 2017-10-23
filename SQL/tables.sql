@@ -191,7 +191,7 @@ ORDER BY RAND()
 Create View CategoriesView AS
 Select Categories.categoryID, Categories.categoryName
 from Categories
-Inner Join Cards ON Categories.categoryID = Cards.categoryID
+Join Cards ON Categories.categoryID = Cards.categoryID
 Group By Categories.categoryID;
 
 /*Used to find a certain card or to display all the cards*/

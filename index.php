@@ -49,9 +49,6 @@
 
 ?>
 
-
-
-
 <!--
       <ul class="card-container">
         <li><button>This?</button></li>
@@ -86,7 +83,6 @@
         $stmt->execute();
         $stmt->store_result();
         $nbrOfComments = $stmt->num_rows();
-
 
 
         echo "<ul id='commentContainer'>";

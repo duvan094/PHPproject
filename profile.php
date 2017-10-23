@@ -26,7 +26,7 @@
 					echo "<h1>There's nothing here :(</h1>";
 		    }else{
 
-					echo "<h1>" . $_GET["username"] . "</h1>";
+					echo "<h1>" . $username . "</h1>";
 					echo "<ul>";
 
 					while($stmt->fetch()){

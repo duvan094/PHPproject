@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <?php include "config.php" ?>
 <!DOCTYPE html>
 <html>
@@ -22,21 +26,51 @@
           <span></span>
         </button>
 
-        <ul>
-          <li><a id="signupShow1" href="">Sign&nbsp;Up</a></li>
-          <li><a id="loginShow" href="">Log&nbsp;In</a></li>
-          <li><a class="<?php echo $current_page == 'profile.php' ? 'active' : NULL ?>" href="profile.php">Profile</a></li>
-          <li><a class="<?php echo $current_page == 'topcards.php' ? 'active' : NULL ?>" href="topcards.php">Top&nbsp;Cards</a></li>
-          <li><a class="<?php echo $current_page == 'addCards.php' ? 'active' : NULL ?>" href="addCards.php">+Add&nbsp;Cards</a></li>
-          <li><a class="<?php echo ($current_page == 'index.php' || $current_page == '') ? 'active' : NULL ?>" href="index.php">Home</a></li>
-          <li>
-            <form id="searchBar" action="searchResults.php" method="GET">
-              <input type="text" name="searchField" placeholder="Search Users or Questions..."value="">
-            </form>
-          </li>
-        </ul>
+        <?php
+          /*Displays a different header if the user is logged in*/
+          if (isset($_SESSION['username'])) {//The header if logged in.
+            echo "<ul>";
+            echo "<li><a href='logout.php'>Log&nbsp;Out</a></li>";
+            echo "<li><a class='" . ($current_page == 'profile.php' ? 'active' : NULL) . "' href='profile.php?username=" . $_SESSION['username'] . "'>Profile</a></li>";
+            echo "<li><a class='" . ($current_page == 'topcards.php' ? 'active' : NULL) . "' href='topcards.php'>Top&nbsp;Cards</a></li>";
+            echo "<li><a class='" . ($current_page == 'addCards.php' ? 'active' : NULL) . "' href='addCards.php'>+Add&nbsp;Cards</a></li>";
+            echo "<li><a class='" . (($current_page == 'index.php' || $current_page == '') ? 'active' : NULL) . "' href='index.php'>Home</a></li>";
+            echo "<li>";
+            echo "<form id='searchBar' action='searchResults.php' method='GET'>";
+            echo "<input type='text' name='searchField' placeholder='Search Users or Questions...' value=''>";
+            echo "</form>";
+            echo "</li>";
+            echo "</ul>";
+          }else{//The header if not logged in.
+            echo "<ul>";
+            echo "<li><a id='signupShow1' href=''>Sign&nbsp;Up</a></li>";
+            echo "<li><a id='loginShow' href=''>Log&nbsp;In</a></li>";
+            echo "<li><a class='" . ($current_page == 'topcards.php' ? 'active' : NULL) . "' href='topcards.php'>Top&nbsp;Cards</a></li>";
+            echo "<li><a class='" . ($current_page == 'addCards.php' ? 'active' : NULL) . "' href='addCards.php'>+Add&nbsp;Cards</a></li>";
+            echo "<li><a class='" . (($current_page == 'index.php' || $current_page == '') ? 'active' : NULL) . "' href='index.php'>Home</a></li>";
+            echo "<li>";
+            echo "<form id='searchBar' action='searchResults.php' method='GET'>";
+            echo "<input type='text' name='searchField' placeholder='Search Users or Questions...' value=''>";
+            echo "</form>";
+            echo "</li>";
+            echo "</ul>";
+          }
+        ?>
 
       </div>
     </nav>
 
-    <?php include "loginModule.php" ?>
+    <?php
+      if(!isset($_SESSION['username'])) {//Only include loginModule if logged in.
+        include "loginModule.php";
+      }
+    ?>
+
+    <script>
+      /*Hamburger button*/
+      document.querySelector("#hamburgerButton").addEventListener("click", function(event) {
+              event.preventDefault();
+              document.querySelector("nav>div>ul").classList.toggle("clicked");
+              document.querySelector("#hamburgerButton").classList.toggle("clicked");
+      }, false);
+    </script>

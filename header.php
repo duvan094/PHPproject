@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <?php include "config.php" ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +26,36 @@
           <span></span>
         </button>
 
-        <ul>
+        <?php
+          if (isset($_SESSION['username'])) {
+            echo "<ul>";
+            echo "<li><a href=''>Log&nbsp;Out</a></li>";
+            echo "<li><a class='" . ($current_page == 'profile.php' ? 'active' : NULL) . "' href='profile.php'>Profile</a></li>";
+            echo "<li><a class='" . ($current_page == 'topcards.php' ? 'active' : NULL) . "' href='topcards.php'>Top&nbsp;Cards</a></li>";
+            echo "<li><a class='" . ($current_page == 'addCards.php' ? 'active' : NULL) . "' href='addCards.php'>+Add&nbsp;Cards</a></li>";
+            echo "<li><a class='" . (($current_page == 'index.php' || $current_page == '') ? 'active' : NULL) . "' href='index.php'>Home</a></li>";
+            echo "<li>";
+            echo "<form id='searchBar' action='searchResults.php' method='GET'>";
+            echo "<input type='text' name='searchField' placeholder='Search Users or Questions...' value=''>";
+            echo "</form>";
+            echo "</li>";
+            echo "</ul>";
+          }else{
+            echo "<ul>";
+            echo "<li><a id='signupShow1' href=''>Sign&nbsp;Up</a></li>";
+            echo "<li><a id='loginShow' href=''>Log&nbsp;In</a></li>";
+            echo "<li><a class='" . ($current_page == 'topcards.php' ? 'active' : NULL) . "' href='topcards.php'>Top&nbsp;Cards</a></li>";
+            echo "<li><a class='" . ($current_page == 'addCards.php' ? 'active' : NULL) . "' href='addCards.php'>+Add&nbsp;Cards</a></li>";
+            echo "<li><a class='" . (($current_page == 'index.php' || $current_page == '') ? 'active' : NULL) . "' href='index.php'>Home</a></li>";
+            echo "<li>";
+            echo "<form id='searchBar' action='searchResults.php' method='GET'>";
+            echo "<input type='text' name='searchField' placeholder='Search Users or Questions...' value=''>";
+            echo "</form>";
+            echo "</li>";
+            echo "</ul>";
+          }
+        ?>
+<!--        <ul>
           <li><a id="signupShow1" href="">Sign&nbsp;Up</a></li>
           <li><a id="loginShow" href="">Log&nbsp;In</a></li>
           <li><a class="<?php echo $current_page == 'profile.php' ? 'active' : NULL ?>" href="profile.php">Profile</a></li>
@@ -35,7 +68,7 @@
             </form>
           </li>
         </ul>
-
+-->
       </div>
     </nav>
 

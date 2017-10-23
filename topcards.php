@@ -2,10 +2,6 @@
 
 <main id="topListContainer">
 
-	<?php
-	echo "SELECT * FROM Users WHERE username = '{$username}' AND password = '{$password}'";
-	?>
-
 	<h1>Top 10</h1>
 	<table id="topList">
 		<tr>

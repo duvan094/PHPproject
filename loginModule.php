@@ -1,5 +1,57 @@
 <div id=loginWrapper>
 
+  <?php
+    //Open the database...
+    @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+    //Check if you can connect.
+    if ($db->connect_error) {
+        echo "could not connect: " . $db->connect_error;
+        printf("<br><a href=index.php>Return to home page </a>");
+      exit();
+    }
+
+    if (isset($_POST['username'], $_POST['password'])) {
+
+
+      $username = mysqli_real_escape_string($db, $_POST['username']);
+      //Make everything you write into a string... Can't change code with html entitites. Same for password.
+      $username = htmlentities($username);
+
+      $password = mysqli_real_escape_string($db, $_POST['password']);
+      $password = htmlentities($password);
+      //    $password = sha1($_POST['password']);
+
+
+      echo "SELECT * FROM Users WHERE username = '{$username}' AND password = '{$password}'";
+
+      $query = ("SELECT * FROM Users WHERE username = '{$username}' "." AND password = '{$password}'");
+
+
+      $stmt = $db->prepare($query);
+      $stmt->execute();
+      $stmt->store_result();
+
+      //If there is a match (login), totalcount = number of rows found. One row for one login.
+      $totalcount = $stmt->num_rows();
+
+
+    }
+
+    if (isset($totalcount)) {
+      if ($totalcount == 0) {
+        echo '<h2>Wrong username or password, try again!</h2>';
+        } else {
+          //What's going to happen when you press SUBMIT:
+          $_SESSION['username'] = $username;
+          echo '<meta http-equiv="refresh" content= "0; URL="addCards.php">';
+          }
+        }
+
+  ?>
+
+
+
   <div class="logincontainer">
     <button id="close-button1" class="close-button" type="button" name="button"><i class="fa fa-window-close" aria-hidden="true"></i></button>
     <h3>Log In</h3>
@@ -15,61 +67,6 @@
 
   </div>
 </div>
-
-
-<?php
-
-  //Open the database...
-  @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
-
-  //Check if you can connect.
-  if ($db->connect_error) {
-      echo "could not connect: " . $db->connect_error;
-      printf("<br><a href=index.php>Return to home page </a>");
-    exit();
-  }
-
-
-  if (isset($_POST['username'], $_POST['password'])) {
-
-    $username = mysqli_real_escape_string($db, $_POST['username']);
-    //Make everything you write into a string... Can't change code with html entitites. Same for password.
-    $username = htmlentities($username);
-
-
-    $password = sha1($_POST['password']);
-    $password = htmlentities($password);
-
-
-
-    echo "SELECT * FROM Users WHERE username = '{$username}' AND password = '{$password}'";
-
-    $query = ("SELECT * FROM Users WHERE username = '{$username}' "." AND password = '{$password}'");
-
-
-    $stmt = $db->prepare($query);
-    $stmt->execute();
-    $stmt->store_result();
-
-    //If there is a match (login), totalcount = number of rows found. One row for one login.
-    $totalcount = $stmt->num_rows();
-
-
-  }
-
-  if (isset($totalcount)) {
-    if ($totalcount == 0) {
-      echo '<h2>Wrong username or password, try again!</h2>';
-      } else {
-        //What's going to happen when you press SUBMIT:
-        echo '<meta http-equiv="refresh" content= "0; URL="addCards.php">';
-        }
-      }
-
-?>
-
-
-
 
 
 <div id=signupWrapper>

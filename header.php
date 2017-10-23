@@ -27,10 +27,11 @@ session_start();
         </button>
 
         <?php
-          if (isset($_SESSION['username'])) {
+          /*Displays a different header if the user is logged in*/
+          if (isset($_SESSION['username'])) {//The header if logged in.
             echo "<ul>";
-            echo "<li><a href=''>Log&nbsp;Out</a></li>";
-            echo "<li><a class='" . ($current_page == 'profile.php' ? 'active' : NULL) . "' href='profile.php'>Profile</a></li>";
+            echo "<li><a href='logout.php'>Log&nbsp;Out</a></li>";
+            echo "<li><a class='" . ($current_page == 'profile.php' ? 'active' : NULL) . "' href='profile.php?username=" . $_SESSION['username'] . "'>Profile</a></li>";
             echo "<li><a class='" . ($current_page == 'topcards.php' ? 'active' : NULL) . "' href='topcards.php'>Top&nbsp;Cards</a></li>";
             echo "<li><a class='" . ($current_page == 'addCards.php' ? 'active' : NULL) . "' href='addCards.php'>+Add&nbsp;Cards</a></li>";
             echo "<li><a class='" . (($current_page == 'index.php' || $current_page == '') ? 'active' : NULL) . "' href='index.php'>Home</a></li>";
@@ -40,7 +41,7 @@ session_start();
             echo "</form>";
             echo "</li>";
             echo "</ul>";
-          }else{
+          }else{//The header if not logged in.
             echo "<ul>";
             echo "<li><a id='signupShow1' href=''>Sign&nbsp;Up</a></li>";
             echo "<li><a id='loginShow' href=''>Log&nbsp;In</a></li>";
@@ -55,21 +56,12 @@ session_start();
             echo "</ul>";
           }
         ?>
-<!--        <ul>
-          <li><a id="signupShow1" href="">Sign&nbsp;Up</a></li>
-          <li><a id="loginShow" href="">Log&nbsp;In</a></li>
-          <li><a class="<?php echo $current_page == 'profile.php' ? 'active' : NULL ?>" href="profile.php">Profile</a></li>
-          <li><a class="<?php echo $current_page == 'topcards.php' ? 'active' : NULL ?>" href="topcards.php">Top&nbsp;Cards</a></li>
-          <li><a class="<?php echo $current_page == 'addCards.php' ? 'active' : NULL ?>" href="addCards.php">+Add&nbsp;Cards</a></li>
-          <li><a class="<?php echo ($current_page == 'index.php' || $current_page == '') ? 'active' : NULL ?>" href="index.php">Home</a></li>
-          <li>
-            <form id="searchBar" action="searchResults.php" method="GET">
-              <input type="text" name="searchField" placeholder="Search Users or Questions..."value="">
-            </form>
-          </li>
-        </ul>
--->
+
       </div>
     </nav>
 
-    <?php include "loginModule.php" ?>
+    <?php
+      if(!isset($_SESSION['username'])) {//Only include loginModule if logged in.
+        include "loginModule.php";
+      }
+    ?>

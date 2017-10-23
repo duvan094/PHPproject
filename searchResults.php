@@ -13,8 +13,8 @@
           exit();
       }
 
-      $query = "";
-      $searchVariable = "";
+      $query;
+      $searchVariable;
 
       /*If a user chose a category*/
       if(isset($_GET['category']) && !empty($_GET['category'])){
@@ -22,7 +22,7 @@
         $searchVariable = htmlentities($searchVariable);
         $query = "select * from CardsView Where categoryName='" . $searchVariable . "'";
       }else{
-        $searcVariable =  mysqli_real_escape_string($db, $_GET['searchField']);
+        $searchVariable =  mysqli_real_escape_string($db, $_GET['searchField']);
         $searchVariable = htmlentities($searchVariable);
         $query = "select * from CardsView Where title LIKE'%" .  $searchVariable . "%' OR alt1 LIKE'%" . $searchVariable . "%' OR alt2 LIKE'%" . $searchVariable . "%' OR username LIKE'%" . $searchVariable . "%'";
       }

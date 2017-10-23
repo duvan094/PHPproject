@@ -512,6 +512,15 @@ main>h1{
 .categoriesList{
 	list-style: none;
 	overflow: hidden;
+	margin-top: 22px;
+}
+
+
+.categoriesList>p{
+	color:#FFF;
+	font-size: 14px;
+	font-weight: 300;
+	margin:5px;
 }
 
 .categoriesList>li{
@@ -527,7 +536,21 @@ main>h1{
 	margin:5px;
 	border-radius: 2px;
 	font-size: 12px;
-	
+}
+
+
+.categoriesList>li>a:hover{
+	background:rgba(70,180,224,0.8);
+	color:#FFF;
+}
+
+.searchCategories{
+	text-align: center;
+}
+
+.searchCategories>li{
+	float: none;
+	display: inline-block;
 }
 
 /* LOGIN IN POP UP */
@@ -774,6 +797,51 @@ main#userProfile>h1{
 }
 
 
+#searchBarLarge{
+	margin-top: 120px;
+	padding:11px;
+	text-align: center;
+}
+
+#searchBarLarge>h2{
+	color:#FFF;
+	margin-bottom: 11px;
+	font-weight: 600;
+}
+
+#searchBarLarge>input{
+	display: inline-block;
+}
+
+#searchBarLarge>input[type=text]{
+	/*border:solid 1px #5A5A5C;*/
+	border: #1A1A1C 1px solid;
+	border-radius: 5px;
+	padding:11px 11px;
+	margin-right: 5px;
+	background:#4A4A4C;
+	font-size: 14px;
+	line-height: 18px;
+	width:200px;
+	color:#FFF;
+	box-sizing: border-box;
+}
+
+#searchBarLarge>input[type=submit]{
+	border: #1A1A1C 1px solid;
+	border-radius: 5px;
+	padding:11px 11px;
+	font-size: 14px;
+	font-weight: 600;
+	outline:none;
+	box-sizing: border-box;
+}
+
+#searchBarLarge>input:focus{
+	background: #404042;
+}
+
+
 
 /*Search page end*/
 
@@ -824,9 +892,20 @@ footer>#copyright{
 			text-align: center;
 	}
 
+	#searchBarLarge>input[type=text]{
+		width:340px;
+	}
+
 }
 
 @media(min-width:835px){
+
+
+	#searchBarLarge>input[type=text]{
+		width:420px;
+	}
+
+
 	#hamburgerButton{
 		display:none;
 	}

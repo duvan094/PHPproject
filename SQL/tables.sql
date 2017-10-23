@@ -30,7 +30,7 @@ Create table Categories(
 )engine = innodb;
 
 Insert into Categories (categoryName) values
-("None"),("18+"),("Serious"),("Friends & Family"),("Casual"),("Mixed"),("Dark"),("Party"),("Other")
+("None"),("Adult"),("Serious"),("Friends & Family"),("Casual"),("Mixed"),("Dark"),("Party"),("Other")
 ;
 
 Create table Users(
@@ -176,6 +176,22 @@ Join Users ON Users.userId = Cards.userId
 Join Categories ON Cards.categoryID = Categories.categoryID
 ORDER BY RAND()
 LIMIT 1;/*Remove this if you want more than one row*/
+
+Create View RandomList AS
+Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
+Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded, Cards.cardId
+from Cards
+Join Users ON Users.userId = Cards.userId
+Join Categories ON Cards.categoryID = Categories.categoryID
+ORDER BY RAND()
+;
+
+/*A view that only shows categories that have cards assigned to them*/
+Create View CategoriesView AS
+Select Categories.categoryID, Categories.categoryName
+from Categories
+Inner Join Cards ON Categories.categoryID = Cards.categoryID
+Group By Categories.categoryID;
 
 /*Used to find a certain card or to display all the cards*/
 Create View CardsView AS

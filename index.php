@@ -2,7 +2,7 @@
     <main>
 
 
-      <h1>Would You Rather?</h1>
+      <h3>Would You Rather?</h3>
     <?php
 
       @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -18,10 +18,12 @@
       if(isset($_GET['cardId']) && !empty($_GET['cardId'])){
 
         $query = "select * from CardsView Where cardId=" . $_GET['cardId'];
+
         $stmt = $db->prepare($query);
         $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded, $cardId);
         $stmt->execute();
         $stmt->store_result();
+
 
         /*If no card can be found, the page is refreshed and selects a random card.*/
         if($stmt->num_rows() == 0){
@@ -34,9 +36,10 @@
         $query = "select * from RandomCard";
 
         if(isset($_GET['categoryName']) && !empty($_GET['categoryName'])){
-          $query = $query . " Where categoryName='" . $_GET['categoryName'] . "'";
+          $query = "Select * from RandomList Where categoryName='".$_GET['categoryName']."'";
+          echo $query;
         }
-        
+
         $stmt = $db->prepare($query);
         $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded, $cardId);
         $stmt->execute();
@@ -73,7 +76,7 @@
       <p class="textWithLink">Made by <a href="profile.php">steffe94</a>, 32 days ago.</p>
 -->
       <ul id="nextPrevButtons">
-        <li><a href="index.php?cardId=<?php echo $cardId-1; ?>">Previous Question</a></li>
+        <li><a href="index.php?cardId=<?php echo $cardId-1;?>">Previous Question</a></li>
         <li><a href="index.php?cardId=<?php echo $cardId+1;?>">Next Question</a></li>
       </ul>
 
@@ -128,12 +131,13 @@
         exit();
       }
 
-      $query = "select * from Categories";
+      $query = "select * from CategoriesView";
       $stmt = $db->prepare($query);
       $stmt->bind_result($categoryId,$categoryName);
       $stmt->execute();
 
       echo "<ul class='categoriesList'>";
+      echo "<p>Filter Cards By Category.</p>";
       while ($stmt->fetch()) {
         echo "<li><a href='index.php?categoryName=$categoryName'>$categoryName</a></li>";
       }

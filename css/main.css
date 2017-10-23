@@ -509,6 +509,26 @@ main>h1{
 	cursor:pointer;
 }
 
+.categoriesList{
+	list-style: none;
+	overflow: hidden;
+}
+
+.categoriesList>li{
+	float:left;
+}
+
+.categoriesList>li>a{
+	text-decoration: none;
+	color:#56C4F0;
+	display: block;
+	padding:2px 5px;
+	background:rgba(70,180,224,0.4);
+	margin:5px;
+	border-radius: 2px;
+	font-size: 12px;
+	
+}
 
 /* LOGIN IN POP UP */
 

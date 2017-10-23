@@ -16,6 +16,7 @@
 
       /*Here we check if a specific card is requested*/
       if(isset($_GET['cardId']) && !empty($_GET['cardId'])){
+
         $query = "select * from CardsView Where cardId=" . $_GET['cardId'];
         $stmt = $db->prepare($query);
         $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded, $cardId);
@@ -31,6 +32,11 @@
       }else{
         /*If no specific card is requested from the GET, a random card is selected*/
         $query = "select * from RandomCard";
+
+        if(isset($_GET['categoryName']) && !empty($_GET['categoryName'])){
+          $query = $query . " Where categoryName='" . $_GET['categoryName'] . "'";
+        }
+        
         $stmt = $db->prepare($query);
         $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded, $cardId);
         $stmt->execute();

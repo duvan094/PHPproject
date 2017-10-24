@@ -186,7 +186,7 @@ body p, h1, h3 {
 
 h3{
 	text-align: center;
-	text-shadow: 2px 2px #000000;
+	text-shadow: 2px 2px 5px #000000;
 	font-weight: 400;
 }
 
@@ -220,16 +220,20 @@ main>h1{
 	margin:22px auto 11px auto;
 	overflow: hidden;
 	position: relative;
+	-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
-.card-container>li{
+.card-container>li,.card-container>div{
 	list-style: none;
 	width:100%;
 	box-sizing: border-box;
 	padding:5px;
 }
 
-.card-container>li>button, .card{
+.card-container>div>input[type=submit],.card-container>div>div, .card{
 	width:100%;
 	height:150px;
 	border:none;
@@ -246,6 +250,28 @@ main>h1{
 	position: relative;
 	padding: 22px;
 	box-sizing: border-box;
+}
+
+.card-container>div>div{
+	text-align: center;
+}
+
+.card-container>div>div>h3{
+	font-weight: 600;
+	font-size: 62px;
+	margin-top: 22px;
+}
+
+.card-container>div>div>h5{
+	margin-top: 11px;
+	font-weight: 600;
+	font-size: 18px
+}
+
+.card-container>div>div>p{
+	font-weight: 300;
+	font-size: 18px;
+	color:rgba(255,255,255,0.8);
 }
 
 /* +AddCards CSS style - where you fill in own alternativs for cards */
@@ -272,7 +298,7 @@ main>h1{
 	background: #000;
 }
 
-.card-container>li>button::after {
+.card-container>div>input[type=submit]::after,.card-container>div>div::after {
 	content: '';
 	width:100%;
 	height:100%;
@@ -286,11 +312,11 @@ main>h1{
 }
 
 
-.card-container>li:first-child>button, .card-container>li:first-child>.card{
+.card-container>div:first-child>input[type=submit], .card-container>li:first-child>.card,.card-container>div:first-child>div{
 	background:#89DA59;
 }
 
-.card-container>li:last-child>button, .card-container>li:last-child>.card{
+.card-container>div:last-child>input[type=submit], .card-container>li:last-child>.card, .card-container>div:last-child>div{
 	background:#46B4E0;
 }
 
@@ -318,7 +344,7 @@ main>h1{
   cursor:default;
 }
 
-.card-container>li>button:hover{
+.card-container>div>input[type=submit]:hover,.card-container>div>div:hover{
   -webkit-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
   -moz-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
   box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
@@ -326,7 +352,7 @@ main>h1{
 	font-size: 23px;
 }
 
-.card-container>li>button:active{
+.card-container>div>input[type=submit]:active,.card-container>div>div:active{
 	-webkit-box-shadow: inset 0px 10px 149px 0px rgba(0,0,0,0.2);
 	-moz-box-shadow: inset 0px 10px 149px 0px rgba(0,0,0,0.2);
 	box-shadow: inset 0px 10px 149px 0px rgba(0,0,0,0.2);
@@ -464,7 +490,7 @@ main>h1{
 .textWithLink>a{
 	text-decoration: none;
 	color:#46B4E0;
-	text-shadow: 2px 2px #000000;
+	text-shadow: 2px 2px 2px #000000;
 }
 
 .textWithLink>a:hover{
@@ -926,12 +952,12 @@ footer>#copyright{
 		margin: 22px 0;
 	}
 
-	.card-container>li{
+	.card-container>li,.card-container>div{
 		float:left;
 		width:50%;
 	}
 
-	.card-container>li>button{
+	.card-container>div>input[type=submit],.card-container>div>div{
 		height:250px;
 	}
 

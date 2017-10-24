@@ -49,10 +49,10 @@
       }
 
       $stmt->fetch();
-
+/*
       echo "<ul class='card-container'>";
       echo "<li><button> $alt1 </button></li>";
-      echo "<li><button> $alt2 </button></li>";
+      echo "<li><button'> $alt2 </button></li>";
       echo "</ul>";
       echo "<ul class='upvote-container'>";
       echo "<li><button class='like-button'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></button></li>";
@@ -60,9 +60,71 @@
       echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
       echo  "</ul>";
       echo  "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a> made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
+*/
+      if(isset($_POST['altClicked']) && !empty($_POST['altClicked'])){
+        echo "<form class='card-container'>";
+
+
+        @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+        /*Check for connection error*/
+        if ($db->connect_error) {
+          echo "could not connect: " . $db->connect_error;
+          printf("<br><a href=index.php>Return to home page </a>");
+          exit();
+        }
+        //      UPDATE Orders SET Quantity = Quantity + 1 WHERE ...
+
+
+        if($_POST['altClicked'] == $alt1){
+          $query = ("Update Cards SET alt1Count = alt1Count + 1 WHERE cardId={$cardId}");
+          $stmt = $db->prepare($query);
+          $stmt->execute();
+
+          $alt1Count = $alt1Count+1;
+          $percent1 = round(100 * ($alt1Count/($alt1Count+$alt2Count)));
+          $percent2 = 100-$percent1;
+          echo "<div><div><h3>✓ {$percent1}%</h3><p>{$alt1Count} agree</p><h5>{$alt1}</h5></div></div>";
+          echo "<div><div><h3>{$percent2}%</h3><p>{$alt2Count} disagree</p><h5>{$alt2}</h5></div></div>";
+        }else{
+          $query = ("Update Cards SET alt2Count = alt2Count + 1 WHERE cardId={$cardId}");
+          $stmt = $db->prepare($query);
+          $stmt->execute();
+
+          $alt2Count = $alt2Count + 1;
+
+          if($alt1Count!=0){
+            $percent1 = round(100 * ($alt1Count/($alt1Count+$alt2Count)));
+            $percent2 = 100 - $percent1;
+          }else{
+            $percent1 = 0;
+            $percent2 = 100;
+          }
+
+          echo "<div><div><h3>{$percent1}%</h3><p>{$alt1Count} disagree</p><h5>{$alt1}</h5></div></div>";
+          echo "<div><div><h3>✓ {$percent2}%</h3><p>{$alt2Count} agree</p><h5>{$alt2}</h5></div></div>";
+        }
+        echo "</form>";
+        echo "<ul class='upvote-container'>";
+        echo "<li><button class='like-button'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></button></li>";
+        echo "<li><p>$rating</p></li>";
+        echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
+        echo  "</ul>";
+        echo  "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a> made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
+      }else{
+        echo "<form class='card-container' action='index.php?cardId={$cardId}' method='post'>";
+        echo "<div><input type='submit' name='altClicked' value='{$alt1}'></div>";
+        echo "<div><input type='submit' name='altClicked' value='{$alt2}'></div>";
+        echo "</form>";
+        echo "<ul class='upvote-container'>";
+        echo "<li><button class='like-button'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></button></li>";
+        echo "<li><p>$rating</p></li>";
+        echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
+        echo  "</ul>";
+        echo  "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a> made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
+      }
 
       $cardIdGlobal = $cardId;
-
 ?>
 
 <!--
@@ -210,4 +272,6 @@
         </li>-->
 
     </main>
+
+
     <?php  include "footer.php"?>

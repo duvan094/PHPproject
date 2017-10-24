@@ -41,7 +41,7 @@
             //What's going to happen when you press SUBMIT:
             $_SESSION['username'] = $username;
             $_SESSION['userId'] = $userId;
-            //echo '<meta http-equiv="refresh" content= "0; URL="addCards.php">';
+            echo '<meta http-equiv="refresh" content= "0; URL="index.php">';
           }
         }
 

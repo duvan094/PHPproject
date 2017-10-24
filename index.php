@@ -1,4 +1,8 @@
     <?php include "header.php" ?>
+    <?php
+      $cardIdGlobal = "";
+     ?>
+
     <main>
 
 
@@ -57,6 +61,8 @@
       echo  "</ul>";
       echo  "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a> made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
 
+      $cardIdGlobal = $cardId;
+
 ?>
 
 <!--
@@ -76,6 +82,35 @@
         <li><a href="index.php?cardId=<?php echo $cardId+1;?>">Next Question</a></li>
       </ul>
 
+
+      <?php
+
+        if (isset($_POST['comment'])) {
+          @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+          /*Check for connection error*/
+          if ($db->connect_error) {
+            echo "could not connect: " . $db->connect_error;
+            printf("<br><a href=index.php>Return to home page </a>");
+            exit();
+          }
+
+          $cardId = $_GET['cardId'];
+          $userId = $_SESSION['userId'];
+          $comment = mysqli_real_escape_string($db, $_POST['comment']);
+          $comment = htmlentities($comment);
+
+
+
+          #<iframe style="position:fixed; top:10px; left:10px; width:100%; height:100%; z-index:99;" border="0" src="http://ju.se/"  />
+          #try the iframe after you add the "htmlentities"
+
+          $query = ("INSERT INTO Comments (cardId, comment, userId) VALUES ({$cardId}, '{$comment}', {$userId})");
+          $stmt = $db->prepare($query);
+          $stmt->execute();
+        }
+
+      ?>
 
       <?php
 
@@ -107,13 +142,21 @@
         }
       ?>
 
-      <li class="commentField comment">
-        <form class="" action="index.html" method="post">
-          <textarea name="" rows="6" cols="80" placeholder="Write a comment."></textarea>
-          <br>
-          <input type="submit" name="" value="Post Your Comment">
-        </form>
-      </li>
+      <?php
+
+        if (isset($_SESSION['username'])) {//The header if logged in.
+          echo "<li class='commentField comment'>";
+          echo "<form class='' action='index.php?cardId={$cardIdGlobal}' method='post'>";
+          echo "<textarea name='comment' rows='6' cols='80' placeholder='Write a comment.'></textarea>";
+          echo "<br>";
+          echo "<input type='submit' name='' value='Post Your Comment'>";
+          echo "</form>";
+          echo "</li>";
+        }else{
+          echo "<li class='comment commentField'><h4>Log in to comment.</h4></li>";
+        }
+       ?>
+
     </ul>
 
     <?php

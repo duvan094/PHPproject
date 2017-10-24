@@ -1,5 +1,6 @@
 <?php include "header.php" ?>
 
+
 <main id="userProfile">
 	<?php
 		/*Here we check if a specific user page is selected from the GET*/

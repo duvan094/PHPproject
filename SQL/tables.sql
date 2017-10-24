@@ -51,9 +51,9 @@ Insert into Users (username,password,countryId) values
 
 Create table Cards(
   cardId INT NOT NULL AUTO_INCREMENT,
-  title varchar(50) NOT NULL UNIQUE,
-  alt1 varchar(200) NOT NULL,
-  alt2 varchar(200) NOT NULL,
+  title varchar(30) NOT NULL UNIQUE,
+  alt1 varchar(100) NOT NULL,
+  alt2 varchar(100) NOT NULL,
   userId INT NOT NULL,
   alt1Count INT DEFAULT 0,
   alt2Count INT DEFAULT 0,

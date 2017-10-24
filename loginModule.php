@@ -23,31 +23,29 @@
       //    $password = sha1($_POST['password']);
 
 
-      echo "SELECT * FROM Users WHERE username = '{$username}' AND password = '{$password}'";
+      echo "select userId From Users Where username = '{$username}' AND password = '{$password}'";
 
-      $query = ("SELECT * FROM Users WHERE username = '{$username}' "." AND password = '{$password}'");
-
-
-      $stmt = $db->prepare($query);
+      $stmt = $db->prepare("select * From Users Where username = '{$username}' AND password ='{$password}'");
+      $stmt->bind_result($userId,$username,$password,$country);
       $stmt->execute();
       $stmt->store_result();
 
       //If there is a match (login), totalcount = number of rows found. One row for one login.
       $totalcount = $stmt->num_rows();
+      $stmt->fetch();
 
-
-    }
-
-    if (isset($totalcount)) {
-      if ($totalcount == 0) {
-        echo '<h2>Wrong username or password, try again!</h2>';
+      if (isset($totalcount)) {
+        if ($totalcount == 0) {
+          echo '<h2>Wrong username or password, try again!</h2>';
         } else {
-          //What's going to happen when you press SUBMIT:
-          $_SESSION['username'] = $username;
-          echo '<meta http-equiv="refresh" content= "0; URL="addCards.php">';
+            //What's going to happen when you press SUBMIT:
+            $_SESSION['username'] = $username;
+            $_SESSION['userId'] = $userId;
+            //echo '<meta http-equiv="refresh" content= "0; URL="addCards.php">';
           }
         }
 
+    }
   ?>
 
 

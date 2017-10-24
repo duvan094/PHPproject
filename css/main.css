@@ -229,7 +229,7 @@ main>h1{
 	padding:5px;
 }
 
-.card-container>li>button{
+.card-container>li>button, .card{
 	width:100%;
 	height:150px;
 	border:none;
@@ -246,7 +246,31 @@ main>h1{
 	position: relative;
 }
 
-.card-container>li>button::after{
+/* +AddCards CSS style - where you fill in own alternativs for cards */
+.addCardsContainer {
+	text-align: center;
+}
+
+.card {
+	height: 250px;
+}
+
+.addCardsContainer>form>input[type=text] {
+	border: #1A1A1c 1px solid;
+	border-radius: 5px;
+	padding: 11px 11px;
+	margin-right: 5px;
+	background: #4A4A4c;
+	font-size: 14px;
+	line-height: 18px;
+	width: 400px;
+}
+
+.addCardsContainer>li>form>#addCardsInput {
+	background: #000;
+}
+
+.card-container>li>button::after {
 	content: '';
 	width:100%;
 	height:100%;
@@ -259,11 +283,11 @@ main>h1{
 }
 
 
-.card-container>li:first-child>button{
+.card-container>li:first-child>button, .card-container>li:first-child>.card{
 	background:#89DA59;
 }
 
-.card-container>li:last-child>button{
+.card-container>li:last-child>button, .card-container>li:last-child>.card{
 	background:#46B4E0;
 }
 

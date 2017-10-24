@@ -75,7 +75,7 @@
     <button id="close-button2" class="close-button" type="button" name="button"><i class="fa fa-window-close" aria-hidden="true"></i></button>
     <h3>Sign Up</h3>
 
-    <form>
+    <form method="POST" action="signup.php">
       <p>Username</p>
       <input type="text" name="username"> <br>
       <p>Password</p>

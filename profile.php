@@ -32,16 +32,16 @@
 
 					while($stmt->fetch()){
 						echo "<li><h3>Would You Rather</h3>";
-						echo "<ul class='card-container'>";
-						echo "<li><button>$alt1</button></li>";
-						echo "<li><button>$alt2</button></li>";
-						echo "</ul>";
-						echo "<ul class='upvote-container'>";
-						echo "<li><button class='like-button'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></button></li>";
-						echo "<li><p>$rating</p></li>";
-						echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
-						echo "</ul>";
-						echo "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a> made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
+						echo "<form class='card-container' action='index.php?cardId={$cardId}' method='post'>";
+		        echo "<div><input type='submit' name='altClicked' value='{$alt1}'></div>";
+		        echo "<div><input type='submit' name='altClicked' value='{$alt2}'></div>";
+		        echo "</form>";
+		        echo "<ul class='upvote-container'>";
+		        echo "<li><button class='like-button'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></button></li>";
+		        echo "<li><p>$rating</p></li>";
+		        echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
+		        echo  "</ul>";
+		        echo  "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a> made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
 						echo "</li>";
 					}
 					echo "</ul>";

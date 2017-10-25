@@ -84,7 +84,7 @@
           $alt1Count = $alt1Count+1;
           $percent1 = round(100 * ($alt1Count/($alt1Count+$alt2Count)));
           $percent2 = 100-$percent1;
-          echo "<div><div><h3>✓ {$percent1}%</h3><p>{$alt1Count} agree</p><h5>{$alt1}</h5></div></div>";
+          echo "<div><div><h3><i class='fa fa-check' aria-hidden='true'></i> {$percent1}%</h3><p>{$alt1Count} agree</p><h5>{$alt1}</h5></div></div>";
           echo "<div><div><h3>{$percent2}%</h3><p>{$alt2Count} disagree</p><h5>{$alt2}</h5></div></div>";
         }else{
           $query = ("Update Cards SET alt2Count = alt2Count + 1 WHERE cardId={$cardId}");
@@ -102,7 +102,7 @@
           }
 
           echo "<div><div><h3>{$percent1}%</h3><p>{$alt1Count} disagree</p><h5>{$alt1}</h5></div></div>";
-          echo "<div><div><h3>✓ {$percent2}%</h3><p>{$alt2Count} agree</p><h5>{$alt2}</h5></div></div>";
+          echo "<div><div><h3><i class='fa fa-check' aria-hidden='true'></i> {$percent2}%</h3><p>{$alt2Count} agree</p><h5>{$alt2}</h5></div></div>";
         }
         echo "</form>";
         echo "<ul class='upvote-container'>";

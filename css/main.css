@@ -257,11 +257,6 @@ main>h1{
 	text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 
-.card-container>div>div>h3>div{
-	display: inline;
-	text-align: center;
-}
-
 .card-container>div>div>h5{
 	font-weight: 600;
 	font-size: 14px

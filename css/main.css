@@ -258,8 +258,17 @@ white-space: normal;
 }
 
 .card-container>div>div>h3{
+	text-align: center;
 	font-weight: 600;
 	font-size: 42px;
+	text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+/*	color:rgba(255,255,255,0);
+	text-shadow: 1px 0px 1px rgba(0,0,0,0.1), 0 0 0 rgba(0,0,0,0.3), 1px 1px 10px rgba(255,255,255,0.3);
+*/}
+
+.card-container>div>div>h3>div{
+	display: inline;
+	text-align: center;
 }
 
 .card-container>div>div>h5{

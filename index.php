@@ -5,7 +5,6 @@
 
     <main>
 
-
       <h3>Would You Rather?</h3>
     <?php
 
@@ -73,26 +72,27 @@
           printf("<br><a href=index.php>Return to home page </a>");
           exit();
         }
-        //      UPDATE Orders SET Quantity = Quantity + 1 WHERE ...
 
-
-        if($_POST['altClicked'] == $alt1){
+        /*Check which alternative that has been clicked*/
+        if($_POST['altClicked'] == $alt1){/*If altClicked == alt1, it means that the first alternative was clicked*/
+          /*Increase the card for the selected card*/
           $query = ("Update Cards SET alt1Count = alt1Count + 1 WHERE cardId={$cardId}");
           $stmt = $db->prepare($query);
           $stmt->execute();
 
-          $alt1Count = $alt1Count+1;
-          $percent1 = round(100 * ($alt1Count/($alt1Count+$alt2Count)));
-          $percent2 = 100-$percent1;
-          echo "<div><div><h3><i class='fa fa-check' aria-hidden='true'></i> {$percent1}%</h3><p>{$alt1Count} agree</p><h5>{$alt1}</h5></div></div>";
-          echo "<div><div><h3>{$percent2}%</h3><p>{$alt2Count} disagree</p><h5>{$alt2}</h5></div></div>";
+          $alt1Count = $alt1Count+1;/*Since alt1Count is the value before the Update operation we increase it by 1*/
+          $percent1 = round(100 * ($alt1Count/($alt1Count+$alt2Count)));/*Calculate the percentage for card 1*/
+          $percent2 = 100-$percent1;/*Calculate the percentage for card 2*/
+          echo "<div><div><h3><i class='fa fa-check' aria-hidden='true'></i> <span id='percent1'>{$percent1}</span>%</h3><p>{$alt1Count} agree with you</p><h5>{$alt1}</h5></div></div>";
+          echo "<div><div><h3><span id='percent2'>{$percent2}</span>%</h3><p>{$alt2Count} disagree with you</p><h5>{$alt2}</h5></div></div>";
         }else{
           $query = ("Update Cards SET alt2Count = alt2Count + 1 WHERE cardId={$cardId}");
           $stmt = $db->prepare($query);
           $stmt->execute();
 
-          $alt2Count = $alt2Count + 1;
+          $alt2Count = $alt2Count + 1;/*Since alt1Count is the value before the Update operation we increase it by 1*/
 
+          /*In the case that alt1Count is 0, which would lead to division by 0, resulting in an error*/
           if($alt1Count!=0){
             $percent1 = round(100 * ($alt1Count/($alt1Count+$alt2Count)));
             $percent2 = 100 - $percent1;
@@ -101,9 +101,10 @@
             $percent2 = 100;
           }
 
-          echo "<div><div><h3>{$percent1}%</h3><p>{$alt1Count} disagree</p><h5>{$alt1}</h5></div></div>";
-          echo "<div><div><h3><i class='fa fa-check' aria-hidden='true'></i> {$percent2}%</h3><p>{$alt2Count} agree</p><h5>{$alt2}</h5></div></div>";
+          echo "<div><div><h3><span id='percent1'>{$percent1}</span>%</h3><p>{$alt1Count} agree with you</p><h5>{$alt1}</h5></div></div>";
+          echo "<div><div><h3><i class='fa fa-check' aria-hidden='true'></i> <span id='percent2'>{$percent2}</span>%</h3><p>{$alt2Count} disagree with you</p><h5>{$alt2}</h5></div></div>";
         }
+
         echo "</form>";
         echo "<ul class='upvote-container'>";
         echo "<li><button class='like-button'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></button></li>";
@@ -111,7 +112,9 @@
         echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
         echo  "</ul>";
         echo  "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a> made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
+
       }else{
+
         echo "<form class='card-container' action='index.php?cardId={$cardId}' method='post'>";
         echo "<div><input type='submit' name='altClicked' value='{$alt1}'></div>";
         echo "<div><input type='submit' name='altClicked' value='{$alt2}'></div>";
@@ -122,23 +125,12 @@
         echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
         echo  "</ul>";
         echo  "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a> made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
+
       }
 
       $cardIdGlobal = $cardId;
 ?>
 
-<!--
-      <ul class="card-container">
-        <li><button>This?</button></li>
-        <li><button>That?</button></li>
-      </ul>
-      <ul class="upvote-container">
-        <li><button class="like-button"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button></li>
-        <li><p>0</p></li>
-        <li><button class="like-button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></i></button></li>
-      </ul>
-      <p class="textWithLink">Made by <a href="profile.php">steffe94</a>, 32 days ago.</p>
--->
       <ul id="nextPrevButtons">
         <li><a href="index.php?cardId=<?php echo $cardId-1;?>">Previous Question</a></li>
         <li><a href="index.php?cardId=<?php echo $cardId+1;?>">Next Question</a></li>
@@ -244,34 +236,35 @@
       echo "</ul>";
 
     ?>
-      <!--<ul id="commentContainer">
-        <li><h4>4 comments</h4></li>
-        <li class="commentField">
-            <a href="#">joppeBoii</a>
-            <p><i>2017-09-28</i></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. </p>
-        </li>
-        <li class="commentField">
-            <a href="#">robben55</a>
-            <p><i>2017-09-28</i></p>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim id est laborum. </p>
-        </li>
-        <li class="commentField">
-            <a href="#">joppeBoii</a>
-            <p><i>2017-09-28</i></p>
-            <p>Sed do eiusmod tempor incididunt ut. </p>
-        </li>
-        <li class="commentField">
-            <a href="#">oveMann</a>
-            <p><i>2017-09-29</i></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-              abore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </li>-->
 
     </main>
 
+    <script type="text/javascript">
+      /*This script makes a Count animation for the percentage numbers*/
+      var speed = 10;
+
+      /* Call this function with a string containing the ID name to
+       * the element containing the number you want to do a count animation on.*/
+      function incEltNbr(id){
+        elt = document.getElementById(id);
+        endNbr = Number(document.getElementById(id).innerHTML);
+        incNbrRec(0,endNbr,elt);
+      }
+
+      /*A recursive function to increase the number.*/
+      function incNbrRec(i,endNbr,elt){
+        if(i <= endNbr){
+          elt.innerHTML = i;
+          console.log(i);
+          setTimeout(function() {
+            incNbrRec(i+1,endNbr,elt);
+          }, speed);
+        }
+      }
+
+      incEltNbr("percent1");/*Call this funtion with the ID-name for that element to increase the number within*/
+      incEltNbr("percent2");/*Call this funtion with the ID-name for that element to increase the number within*/
+
+    </script>
 
     <?php  include "footer.php"?>

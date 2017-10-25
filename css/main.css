@@ -221,9 +221,9 @@ main>h1{
 	overflow: hidden;
 	position: relative;
 	-webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .card-container>li,.card-container>div{
@@ -250,6 +250,7 @@ user-select: none;
 	position: relative;
 	padding: 22px;
 	box-sizing: border-box;
+white-space: normal;
 }
 
 .card-container>div>div{
@@ -258,19 +259,17 @@ user-select: none;
 
 .card-container>div>div>h3{
 	font-weight: 600;
-	font-size: 62px;
-	margin-top: 22px;
+	font-size: 42px;
 }
 
 .card-container>div>div>h5{
-	margin-top: 11px;
 	font-weight: 600;
-	font-size: 18px
+	font-size: 14px
 }
 
 .card-container>div>div>p{
 	font-weight: 300;
-	font-size: 18px;
+	font-size: 14px;
 	color:rgba(255,255,255,0.8);
 }
 
@@ -968,6 +967,22 @@ footer>#copyright{
 	#searchBarLarge>input[type=text]{
 		width:340px;
 	}
+
+
+	.card-container>div>div>h3{
+		font-size: 62px;
+		margin-top: 22px;
+	}
+
+	.card-container>div>div>h5{
+		margin-top: 11px;
+		font-size: 18px
+	}
+
+	.card-container>div>div>p{
+		font-size: 18px;
+	}
+
 
 }
 

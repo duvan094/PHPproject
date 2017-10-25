@@ -80,6 +80,29 @@
       <input type="password" name="password"> <br>
       <p>Confirm Password</p>
       <input type="password" name="password"> <br>
+      <select name="countrySelect">
+        <?php
+          /*Here we enter all the countries as options in the select menu*/
+          @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+          //Check if you can connect.
+          if ($db->connect_error) {
+              echo "could not connect: " . $db->connect_error;
+              printf("<br><a href=index.php>Return to home page </a>");
+              exit();
+          }
+
+          $stmt = $db->prepare("select * From Countries");
+          $stmt->bind_result($countryId,$countryName);
+          $stmt->execute();
+
+          echo "<option value=''>Select Country:</option>";
+          while($stmt->fetch()){
+            echo "<option value='{$countryId}'>{$countryName}</option>";
+          }
+        ?>
+      </select>
+      <p class="message">(Optional)</p>
       <input type="submit" id="newmember" name="SIGN UP" value="SIGN UP">
     </form>
 

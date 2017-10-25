@@ -255,7 +255,6 @@
       function incNbrRec(i,endNbr,elt){
         if(i <= endNbr){
           elt.innerHTML = i;
-          console.log(i);
           setTimeout(function() {
             incNbrRec(i+1,endNbr,elt);
           }, speed);

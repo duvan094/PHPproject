@@ -48,21 +48,10 @@
       }
 
       $stmt->fetch();
-/*
-      echo "<ul class='card-container'>";
-      echo "<li><button> $alt1 </button></li>";
-      echo "<li><button'> $alt2 </button></li>";
-      echo "</ul>";
-      echo "<ul class='upvote-container'>";
-      echo "<li><button class='like-button'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></button></li>";
-      echo "<li><p>$rating</p></li>";
-      echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
-      echo  "</ul>";
-      echo  "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a> made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
-*/
-      if(isset($_POST['altClicked']) && !empty($_POST['altClicked'])){
-        echo "<form class='card-container'>";
 
+      /*Check if an alternative has been clicked*/
+      if(isset($_POST['altClicked']) && !empty($_POST['altClicked'])){
+        echo "<div class='card-container'>";
 
         @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -91,44 +80,34 @@
           $stmt->execute();
 
           $alt2Count = $alt2Count + 1;/*Since alt1Count is the value before the Update operation we increase it by 1*/
-
-          /*In the case that alt1Count is 0, which would lead to division by 0, resulting in an error*/
-          if($alt1Count!=0){
-            $percent1 = round(100 * ($alt1Count/($alt1Count+$alt2Count)));
-            $percent2 = 100 - $percent1;
-          }else{
-            $percent1 = 0;
-            $percent2 = 100;
-          }
+          /*An if case, if alt1Count is 0, which would lead to division by 0, resulting in an error*/
+          $percent1 = ($alt1Count == 0 ? 0 : round(100 * ($alt1Count/($alt1Count+$alt2Count))));
+          $percent2 = 100 - $percent1;
 
           echo "<div><div><h3><span id='percent1'>{$percent1}</span>%</h3><p>{$alt1Count} agree with you</p><h5>{$alt1}</h5></div></div>";
           echo "<div><div><h3><i class='fa fa-check' aria-hidden='true'></i> <span id='percent2'>{$percent2}</span>%</h3><p>{$alt2Count} disagree with you</p><h5>{$alt2}</h5></div></div>";
         }
 
-        echo "</form>";
-        echo "<ul class='upvote-container'>";
-        echo "<li><button class='like-button'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></button></li>";
-        echo "<li><p>$rating</p></li>";
-        echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
-        echo  "</ul>";
-        echo  "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a> made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
+        echo "</div>";
 
-      }else{
+      }else{/*If no alternative has been clicked*/
 
         echo "<form class='card-container' action='index.php?cardId={$cardId}' method='post'>";
         echo "<div><input type='submit' name='altClicked' value='{$alt1}'></div>";
         echo "<div><input type='submit' name='altClicked' value='{$alt2}'></div>";
         echo "</form>";
-        echo "<ul class='upvote-container'>";
-        echo "<li><button class='like-button'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></button></li>";
-        echo "<li><p>$rating</p></li>";
-        echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
-        echo  "</ul>";
-        echo  "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a> made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
-
       }
 
+      echo "<ul class='upvote-container'>";
+      echo "<li><button class='like-button'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></button></li>";
+      echo "<li><p>$rating</p></li>";
+      echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
+      echo  "</ul>";
+      echo  "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a> made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
+
+
       $cardIdGlobal = $cardId;
+
 ?>
 
       <ul id="nextPrevButtons">
@@ -137,7 +116,7 @@
       </ul>
 
 
-      <?php
+<?php
 
         if (isset($_POST['comment'])) {
           @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -239,31 +218,11 @@
 
     </main>
 
+
+    <script type="text/javascript" src="js/incNbr.js"></script>
     <script type="text/javascript">
-      /*This script makes a Count animation for the percentage numbers*/
-      var speed = 10;
-
-      /* Call this function with a string containing the ID name to
-       * the element containing the number you want to do a count animation on.*/
-      function incEltNbr(id){
-        elt = document.getElementById(id);
-        endNbr = Number(document.getElementById(id).innerHTML);
-        incNbrRec(0,endNbr,elt);
-      }
-
-      /*A recursive function to increase the number.*/
-      function incNbrRec(i,endNbr,elt){
-        if(i <= endNbr){
-          elt.innerHTML = i;
-          setTimeout(function() {
-            incNbrRec(i+1,endNbr,elt);
-          }, speed);
-        }
-      }
-
       incEltNbr("percent1");/*Call this funtion with the ID-name for that element to increase the number within*/
-      incEltNbr("percent2");/*Call this funtion with the ID-name for that element to increase the number within*/
-
+      incEltNbr("percent2");
     </script>
 
     <?php  include "footer.php"?>

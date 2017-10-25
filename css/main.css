@@ -661,7 +661,7 @@ white-space: normal;
 }
 
 #signupWrapper>.logincontainer {
-	height: 340px;
+	height: 380px;
 }
 
 .logincontainer>.textWithLink{
@@ -722,6 +722,21 @@ white-space: normal;
 	font-weight: 400;
 	text-shadow: 2px 2px 2px rgba(0,0,0,0.4);
 	border-radius: 5px;
+}
+
+#signupWrapper>.logincontainer>form>input[type=submit] {
+	margin-top: 20px;
+}
+
+.logincontainer>form>select{
+	width: 100%;
+	margin-top: 20px;
+	border-radius: 5px;
+}
+
+.logincontainer>form>p.message{
+	padding-top: 0;
+	font-size: 10px;
 }
 
 .logincontainer>form>#newmember {

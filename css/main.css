@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800');
 
-
 *{
 	padding:0;
 	margin:0;
@@ -47,7 +46,6 @@ body {
 	top:0;
 }
 
-
 #hamburgerButton>span:nth-child(2){
 	top:100%;
 }
@@ -64,7 +62,6 @@ body {
 	transform: rotate(-135deg);
 	top:50%;
 }
-
 
 #hamburgerButton.clicked>span:nth-child(2){
 	top:50%;
@@ -88,12 +85,10 @@ nav>div>ul{
 	opacity: 0;
 }
 
-
 nav>div>ul.clicked{
 	opacity: 100;
 	left: 25%;
 }
-
 
 nav>div>ul::after{
 	content:'';
@@ -109,7 +104,6 @@ nav>div>ul.clicked::after{
 	right:100%;
 }
 /*hamburger menu end*/
-
 
 nav{
 	width: 100%;
@@ -214,7 +208,6 @@ main>h1{
 	width:100%;
 }
 
-
 /*Would you rather cards*/
 .card-container{
 	margin:22px auto 11px auto;
@@ -250,7 +243,7 @@ main>h1{
 	position: relative;
 	padding: 22px;
 	box-sizing: border-box;
-white-space: normal;
+	white-space: normal;
 }
 
 .card-container>div>div{
@@ -262,9 +255,7 @@ white-space: normal;
 	font-weight: 600;
 	font-size: 42px;
 	text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-/*	color:rgba(255,255,255,0);
-	text-shadow: 1px 0px 1px rgba(0,0,0,0.1), 0 0 0 rgba(0,0,0,0.3), 1px 1px 10px rgba(255,255,255,0.3);
-*/}
+}
 
 .card-container>div>div>h3>div{
 	display: inline;
@@ -319,7 +310,6 @@ white-space: normal;
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
-
 .card-container>div:first-child>input[type=submit], .card-container>li:first-child>.card,.card-container>div:first-child>div{
 	background:#89DA59;
 }
@@ -327,7 +317,6 @@ white-space: normal;
 .card-container>div:last-child>input[type=submit], .card-container>li:last-child>.card, .card-container>div:last-child>div{
 	background:#46B4E0;
 }
-
 
 .card-container::before{
   text-align: center;
@@ -366,7 +355,6 @@ white-space: normal;
 	box-shadow: inset 0px 10px 149px 0px rgba(0,0,0,0.2);
 	font-size: 20px;
 }
-
 /*Would you rather cards -END*/
 
 /*Like-button*/
@@ -432,7 +420,6 @@ white-space: normal;
 	left:50%;
 	margin-left:-22px;
 }
-
 
 .upvote-container>li:first-child>.like-button::before{
 	content:"downvote";
@@ -596,7 +583,6 @@ white-space: normal;
 	margin-top: 22px;
 }
 
-
 .categoriesList>p{
 	color:#FFF;
 	font-size: 14px;
@@ -619,7 +605,6 @@ white-space: normal;
 	font-size: 12px;
 }
 
-
 .categoriesList>li>a:hover{
 	background:rgba(70,180,224,0.8);
 	color:#FFF;
@@ -635,7 +620,6 @@ white-space: normal;
 }
 
 /* LOGIN IN POP UP */
-
 .logincontainer {
 	max-width: 300px;
 	height: 270px;
@@ -720,8 +704,6 @@ white-space: normal;
 	background:#89DA59;
 	padding: 8px;
 	border-radius: 10px;
-	/*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.09);*/
-
 	-webkit-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
 	-moz-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
 	box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
@@ -778,7 +760,6 @@ cursor:pointer;
 	background:rgba(0, 0, 0, 0.75);
 	top: 0;
 }
-
 /* LOGIN IN POP UP -END */
 
 /*Top cards*/
@@ -793,7 +774,6 @@ cursor:pointer;
 	box-shadow: 0px 10px 44px 0px rgba(0,0,0,0.75);
 	resize:both;
 }
-
 
 #topList>tBody>tr{
 	height: 44px;
@@ -892,7 +872,6 @@ main#userProfile>h1{
 	border-bottom: 4px solid #46B4E0;
 }
 
-
 #searchBarLarge{
 	margin-top: 120px;
 	padding:11px;
@@ -936,9 +915,6 @@ main#userProfile>h1{
 #searchBarLarge>input:focus{
 	background: #404042;
 }
-
-
-
 /*Search page end*/
 
 /*FOOTER*/
@@ -992,7 +968,6 @@ footer>#copyright{
 		width:340px;
 	}
 
-
 	.card-container>div>div>h3{
 		font-size: 62px;
 		margin-top: 22px;
@@ -1007,16 +982,13 @@ footer>#copyright{
 		font-size: 18px;
 	}
 
-
 }
 
 @media(min-width:835px){
 
-
 	#searchBarLarge>input[type=text]{
 		width:420px;
 	}
-
 
 	#hamburgerButton{
 		display:none;
@@ -1044,12 +1016,10 @@ footer>#copyright{
 		float:right;
 	}
 
-
 	nav>div>ul.clicked{
 		opacity: 100;
 		left:0;
 	}
-
 
 	nav>div>ul::after{
 			content:none;
@@ -1068,15 +1038,9 @@ footer>#copyright{
 			font-weight: 600;
 	}
 
-
-
-
-
-
 	#searchBar>input{
 		width:250px;
 	}
-
 
 	#searchBar{
 		padding:0;
@@ -1089,6 +1053,5 @@ footer>#copyright{
 	.home{
 		margin-left: 0;
 	}
-
 
 }

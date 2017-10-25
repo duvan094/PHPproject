@@ -160,6 +160,7 @@
     echo "<li><h4>$nbrOfComments comments</h4></li>";
     while ($stmt->fetch()) {
       echo "<li class='commentField'>";
+      echo "<a href='profile.php?username=$username'><i class='fa fa-user' aria-hidden='true'></i></a>";
       echo "<a href='profile.php?username=$username'>$username</a>";
       echo "<p><i>$dateAdded</i></p>";
       echo "<p>$comment</p>";

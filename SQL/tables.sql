@@ -82,19 +82,18 @@ Insert into Cards (title,alt1,alt2,userId,categoryID) values
 ("Awkward or Sad","Bring a girl to a boys night","Go to the movies alone",4,8)
 ;
 
-
-Create table Cards_Users(
+/*A table to keep track on which card a user has voted for.*/
+Create table CardsUsersRating(
   cardId INT NOT NULL,
   userId INT NOT NULL,
-  chosenAlt varchar(100) NOT NULL,
   ratingVote INT DEFAULT 0/*-1,0,1*/,
   Foreign Key(cardId) References Cards(cardId),
   Foreign Key(userId) References Users(userId),
   Primary Key(cardId,userId)
 )engine = innodb;
 
-Insert into Cards_Users(cardId,userId,chosenAlt) values
-(1,1,"Eat a dick");
+Insert into CardsUsersRating(cardId,userId,ratingVote) values
+(1,1,1);
 
 
 /*

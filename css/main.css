@@ -345,6 +345,8 @@ main{
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	max-width: 1280px;
+	margin: auto;
 }
 
 .card-container>li,.card-container>div{
@@ -417,24 +419,28 @@ main{
 }
 /*Would you rather cards -END*/
 
-
-#nextPrevButtons{
-	margin: auto;
-	overflow: hidden;
-	box-sizing: border-box;
-	position: relative;
+#nextPrevButtonsContainer{
+	background: #3A3A3C;
 	-webkit-box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.38);
 	-moz-box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.38);
 	box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.38);
 }
 
-#nextPrevButtons>li{
+#nextPrevButtonsContainer>ul{
+	max-width: 1280px;
+	margin: auto;
+	overflow: hidden;
+	box-sizing: border-box;
+	position: relative;
+}
+
+#nextPrevButtonsContainer>ul>li{
 	float:left;
 	width: 50%;
 	list-style: none;
 }
 
-#nextPrevButtons>li>a{
+#nextPrevButtonsContainer>ul>li>a{
 	display: block;
 	text-decoration: none;
 	text-align: center;
@@ -443,19 +449,25 @@ main{
 	color:#DDD;
 	font-weight: 400;
 	font-size: 14px;
-	border:1px solid #4A4A4C;
 	box-sizing: border-box;
 	background: #3A3A3C;
 	text-shadow: 4px 4px 4px rgba(0,0,0,0.4);
 	transition: background 0.2s ease-in-out;
 }
 
-#nextPrevButtons>li>a:hover{
+#nextPrevButtonsContainer>ul>li:first-child>a{
+	border-right:1px solid #4A4A4C;
+}
+#nextPrevButtonsContainer>ul>li:first-last>a{
+	border-left:1px solid #4A4A4C;
+}
+
+#nextPrevButtonsContainer>ul>li>a:hover{
 	background: #1A1A1C;
 	color:#FFF;
 }
 
-#nextPrevButtons>li>a:active{
+#nextPrevButtonsContainer>ul>li>a:active{
 	background: #0A0A0C;
 	color:#FFF;
 }
@@ -580,9 +592,10 @@ main{
 }
 
 #commentContainer>li:first-child>h4{
-	font-weight: 600;
-	color:#6c6c6c;
-	font-size: 14px;
+	font-weight: 400;
+	color:#000;
+	font-size: 16px;
+	padding-bottom: 22px;
 }
 
 #commentContainer>.commentField>a{
@@ -592,7 +605,7 @@ main{
 }
 
 #commentContainer>.commentField{
-	padding:22px 0;
+	padding:11px 0 11px 22px;
 	list-style: none;
 }
 
@@ -605,13 +618,15 @@ main{
 	font-size: 12px;
 }
 
-.comment{
+#commentContainer>.comment{
+	padding:11px 0 11px 0;
 	max-width: 420px;
 }
 
 .comment>form>textarea{
 	width:100%;
 	padding:11px;
+	box-sizing: border-box;
 }
 
 .comment>form>textarea{
@@ -621,7 +636,7 @@ main{
 .comment>form>input[type="submit"]{
 	margin-top: 11px;
 	padding:11px;
-	background:#2694C0;
+	background:#FF5B44;
 	-webkit-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
 	-moz-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
 	box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
@@ -630,22 +645,20 @@ main{
 }
 
 .comment>form>input[type="submit"]:hover{
-	-webkit-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
-	-moz-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
-	box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.16);
+	background: #DF3B24;
 	cursor:pointer;
 }
 
 .categoriesList{
 	list-style: none;
 	overflow: hidden;
-	margin-top: 22px;
+	padding: 44px 0;
 }
 
 .categoriesList>p{
-	color:#FFF;
-	font-size: 14px;
-	font-weight: 300;
+	color:#000;
+	font-size: 16px;
+	font-weight: 400;
 	margin:5px;
 }
 
@@ -655,18 +668,17 @@ main{
 
 .categoriesList>li>a{
 	text-decoration: none;
-	color:#56C4F0;
+	color:#FFF;
 	display: block;
-	padding:2px 5px;
-	background:rgba(70,180,224,0.4);
+	padding:5px 8px;
+	background:#7BB296;
 	margin:5px;
 	border-radius: 2px;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .categoriesList>li>a:hover{
-	background:rgba(70,180,224,0.8);
-	color:#FFF;
+	background:#5B9276;
 }
 
 

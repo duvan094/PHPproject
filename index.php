@@ -94,11 +94,12 @@
     }
 
   ?>
-
-  <ul id="nextPrevButtons">
-    <li><a href="index.php?cardId=<?php echo $cardId-1;?>">Previous Question</a></li>
-    <li><a href="index.php?cardId=<?php echo $cardId+1;?>">Next Question</a></li>
-  </ul>
+  <div id="nextPrevButtonsContainer">
+    <ul>
+      <li><a href="index.php?cardId=<?php echo $cardId-1;?>">Previous Question</a></li>
+      <li><a href="index.php?cardId=<?php echo $cardId+1;?>">Next Question</a></li>
+    </ul>
+  </div>
   <div class="container">
   <div>
   <?php

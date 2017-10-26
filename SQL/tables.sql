@@ -160,7 +160,7 @@ Create View CardComments AS
 Select Cards.title, Users.username, Countries.countryName, Comments.comment, Comments.dateAdded, Cards.cardId
 from Cards
 Join Comments ON Cards.cardId = Comments.cardId
-Join Users ON Users.userId = Comments.userId;
+Join Users ON Users.userId = Comments.userId
 Join Countries ON Users.countryId = Countries.countryId;
 /*Where Cards.cardId = 1;*/
 

@@ -157,7 +157,7 @@
 
   <?php
     /*Connect to the database to insert the comment*/
-    if (isset($_POST['comment'])) {
+    if (isset($_POST['comment']) && $_POST['comment'] != "") {
       @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
       /*Check for connection error*/
@@ -250,11 +250,14 @@
   </div>
 </main>
 
-
-<script type="text/javascript" src="js/incNbr.js"></script>
-<script type="text/javascript">
-  incEltNbr("percent1");/*Call this funtion with the ID-name for that element to increase the number within*/
-  incEltNbr("percent2");
-</script>
-
+<?php
+  /*Only include Javascript animation if an alternative has been clicked.*/
+  if(isset($_POST['altClicked']) && !empty($_POST['altClicked'])){
+    echo "<script type='text/javascript' src='js/incNbr.js'></script>";
+    echo "<script type='text/javascript'>";
+    echo "incEltNbr('percent1');/*Call this funtion with the ID-name for that element to increase the number within*/";
+    echo "incEltNbr('percent2');";
+    echo "</script>";
+  }
+?>
 <?php  include "footer.php"?>

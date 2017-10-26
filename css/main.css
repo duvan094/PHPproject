@@ -610,7 +610,7 @@ main{
 #commentContainer>.commentField>a{
 	text-decoration: none;
 	font-weight: 600;
-	color:#1c1c1c;
+	color: #CF3B24;
 }
 
 #commentContainer>.commentField{
@@ -626,6 +626,12 @@ main{
 	color:#000;
 	font-size: 12px;
 }
+
+#commentContainer>.commentField>p.commentText{
+	padding-top: 5px;
+	font-size: 14px;
+}
+
 
 #commentContainer>.comment{
 	padding:44px 0 11px 0;

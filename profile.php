@@ -18,7 +18,7 @@
 
 	      $query = "select * from CardsView Where username='" . $username . "'";
 	      $stmt = $db->prepare($query);
-	      $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded,$cardId);
+	      $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$countryName,$dateAdded,$cardId);
 			  $stmt->execute();
 				$stmt->store_result();
 
@@ -42,7 +42,7 @@
 		        echo "<li><p>$rating</p></li>";
 		        echo "<li><button class='like-button'><i class='fa fa-thumbs-up' aria-hidden='true'></i></button></li>";
 		        echo  "</ul>";
-		        echo  "<p class='textWithLink'><a class='cardLinkTitle' href='index.php?cardId=$cardId'>$title</a><br>Made by <i class='fa fa-user' aria-hidden='true'></i> <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
+		        echo  "<p class='textWithLink'><a class='cardLinkTitle' href='index.php?cardId=$cardId'>$title</a><br>Made by <i class='fa fa-user' aria-hidden='true'></i> <a href='profile.php?username=$username'>$username</a>, $dateAdded, <b>$countryName.</b></p>";
 		        echo "</li>";
 
 					}

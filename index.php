@@ -20,7 +20,7 @@
       $query = "select * from CardsView Where cardId=" . $_GET['cardId'];
 
       $stmt = $db->prepare($query);
-      $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded, $cardId);
+      $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$countryName,$dateAdded, $cardId);
       $stmt->execute();
       $stmt->store_result();
 
@@ -39,7 +39,7 @@
       }
 
       $stmt = $db->prepare($query);
-      $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$dateAdded, $cardId);
+      $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$countryName,$dateAdded, $cardId);
       $stmt->execute();
     }
 
@@ -147,7 +147,7 @@
     echo "<li><p>$rating</p></li>";
     echo "<li><button type='submit' form='upvoteForm' class='like-button'><i class='fa fa-thumbs-up' aria-hidden='true'></i></button></li>";
     echo  "</ul>";
-    echo  "<p class='textWithLink'><a class='cardLinkTitle' href='index.php?cardId=$cardId'>$title</a><br>Made by <i class='fa fa-user' aria-hidden='true'></i> <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
+    echo  "<p class='textWithLink'><a class='cardLinkTitle' href='index.php?cardId=$cardId'>$title</a><br>Made by <i class='fa fa-user' aria-hidden='true'></i> <a href='profile.php?username=$username'>$username</a>, $dateAdded, <b>$countryName</b>.</p>";
 
     $cardIdGlobal = $cardId;/*Save the cardId in a global variable*/
 
@@ -191,7 +191,7 @@
 
     $query = "select * from CardComments where cardId = " . $cardId;
     $stmt = $db->prepare($query);
-    $stmt->bind_result($title, $username, $comment, $dateAdded, $cardId);
+    $stmt->bind_result($title, $username, $countryName, $comment, $dateAdded, $cardId);
     $stmt->execute();
     $stmt->store_result();
     $nbrOfComments = $stmt->num_rows();
@@ -202,8 +202,8 @@
       echo "<li class='commentField'>";
       echo "<a href='profile.php?username=$username'><i class='fa fa-user' aria-hidden='true'></i></a>";
       echo "<a href='profile.php?username=$username'>$username</a>";
-      echo "<p><i>$dateAdded</i></p>";
-      echo "<p>$comment</p>";
+      echo "<p><i>$dateAdded</i>, <b>$countryName</b></p>";
+      echo "<p class='commentText'>$comment</p>";
       echo "</li>";
     }
 

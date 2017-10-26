@@ -157,10 +157,11 @@ Join Countries ON Users.countryId = Countries.countryId;
 
 /*Example how you can select the info used for the comments on a specific card*/
 Create View CardComments AS
-Select Cards.title, Users.username, Comments.comment, Comments.dateAdded, Cards.cardId
+Select Cards.title, Users.username, Countries.countryName, Comments.comment, Comments.dateAdded, Cards.cardId
 from Cards
 Join Comments ON Cards.cardId = Comments.cardId
 Join Users ON Users.userId = Comments.userId;
+Join Countries ON Users.countryId = Countries.countryId;
 /*Where Cards.cardId = 1;*/
 
 
@@ -185,10 +186,11 @@ Where Users.username Like "%jacob%";
 /*How to select a random card*/
 Create View RandomCard AS
 Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
-Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded, Cards.cardId
+Cards.rating, Categories.categoryName, Users.username,Countries.countryName,Cards.dateAdded, Cards.cardId
 from Cards
 Join Users ON Users.userId = Cards.userId
 Join Categories ON Cards.categoryID = Categories.categoryID
+Join Countries ON Countries.countryId = Users.countryId
 ORDER BY RAND()
 LIMIT 1;/*Remove this if you want more than one row*/
 
@@ -211,10 +213,11 @@ Group By Categories.categoryID;
 /*Used to find a certain card or to display all the cards*/
 Create View CardsView AS
 Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
-Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded, Cards.cardId
+Cards.rating, Categories.categoryName, Users.username, Countries.countryName, Cards.dateAdded, Cards.cardId
 from Cards
 Join Users ON Users.userId = Cards.userId
-Join Categories ON Cards.categoryID = Categories.categoryID;
+Join Categories ON Cards.categoryID = Categories.categoryID
+Join Countries ON Users.countryId = Countries.countryId;
 /*Users.userId = 1*/
 
 Create View TopListView AS

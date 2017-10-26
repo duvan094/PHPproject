@@ -24,7 +24,8 @@
 
         /*If no user with that specific username can be found the page displays an error message*/
         if($stmt->num_rows() == 0){
-					echo "<h1>There's nothing here :(</h1>";
+					echo "<h1>" . $username . "</h1>";
+					echo "<h1>You have not created any cards yet</h1>";
 		    }else{
 
 					echo "<h1>" . $username . "</h1>";

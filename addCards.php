@@ -1,10 +1,10 @@
 <?php include "header.php" ?>
 
-<main>
+<main id="logintoaddcards">
 
   <?php
     if(!isset($_SESSION['username'])) {//Only include loginModule if logged in.
-      echo "<h3>You have to Log in to create cards.</h3>";
+      echo "<h1>You have to Log in to create cards</h1>";
 
     } else {
 

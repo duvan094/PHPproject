@@ -885,7 +885,14 @@ main#userProfile>h1{
 	margin:88px 0 44px 0;
 }
 
-
+#logintoaddcards>h1{
+	text-align: center;
+	color:#FFF;
+	font-size: 42px;
+	font-weight: 600;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+	margin:88px 0 44px 0;
+}
 
 #searchPage>ul>li>form, #userProfile>ul>li>form{
 	margin-bottom: 11px;

@@ -2,7 +2,6 @@
 <?php $cardIdGlobal = ""; ?>
 
 <main>
-  <h3>Would You Rather?</h3>
 
   <?php
 
@@ -93,21 +92,28 @@
       echo "</form>";
     }
 
+  ?>
+  <div id="nextPrevButtonsContainer">
+    <ul>
+      <li><a href="index.php?cardId=<?php echo $cardId-1;?>">Previous Question</a></li>
+      <li><a href="index.php?cardId=<?php echo $cardId+1;?>">Next Question</a></li>
+    </ul>
+  </div>
+  <div class="container">
+  <div>
+  <?php
     echo "<ul class='upvote-container'>";
-    echo "<li><button class='like-button'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></button></li>";
+    echo "<li><button class='like-button'><i class='fa fa-thumbs-down' aria-hidden='true'></i></i></button></li>";
     echo "<li><p>$rating</p></li>";
-    echo "<li><button class='like-button'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></i></button></li>";
+    echo "<li><button class='like-button'><i class='fa fa-thumbs-up' aria-hidden='true'></i></button></li>";
     echo  "</ul>";
-    echo  "<p class='textWithLink'><a href='index.php?cardId=$cardId'>$title</a> made by <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
+    echo  "<p class='textWithLink'><a class='cardLinkTitle' href='index.php?cardId=$cardId'>$title</a><br>Made by <i class='fa fa-user' aria-hidden='true'></i> <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
 
     $cardIdGlobal = $cardId;/*Save the cardId in a global variable*/
 
   ?>
 
-  <ul id="nextPrevButtons">
-    <li><a href="index.php?cardId=<?php echo $cardId-1;?>">Previous Question</a></li>
-    <li><a href="index.php?cardId=<?php echo $cardId+1;?>">Next Question</a></li>
-  </ul>
+
 
   <?php
     /*Connect to the database to insert the comment*/
@@ -154,6 +160,7 @@
     echo "<li><h4>$nbrOfComments comments</h4></li>";
     while ($stmt->fetch()) {
       echo "<li class='commentField'>";
+      echo "<a href='profile.php?username=$username'><i class='fa fa-user' aria-hidden='true'></i></a>";
       echo "<a href='profile.php?username=$username'>$username</a>";
       echo "<p><i>$dateAdded</i></p>";
       echo "<p>$comment</p>";
@@ -199,7 +206,8 @@
     echo "</ul>";
 
   ?>
-
+  </div>
+  </div>
 </main>
 
 

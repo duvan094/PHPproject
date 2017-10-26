@@ -2,7 +2,6 @@
 <?php $cardIdGlobal = ""; ?>
 
 <main>
-  <h3>Would You Rather?</h3>
 
   <?php
 

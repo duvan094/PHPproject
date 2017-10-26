@@ -77,9 +77,9 @@
       <p>Username</p>
       <input type="text" name="username"> <br>
       <p>Password</p>
-      <input type="password" name="password"> <br>
+      <input type="password" name="password1"> <br>
       <p>Confirm Password</p>
-      <input type="password" name="password"> <br>
+      <input type="password" name="password2"> <br>
       <select name="countrySelect">
         <?php
           /*Here we enter all the countries as options in the select menu*/

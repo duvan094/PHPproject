@@ -949,6 +949,12 @@ footer>#copyright{
 	color:#A1A1A3;
 	font-size: 12px;
 }
+
+
+.invisibleForm{
+	display: none;
+}
+
 /* FOOTER -END */
 @media(min-width:420px){
 	#topListContainer{

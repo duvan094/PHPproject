@@ -101,11 +101,51 @@
   </div>
   <div class="container">
   <div>
+
+    <?php
+      /*Connect to the database to insert the comment*/
+      if (isset($_POST['vote']) && isset($_SESSION['userId'])) {
+        @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+        /*Check for connection error*/
+        if ($db->connect_error) {
+          echo "could not connect: " . $db->connect_error;
+          printf("<br><a href=index.php>Return to home page </a>");
+          exit();
+        }
+
+        $cardId = $_GET['cardId'];
+        $userId = $_SESSION['userId'];
+        $query = "";
+
+        if($_POST['vote'] == "upvote"){
+          $query = ("Update Cards SET rating = rating + 1 WHERE cardId={$cardId}");
+          $rating++;
+        }else if($_POST['vote'] == "downvote"){
+          $query = ("Update Cards SET rating = rating - 1 WHERE cardId={$cardId}");
+          $rating--;
+        }
+
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+
+      }
+    ?>
+
+  <?php
+    /*This is two invisble forms that are called from the upvote/downvote buttons*/
+    echo "<form class='invisibleForm' action='index.php?cardId=$cardId' method='POST' id='downvoteForm'>";
+    echo "<input type='text' value='downvote' name='vote' readonly>";
+    echo "</form>";
+    echo "<form class='invisibleForm' action='index.php?cardId=$cardId' method='POST' id='upvoteForm'>";
+    echo "<input type='text' value='upvote' name='vote' readonly>";
+    echo "</form>";
+  ?>
   <?php
     echo "<ul class='upvote-container'>";
-    echo "<li><button class='like-button'><i class='fa fa-thumbs-down' aria-hidden='true'></i></i></button></li>";
+    echo "<li><button type='submit' form='downvoteForm' class='like-button'><i class='fa fa-thumbs-down' aria-hidden='true'></i></button></li>";
     echo "<li><p>$rating</p></li>";
-    echo "<li><button class='like-button'><i class='fa fa-thumbs-up' aria-hidden='true'></i></button></li>";
+    echo "<li><button type='submit' form='upvoteForm' class='like-button'><i class='fa fa-thumbs-up' aria-hidden='true'></i></button></li>";
     echo  "</ul>";
     echo  "<p class='textWithLink'><a class='cardLinkTitle' href='index.php?cardId=$cardId'>$title</a><br>Made by <i class='fa fa-user' aria-hidden='true'></i> <a href='profile.php?username=$username'>$username</a>, $dateAdded</p>";
 

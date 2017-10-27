@@ -147,7 +147,7 @@
     echo "<li><p>$rating</p></li>";
     echo "<li><button type='submit' form='upvoteForm' class='like-button'><i class='fa fa-thumbs-up' aria-hidden='true'></i></button></li>";
     echo  "</ul>";
-    echo  "<p class='textWithLink'><a class='cardLinkTitle' href='index.php?cardId=$cardId'>$title</a><br>Made by <i class='fa fa-user' aria-hidden='true'></i> <a href='profile.php?username=$username'>$username</a>, $dateAdded, <b>$countryName</b>.</p>";
+    echo  "<p class='textWithLink'><a class='cardLinkTitle' href='index.php?cardId=$cardId'>$title</a>, <a href='searchResults.php?category=$categoryName'>$categoryName</a><br>Made by <i class='fa fa-user' aria-hidden='true'></i> <a href='profile.php?username=$username'>$username</a>, $dateAdded, <b>$countryName</b>.</p>";
 
     $cardIdGlobal = $cardId;/*Save the cardId in a global variable*/
 

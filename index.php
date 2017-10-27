@@ -80,8 +80,8 @@
         $percent1 = ($alt1Count == 0 ? 0 : round(100 * ($alt1Count/($alt1Count+$alt2Count))));
         $percent2 = 100 - $percent1;
 
-        echo "<div><div><h3><span id='percent1'>{$percent1}</span>%</h3><p>{$alt1Count} agree with you</p><h5>{$alt1}</h5></div></div>";
-        echo "<div><div><h3><i class='fa fa-check' aria-hidden='true'></i> <span id='percent2'>{$percent2}</span>%</h3><p>{$alt2Count} disagree with you</p><h5>{$alt2}</h5></div></div>";
+        echo "<div><div><h3><span id='percent1'>{$percent1}</span>%</h3><p>{$alt1Count} disagree with you</p><h5>{$alt1}</h5></div></div>";
+        echo "<div><div><h3><i class='fa fa-check' aria-hidden='true'></i> <span id='percent2'>{$percent2}</span>%</h3><p>{$alt2Count} agree with you</p><h5>{$alt2}</h5></div></div>";
       }
       echo "</div>";
 

@@ -183,23 +183,13 @@ Join Categories ON Cards.categoryID = Categories.categoryID
 Where Users.username Like "%jacob%";
 */
 
-/*How to select a random card*/
-Create View RandomCard AS
+Create View RandomList AS
 Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
 Cards.rating, Categories.categoryName, Users.username,Countries.countryName,Cards.dateAdded, Cards.cardId
 from Cards
 Join Users ON Users.userId = Cards.userId
 Join Categories ON Cards.categoryID = Categories.categoryID
 Join Countries ON Countries.countryId = Users.countryId
-ORDER BY RAND()
-LIMIT 1;/*Remove this if you want more than one row*/
-
-Create View RandomList AS
-Select Cards.title, Cards.alt1, Cards.alt2, Cards.alt1Count, Cards.alt2Count,
-Cards.rating, Categories.categoryName, Users.username, Cards.dateAdded, Cards.cardId
-from Cards
-Join Users ON Users.userId = Cards.userId
-Join Categories ON Cards.categoryID = Categories.categoryID
 ORDER BY RAND()
 ;
 

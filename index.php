@@ -32,10 +32,10 @@
 
     }else{
         /*If no specific card is requested from the GET, a random card is selected*/
-      $query = "select * from RandomCard";
+      $query = "select * from RandomList";
 
       if(isset($_GET['categoryName']) && !empty($_GET['categoryName'])){
-        $query = "Select * from RandomList Where categoryName='".$_GET['categoryName']."'";
+        $query = $query . " Where categoryName='".$_GET['categoryName']."'";
       }
 
       $stmt = $db->prepare($query);

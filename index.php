@@ -84,7 +84,7 @@
         echo "<div><div><h3><i class='fa fa-check' aria-hidden='true'></i> <span id='percent2'>{$percent2}</span>%</h3><p>{$alt2Count} agree with you</p><h5>{$alt2}</h5></div></div>";
       }
       echo "</div>";
-
+      
     }else{/*If no alternative has been clicked*/
       echo "<form class='card-container' action='index.php?cardId={$cardId}' method='post'>";
       echo "<div><input type='submit' name='altClicked' value='{$alt1}'></div>";
@@ -175,6 +175,10 @@
       $query = ("INSERT INTO Comments (cardId, comment, userId) VALUES ({$cardId}, '{$comment}', {$userId})");
       $stmt = $db->prepare($query);
       $stmt->execute();
+
+      /*Code to keep the form from sending the information several times. Borrowed from Ellen Brage.*/
+      unset($_POST);
+      echo "<script> window.location.href ='index.php?cardId=$cardId';</script>";
     }
   ?>
 

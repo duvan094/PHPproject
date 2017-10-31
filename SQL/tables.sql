@@ -161,7 +161,10 @@ Select Cards.title, Users.username, Countries.countryName, Comments.comment, Com
 from Cards
 Join Comments ON Cards.cardId = Comments.cardId
 Join Users ON Users.userId = Comments.userId
-Join Countries ON Users.countryId = Countries.countryId;
+Join Countries ON Users.countryId = Countries.countryId
+ORDER BY Comments.dateAdded ASC
+;
+
 /*Where Cards.cardId = 1;*/
 
 

@@ -67,8 +67,12 @@ Create table Cards(
 
 
 Insert into Cards (title,alt1,alt2,userId,categoryID) values
-("Dick or Toe","Eat a dick","Suck a toe",1,2),
 ("Naughty Hitler","Kill Hitler","Slap Hitler",1,5),
+("Fruity Dilemmas","Eat a Fruit","Don&#39;t",1,5),
+("Drink Preference","Beer","Wine",1,5),
+("Love Hurts","Loved and lost","Never loved at all",1,5),
+("Easy Choices","Be a Nickleback fan","Die an early death",1,5),
+("Math is hard","Get $100 today","Get $1 a day for 200 days",1,5),
 ("Project Management","Be a project Manager","Be a project Owner",1,5),
 ("Banana Phone","Live without a phone","Live without genitals",2,5),
 ("Time Travel","Live 500 years ago","Live 500 years in the future",2,5),
@@ -77,6 +81,7 @@ Insert into Cards (title,alt1,alt2,userId,categoryID) values
 ("9/11 or Harambe","Revive Harambe","Prevent 9/11",4,7),
 ("Trust Fall","Fail to save someone during a trust fall","Have someone fail to save you during a trust fall",4,7),
 ("Alcoholic Dilemmas","RedBull Vodka","Gin & Tonic",4,8),
+("Deadly Knowledge","Know how you will die","Know when you will die",4,8),
 ("Tequila or Lonliness","Tequila Shots at 2 AM","Go home alone",4,8),
 ("Mexican or Russian","Tequila without salt & lemon","Just Vodka",4,8),
 ("Awkward or Sad","Bring a girl to a boys night","Go to the movies alone",4,8)
@@ -164,9 +169,6 @@ Join Users ON Users.userId = Comments.userId
 Join Countries ON Users.countryId = Countries.countryId
 ORDER BY Comments.dateAdded ASC
 ;
-
-/*Where Cards.cardId = 1;*/
-
 
 /*Search Card example*/
 /*

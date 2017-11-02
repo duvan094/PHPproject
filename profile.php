@@ -25,7 +25,15 @@
         /*If no user with that specific username can be found the page displays an error message*/
         if($stmt->num_rows() == 0){
 					echo "<h1>" . $username . "</h1>";
-					echo "<h1>You have not created any cards yet</h1>";
+					if(isset($_SESSION['username'])){
+						if($_SESSION['username'] == $username){
+							echo "<p class='profileError'>You have not created any cards yet.</p>";
+						}else{
+							echo "<p class='profileError'>This user has not created any cards yet.</p>";
+						}
+					}else{
+						echo "<p class='profileError'>This user has not created any cards yet.</p>";
+					}
 		    }else{
 
 					echo "<h1>" . $username . "</h1>";
@@ -51,7 +59,7 @@
 
 		}else{
 			//If no specific user is requested the page prints out this Error message
-			echo "<h1>There's nothing here :(</h1>";
+			echo "<p class='profileError'>There's nothing here :(</p>";
 		}
 	?>
 

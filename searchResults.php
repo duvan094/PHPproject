@@ -74,8 +74,8 @@
       echo "<ul>";
       if(isset($_POST['searchVariant']) && $_POST['searchVariant'] == 'Users'){//If users is selected
         while($stmt->fetch()){
-          echo "<li>";
-          echo "<a href='profile.php?username={$username}'>{$username}</a>";
+          echo "<li class='userSearch'>";
+          echo "<a href='profile.php?username={$username}'><i class='fa fa-user' aria-hidden='true'></i> {$username}</a>";
           echo "</li>";
         }
       }else{

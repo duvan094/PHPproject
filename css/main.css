@@ -823,6 +823,23 @@ main{
 	margin-bottom:44px;
 }
 
+.userSearch{
+	border-top: 1px solid #31313C;
+	border-bottom: 1px solid #31313C;
+	padding: 22px 11px;
+}
+
+.userSearch>a{
+	text-decoration: none;
+	color:#5B9276;
+	font-weight: 600;
+}
+
+.userSearch>a:hover{
+	color:#7BB296;
+}
+
+
 #searchMenu{
 	border-bottom: 2px solid #7BB296;
 	padding-top: 22px;

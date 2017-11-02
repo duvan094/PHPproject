@@ -786,7 +786,7 @@ main{
 	margin: auto;
 }
 
-#searchMenu>.searchMenuWrapper>p{
+.searchMenuWrapper>p{
 	color:#FFF;
 	padding:11px 22px;
 }
@@ -812,7 +812,7 @@ main{
 	color:#7BB296;
 }
 
-#searchMenu>.searchMenuWrapper>input[type=submit]:first-child{
+#searchMenu>.searchMenuWrapper>input[type=submit].selected{
 	border-bottom: 4px solid #7BB296;
 }
 

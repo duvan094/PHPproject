@@ -125,7 +125,7 @@ nav>div>ul>li{
 	list-style: none;
 }
 
-nav>div>ul>li>a{
+nav>div>ul>li>a,#toggleBtn>input{
 		text-decoration: none;
 		padding:22px 22px;
 		line-height: 22px;
@@ -139,12 +139,8 @@ nav>div>ul>li>a{
 #toggleBtn>input{
 	background: none;
 	outline: none;
-	color:#DDD;
-	font-weight: 600;
-	text-align: left;
 	border: none;
-	line-height: 22px;
-	padding:22px 22px;
+	width: 100%;
 	cursor: pointer;
 }
 
@@ -400,6 +396,10 @@ main{
 	box-sizing: border-box;
 	white-space: normal;
 	cursor: pointer;
+}
+
+.card{
+	resize: none;
 }
 
 .card-container>div>div{
@@ -1019,7 +1019,7 @@ footer>#copyright{
 		height:300px;
 	}
 
-	nav>div>ul>li>a{
+	nav>div>ul>li>a,#toggleBtn>input{
 			text-align: center;
 	}
 
@@ -1103,6 +1103,8 @@ textarea {
 	color:#FFF;
 }
 
+
+
 .addCardsContainer>input[type="submit"]:hover {
 	background: #DF3B24;
 	cursor:pointer;
@@ -1158,7 +1160,7 @@ textarea {
 			position: absolute;
 	}
 
-	nav>div>ul>li>a{
+	nav>div>ul>li>a,#toggleBtn>input{
 			padding:22px 11px;
 			line-height: 22px;
 			font-size: 12px;

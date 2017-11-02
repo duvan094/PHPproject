@@ -11,6 +11,7 @@
     color: #FFF;
 }
 
+
 body {
 	background: #1A1A1C;
 	height: 100%;
@@ -131,7 +132,19 @@ nav>div>ul>li>a{
 		text-align: left;
 }
 
-nav>div>ul>li>a:hover{
+#toggleBtn>input{
+	background: none;
+	outline: none;
+	color:#DDD;
+	font-weight: 600;
+	text-align: left;
+	border: none;
+	line-height: 22px;
+	padding:22px 22px;
+	cursor: pointer;
+}
+
+nav>div>ul>li>a:hover,#toggleBtn>input:hover{
 	background:rgba(0, 0, 0, 0.2);
 	color:#FFF;
 }
@@ -148,6 +161,10 @@ nav>div>ul>li>.active:hover{
 nav>.navWrapper{
 	max-width: 960px;
 	margin:auto;
+}
+
+nav.light{
+	background: #7F7F7F;
 }
 
 #searchBar{
@@ -435,6 +452,10 @@ main{
 	box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.38);
 }
 
+#nextPrevButtonsContainer.light{
+	background: #E5E5E5;
+}
+
 #nextPrevButtonsContainer>ul{
 	max-width: 1280px;
 	margin: auto;
@@ -464,9 +485,20 @@ main{
 	transition: background 0.2s ease-in-out;
 }
 
+
+#nextPrevButtonsContainer.light>ul>li>a{
+	background: #C2C2C2;
+	color:#1A1A1C;
+}
+
 #nextPrevButtonsContainer>ul>li:first-child>a{
 	border-right:1px solid #4A4A4C;
 }
+
+#nextPrevButtonsContainer.light>ul>li:first-child>a{
+	border-right:1px solid #7F7F7F;
+}
+
 #nextPrevButtonsContainer>ul>li:first-last>a{
 	border-left:1px solid #4A4A4C;
 }
@@ -476,11 +508,22 @@ main{
 	color:#FFF;
 }
 
+
+#nextPrevButtonsContainer.light>ul>li>a:hover{
+	background: #7F7F7F;
+	color:#1A1A1C;
+}
+
 #nextPrevButtonsContainer>ul>li>a:active{
 	background: #0A0A0C;
 	color:#FFF;
 }
 
+
+#nextPrevButtonsContainer.light>ul>li>a:active{
+	background: #7F7F7F;
+	color:#1A1A1C;
+}
 .container{
 	background: #FFF;
 	-webkit-box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.38);

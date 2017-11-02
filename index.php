@@ -1,6 +1,7 @@
 <?php include "header.php" ?>
 <?php $cardIdGlobal = ""; ?>
 
+
 <main>
 
   <?php
@@ -92,8 +93,13 @@
       echo "</form>";
     }
 
+  if($_COOKIE['color_mode'] == "light" && isset($_COOKIE['color_mode'])){
+    echo "<div id='nextPrevButtonsContainer' class='light'>";
+  }else{
+    echo "<div id='nextPrevButtonsContainer'>";
+  }
   ?>
-  <div id="nextPrevButtonsContainer">
+
     <ul>
       <li><a href="index.php?cardId=<?php echo $cardId-1;?>">Previous Question</a></li>
       <li><a href="index.php?cardId=<?php echo $cardId+1;?>">Next Question</a></li>
@@ -200,7 +206,11 @@
     $stmt->store_result();
     $nbrOfComments = $stmt->num_rows();
 
-    echo "<ul id='commentContainer'>";
+//    if($_COOKIE["color_mode"] == "light"){
+  //    echo "<ul id='commentContainer' class='light'>";
+//    }else{
+      echo "<ul id='commentContainer'>";
+  //  }
     echo "<li><h4>$nbrOfComments comments</h4></li>";
     while ($stmt->fetch()) {
       echo "<li class='commentField'>";

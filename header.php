@@ -33,13 +33,15 @@ if ($_SESSION['userip'] !== $_SERVER['REMOTE_ADDR']){
 
 
   <?php
-    if($_COOKIE["color_mode"] == "light"){
-      echo "<body class='light'>";
-      echo "<nav class='light'>";
-    }else{
-      echo "<body>";
-      echo "<nav>";
-    }
+    if(isset($_COOKIE['color_mode'])){
+        if($_COOKIE['color_mode'] == "light"){
+          echo "<body class='light'>";
+          echo "<nav class='light'>";
+        }else{
+          echo "<body>";
+          echo "<nav>";
+        }
+      }
     ?>
 
       <div class="navWrapper">
@@ -64,7 +66,7 @@ if ($_SESSION['userip'] !== $_SERVER['REMOTE_ADDR']){
             echo "<li><a class='" . (($current_page == 'index.php' || $current_page == '' || strpos($current_page,'index.php') !== false) ? 'active' : NULL) . "' href='index.php'>Home</a></li>";
           /* This is the button for toggling light and dark mode */
             echo "<li><form class='' action='' method='post' id='toggleBtn'>";
-            echo "<input type='submit' name='Change color mode' value='Change Color'>";
+            echo "<input type='submit' name='changeColor' value='Change Color'>";
             echo "</form></li>";
             echo "<li>";
             echo "<form id='searchBar' action='searchResults.php' method='GET'>";

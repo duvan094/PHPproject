@@ -137,10 +137,12 @@
       echo "</form>";
     }
 
-  if($_COOKIE['color_mode'] == "light" && isset($_COOKIE['color_mode'])){
-    echo "<div id='nextPrevButtonsContainer' class='light'>";
-  }else{
-    echo "<div id='nextPrevButtonsContainer'>";
+  if(isset($_COOKIE['color_mode'])){
+    if($_COOKIE['color_mode'] == "light"){
+      echo "<div id='nextPrevButtonsContainer' class='light'>";
+    }else{
+      echo "<div id='nextPrevButtonsContainer'>";
+    }
   }
   ?>
 
@@ -250,9 +252,6 @@
     $stmt->store_result();
     $nbrOfComments = $stmt->num_rows();
 
-//    if($_COOKIE["color_mode"] == "light"){
-  //    echo "<ul id='commentContainer' class='light'>";
-//    }else{
       echo "<ul id='commentContainer'>";
   //  }
     echo "<li><h4>$nbrOfComments comments</h4></li>";

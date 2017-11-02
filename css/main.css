@@ -406,11 +406,11 @@ main{
 	height: 250px;
 }
 
-.card-container>div:first-child>input[type=submit], .card-container>div:first-child>input[type=text], .card-container>div:first-child>div{
+.card-container>div:first-child>input[type=submit], .card-container>div:first-child>textarea, .card-container>div:first-child>div{
 	background: #7BB296;
 }
 
-.card-container>div:last-child>input[type=submit], .card-container>div:last-child>input[type=text], .card-container>div:last-child>div{
+.card-container>div:last-child>input[type=submit], .card-container>div:last-child>textarea, .card-container>div:last-child>div{
 	background: #FF5B44;
 }
 
@@ -419,11 +419,11 @@ main{
 	font-size: 23px;
 }
 
-.card-container>div:first-child>input[type=submit]:active, .card-container>li:first-child>.card:active,.card-container>div:first-child>div:active{
+.card-container>div:first-child>input[type=submit]:active, .card-container>div:first-child>div:active{
 	background: #5B9276;
 }
 
-.card-container>div:last-child>input[type=submit]:active, .card-container>li:last-child>.card:active, .card-container>div:last-child>div:active{
+.card-container>div:last-child>input[type=submit]:active, .card-container>div:last-child>div:active{
 	background: #CF3B24;
 }
 /*Would you rather cards -END*/
@@ -648,7 +648,7 @@ main{
 	resize: none;
 }
 
-.comment>form>input[type="submit"], .addCardsContainer>input[type="submit"]{
+.comment>form>input[type="submit"] {
 	margin-top: 11px;
 	padding:11px;
 	background:#FF5B44;
@@ -659,7 +659,7 @@ main{
 	color:#FFF;
 }
 
-.comment>form>input[type="submit"]:hover, .addCardsContainer>input[type="submit"]:hover{
+.comment>form>input[type="submit"]:hover {
 	background: #DF3B24;
 	cursor:pointer;
 }
@@ -999,22 +999,49 @@ footer>#copyright{
 	width: 400px;
 }
 
-.addCardsContainer>form>.card {
-
+textarea {
+	white-space: normal;
+	text-align: justify;
+	-moz-text-align-last: center; /* Firefox 12+ */
+    text-align-last: center;
 }
 
-/* CHANGE PLACEHOLDER TEXT COLOUR */
+/* CHANGE PLACEHOLDER TEXT COLOUR - for all browsers */
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: white;
+  opacity: 0.4;
+  text-align: center;
 }
 ::-moz-placeholder { /* Firefox 19+ */
   color: white;
+  opacity: 0.4;
+  text-align: center;
 }
 :-ms-input-placeholder { /* IE 10+ */
   color: white;
+  opacity: 0.4;
+  text-align: center;
 }
 :-moz-placeholder { /* Firefox 18- */
   color: white;
+  opacity: 0.4;
+  text-align: center;
+}
+
+.addCardsContainer>input[type="submit"] {
+	margin-top: 11px;
+	padding:11px;
+	background:#FF5B44;
+	-webkit-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
+	-moz-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
+	box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
+	border: none;
+	color:#FFF;
+}
+
+.addCardsContainer>input[type="submit"]:hover {
+	background: #DF3B24;
+	cursor:pointer;
 }
 
 /*ADD CARDS END*/

@@ -823,11 +823,17 @@ main{
 	margin-bottom:44px;
 }
 
-.userSearch{
-	border-top: 1px solid #31313C;
+#searchPage>ul>li.userSearch{
 	border-bottom: 1px solid #31313C;
 	padding: 22px 11px;
+	margin-bottom: 0;
 }
+
+
+#searchPage>ul>li.userSearch:first-child{
+	border-top: 1px solid #31313C;
+}
+
 
 .userSearch>a{
 	text-decoration: none;

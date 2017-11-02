@@ -791,7 +791,7 @@ main{
 	padding:11px 22px;
 }
 
-.searchMenuWrapper>p,.searchMenuWrapper>button{
+.searchMenuWrapper>p,.searchMenuWrapper>input[type=submit]{
 	float:left;
 	font-size: 14px;
 }
@@ -799,7 +799,7 @@ main{
 	overflow: hidden;
 }
 
-#searchMenu>.searchMenuWrapper>button{
+#searchMenu>.searchMenuWrapper>input[type=submit]{
 	padding:11px 22px;
 	background: none;
 	border: none;
@@ -808,11 +808,11 @@ main{
 	cursor: pointer;
 }
 
-#searchMenu>.searchMenuWrapper>button:hover{
+#searchMenu>.searchMenuWrapper>input[type=submit]:hover{
 	color:#7BB296;
 }
 
-#searchMenu>.searchMenuWrapper>button:first-child{
+#searchMenu>.searchMenuWrapper>input[type=submit]:first-child{
 	border-bottom: 4px solid #7BB296;
 }
 

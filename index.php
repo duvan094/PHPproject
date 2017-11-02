@@ -258,7 +258,7 @@
     if (isset($_SESSION['username'])) {//Show a commentfield if logged in.
       echo "<li class='commentField comment'>";
       echo "<form class='' action='index.php?cardId={$cardIdGlobal}' method='post'>";
-      echo "<textarea name='comment' rows='6' cols='80' placeholder='Write a comment.'></textarea>";
+      echo "<textarea name='comment' rows='6' cols='80' maxlength='200' placeholder='Write a comment.'></textarea>";
       echo "<br>";
       echo "<input type='submit' name='' value='Post Your Comment'>";
       echo "</form>";

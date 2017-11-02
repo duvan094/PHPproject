@@ -6,7 +6,6 @@ session_start ();
 include "setcookie.php";
 
 if (isset($_SESSION['userip']) === false){
-
     #here we store the IP into the session 'userip'
     $_SESSION['userip'] = $_SERVER['REMOTE_ADDR'];
 }
@@ -16,7 +15,6 @@ if ($_SESSION['userip'] !== $_SERVER['REMOTE_ADDR']){
     #this way the attacker will have no session
     session_unset();
     session_destroy();
-
 }
 
 ?>

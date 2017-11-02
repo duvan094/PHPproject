@@ -16,50 +16,85 @@
       $query;
       $searchVariable;
 
-      /*If a user chose a category*/
-      if(isset($_GET['category']) && !empty($_GET['category'])){
-        $searchVariable =  mysqli_real_escape_string($db, $_GET['category']);
-        $searchVariable = htmlentities($searchVariable);
-        $query = "select * from CardsView Where categoryName='" . $searchVariable . "'";
-      }else{
+      if(isset($_POST['searchVariant']) && $_POST['searchVariant'] == 'Users'){//If users is selected
         $searchVariable =  mysqli_real_escape_string($db, $_GET['searchField']);
         $searchVariable = htmlentities($searchVariable);
-        $query = "select * from CardsView Where title LIKE'%" .  $searchVariable . "%' OR alt1 LIKE'%" . $searchVariable . "%' OR alt2 LIKE'%" . $searchVariable . "%' OR username LIKE'%" . $searchVariable . "%'";
-      }
+        $query = "select username from Users Where username LIKE '%" . $searchVariable . "%'";
+        $stmt = $db->prepare($query);
+        $stmt->bind_result($username);
+      }else{
+        /*If a user chose a category*/
+        if(isset($_GET['category']) && !empty($_GET['category'])){
+          $searchVariable =  mysqli_real_escape_string($db, $_GET['category']);
+          $searchVariable = htmlentities($searchVariable);
+          $query = "select * from CardsView Where categoryName='" . $searchVariable . "'";
+        }else{
+          $searchVariable =  mysqli_real_escape_string($db, $_GET['searchField']);
+          $searchVariable = htmlentities($searchVariable);
+          $query = "select * from CardsView Where title LIKE'%" .  $searchVariable . "%' OR alt1 LIKE'%" . $searchVariable . "%' OR alt2 LIKE'%" . $searchVariable . "%' OR username LIKE'%" . $searchVariable . "%'";
+        }
 
-      $stmt = $db->prepare($query);
-      $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$countryName, $dateAdded,$cardId);
+        $stmt = $db->prepare($query);
+        $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$countryName, $dateAdded,$cardId);
+      }
       $stmt->execute();
       $stmt->store_result();
       $nbrOfResults = $stmt->num_rows();
 
   ?>
+  <?php
 
-  <div id="searchMenu">
+    echo "<div id='searchMenu'>";
 
-    <div class="searchMenuWrapper">
-      <button type="button" name="button">Cards</button>
-      <button type="button" name="button">Users</button>
-      <p><?php echo $nbrOfResults ?> card results for <i><?php echo $searchVariable ?></i></p>
-    </div>
-  </div>
-  <ul>
-    <?php
-      while($stmt->fetch()){
-        echo "<li>";
-        echo "<form class='card-container' action='index.php?cardId={$cardId}' method='post'>";
-        echo "<div><input type='submit' name='altClicked' value='{$alt1}'></div>";
-        echo "<div><input type='submit' name='altClicked' value='{$alt2}'></div>";
-        echo "</form>";
-        echo "<ul class='upvote-container'>";
-        echo "<li><button class='like-button'><i class='fa fa-thumbs-down' aria-hidden='true'></i></i></button></li>";
-        echo "<li><p>$rating</p></li>";
-        echo "<li><button class='like-button'><i class='fa fa-thumbs-up' aria-hidden='true'></i></button></li>";
-        echo  "</ul>";
-        echo  "<p class='textWithLink'><a class='cardLinkTitle' href='index.php?cardId=$cardId'>$title</a>, <a href='searchResults.php?category=$categoryName'>$categoryName</a><br>Made by <i class='fa fa-user' aria-hidden='true'></i> <a href='profile.php?username=$username'>$username</a>, $dateAdded, <b>$countryName</b>.</p>";
-        echo "</li>";
+    if(isset($_GET['category']) && !empty($_GET['category'])){
+      echo "<div class='searchMenuWrapper'>";
+      echo "<p>$nbrOfResults category results for <i>$searchVariable</i></p>";
+      echo "</div>";
+    }else{
+      echo "<form class='searchMenuWrapper'  action='searchResults.php?searchField={$_GET['searchField']}' method='POST'>";
+
+      if(isset($_POST['searchVariant']) && $_POST['searchVariant'] == 'Users'){//Check which search is selected
+        echo "<input type='submit' name='searchVariant' value='Cards'>";
+        echo "<input type='submit' name='searchVariant' value='Users' class='selected'>";
+      }else{
+        echo "<input type='submit' name='searchVariant' value='Cards' class='selected'>";
+        echo "<input type='submit' name='searchVariant' value='Users'>";
       }
+      if(isset($_POST['searchVariant']) && $_POST['searchVariant'] == 'Users'){//If users is selected
+        echo "<p>$nbrOfResults user results for <i>$searchVariable</i></p>";
+      }else{
+        echo "<p>$nbrOfResults card results for <i>$searchVariable</i></p>";
+      }
+      echo "</form>";
+    }
+    echo "</div>";
 
+    ?>
+    <?php
+      echo "<ul>";
+      if(isset($_POST['searchVariant']) && $_POST['searchVariant'] == 'Users'){//If users is selected
+        while($stmt->fetch()){
+          echo "<li>";
+          echo "<a href='profile.php?username={$username}'>{$username}</a>";
+          echo "</li>";
+        }
+      }else{
+        while($stmt->fetch()){
+          echo "<li>";
+          echo "<form class='card-container' action='index.php?cardId={$cardId}' method='post'>";
+          echo "<div><input type='submit' name='altClicked' value='{$alt1}'></div>";
+          echo "<div><input type='submit' name='altClicked' value='{$alt2}'></div>";
+          echo "</form>";
+          echo "<ul class='upvote-container'>";
+          echo "<li><button class='like-button'><i class='fa fa-thumbs-down' aria-hidden='true'></i></i></button></li>";
+          echo "<li><p>$rating</p></li>";
+          echo "<li><button class='like-button'><i class='fa fa-thumbs-up' aria-hidden='true'></i></button></li>";
+          echo  "</ul>";
+          echo  "<p class='textWithLink'><a class='cardLinkTitle' href='index.php?cardId=$cardId'>$title</a>, <a href='searchResults.php?category=$categoryName'>$categoryName</a><br>Made by <i class='fa fa-user' aria-hidden='true'></i> <a href='profile.php?username=$username'>$username</a>, $dateAdded, <b>$countryName</b>.</p>";
+          echo "</li>";
+        }
+      }
+      echo "</ul>";
 
       /*At the bottom of the page we put some buttons for quick access for searching a specific category*/
       @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -85,45 +120,6 @@
 
 
     ?>
-    <!--<li>
-      <h3>If You Where A Cat Would You Do...</h3>
-      <ul class="card-container">
-        <li><button>This?</button></li>
-        <li><button>That?</button></li>
-      </ul>
-      <ul class="upvote-container">
-        <li><button class="like-button"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button></li>
-        <li><p>0</p></li>
-        <li><button class="like-button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></i></button></li>
-      </ul>
-      <p class="textWithLink">Made by <a href="#">steffe94</a>, 32 days ago.</p>
-    </li>
-    <li>
-      <h3>Would You Rather Do...</h3>
-      <ul class="card-container">
-        <li><button>This?</button></li>
-        <li><button>That?</button></li>
-      </ul>
-      <ul class="upvote-container">
-        <li><button class="like-button"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button></li>
-        <li><p>0</p></li>
-        <li><button class="like-button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></i></button></li>
-      </ul>
-      <p class="textWithLink">Made by <a href="#">johan32</a>, 1 year ago.</p>
-    </li>
-    <li>
-      <h3>Would You Rather Do...</h3>
-      <ul class="card-container">
-        <li><button>This?</button></li>
-        <li><button>That?</button></li>
-      </ul>
-      <ul class="upvote-container">
-        <li><button class="like-button"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button></li>
-        <li><p>0</p></li>
-        <li><button class="like-button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></i></button></li>
-      </ul>
-      <p class="textWithLink">Made by <a href="#">joppeBoi</a>, 32 days ago.</p>
-    </li>-->
   </ul>
 <?php
   }else{

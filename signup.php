@@ -1,6 +1,6 @@
 
 <?php
-	if(isset($_POST['username']) && isset($_POST['password1'])){
+	if(isset($_POST['username']) && isset($_POST['password1']) && $_POST["password1"] === $_POST["password2"]){
 
     include "config.php";
 

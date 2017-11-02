@@ -64,10 +64,6 @@ if ($_SESSION['userip'] !== $_SERVER['REMOTE_ADDR']){
             echo "<li><a class='" . ($current_page == 'topcards.php' ? 'active' : NULL) . "' href='topcards.php'>Top&nbsp;Cards</a></li>";
             echo "<li><a class='" . ($current_page == 'addCards.php' ? 'active' : NULL) . "' href='addCards.php'>+Add&nbsp;Cards</a></li>";
             echo "<li><a class='" . (($current_page == 'index.php' || $current_page == '' || strpos($current_page,'index.php') !== false) ? 'active' : NULL) . "' href='index.php'>Home</a></li>";
-          /* This is the button for toggling light and dark mode */
-            echo "<li><form class='' action='' method='post' id='toggleBtn'>";
-            echo "<input type='submit' name='changeColor' value='Change Color'>";
-            echo "</form></li>";
             echo "<li>";
             echo "<form id='searchBar' action='searchResults.php' method='GET'>";
             echo "<input type='text' name='searchField' placeholder='Search Users or Questions...' value=''>";
@@ -81,10 +77,6 @@ if ($_SESSION['userip'] !== $_SERVER['REMOTE_ADDR']){
             echo "<li><a class='" . ($current_page == 'topcards.php' ? 'active' : NULL) . "' href='topcards.php'>Top&nbsp;Cards</a></li>";
             echo "<li><a class='" . ($current_page == 'addCards.php' ? 'active' : NULL) . "' href='addCards.php'>+Add&nbsp;Cards</a></li>";
             echo "<li><a class='" . (($current_page == 'index.php' || $current_page == '' || strpos($current_page,'index.php') !== false) ? 'active' : NULL) . "' href='index.php'>Home</a></li>";
-            /* This is the button for toggling light and dark mode */
-            echo "<li><form class='' action='' method='post' id='toggleBtn'>";
-            echo "<input type='submit' name='changeColor' value='Change Color'>";
-            echo "</form></li>";
             echo "<li>";
             echo "<form id='searchBar' action='searchResults.php' method='GET'>";
             echo "<input type='text' name='searchField' placeholder='Search Users or Questions...' value=''>";

@@ -31,7 +31,7 @@ session_start();
           if (isset($_SESSION['username'])) {//The header if logged in.
             echo "<ul>";
             echo "<li><a href='logout.php'>Log&nbsp;Out</a></li>";
-            echo "<li><a class='" . ($current_page == 'profile.php' || strpos($current_page,'profile.php') !== false ? 'active' : NULL) . "' href='profile.php?username=" . $_SESSION['username'] . "'>Profile</a></li>";
+            echo "<li><a class='" . ($current_page == ('profile.php?username=' . $_SESSION['username']) ? 'active' : NULL) . "' href='profile.php?username=" . $_SESSION['username'] . "'>Profile</a></li>";
             echo "<li><a class='" . ($current_page == 'topcards.php' ? 'active' : NULL) . "' href='topcards.php'>Top&nbsp;Cards</a></li>";
             echo "<li><a class='" . ($current_page == 'addCards.php' ? 'active' : NULL) . "' href='addCards.php'>+Add&nbsp;Cards</a></li>";
             echo "<li><a class='" . (($current_page == 'index.php' || $current_page == '' || strpos($current_page,'index.php') !== false) ? 'active' : NULL) . "' href='index.php'>Home</a></li>";

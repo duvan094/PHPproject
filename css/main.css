@@ -18,6 +18,10 @@ body {
 	position: relative;
 }
 
+body.light{
+	background: #7F7F7F;
+}
+
 /*Hamburger menu*/
 #hamburgerButton{
 	display: block;
@@ -453,7 +457,7 @@ main{
 }
 
 #nextPrevButtonsContainer.light{
-	background: #E5E5E5;
+	background: #C2C2C2;
 }
 
 #nextPrevButtonsContainer>ul{

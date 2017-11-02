@@ -32,13 +32,16 @@ if ($_SESSION['userip'] !== $_SERVER['REMOTE_ADDR']){
     <link rel="stylesheet" href="css/main.css">
     <script src="https://use.fontawesome.com/8718023d1d.js"></script>
   </head>
-  <body>
 
-  <?php  if($_COOKIE["color_mode"] == "light"){
-          echo "<nav class='light'>";
-        }else{
-          echo "<nav>";
-        }
+
+  <?php
+    if($_COOKIE["color_mode"] == "light"){
+      echo "<body class='light'>";
+      echo "<nav class='light'>";
+    }else{
+      echo "<body>";
+      echo "<nav>";
+    }
     ?>
 
       <div class="navWrapper">

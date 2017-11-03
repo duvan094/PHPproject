@@ -1019,66 +1019,21 @@ footer>#copyright{
 	padding-bottom: 44px;
 }
 
-#colorToggle>label {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+#colorToggle>input{
+	padding:11px 22px;
+	background:#7BB296;
+	border: none;
+	color:#FFF;
+	cursor: pointer;
+	-webkit-box-shadow: 0px 12px 0px -6px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 12px 0px -6px rgba(0,0,0,0.5);
+	box-shadow: 0px 12px 0px -6px rgba(0,0,0,0.5);
+
 }
 
-#colorToggle>p{
-	color:#CCC;
-	font-size: 12px;
-	padding-bottom: 11px;
+#colorToggle>input:hover{
+	background: #5B9276;
 }
-
-#colorToggle>label>input {
-  display:none;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: #FFF;
-  -webkit-transition: .2s;
-  transition: .2s;
-}
-
-input:checked + .slider {
-  background-color: #FF5B44;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
 
 @media(min-width:420px){
 	#topListContainer{

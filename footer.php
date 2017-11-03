@@ -1,10 +1,6 @@
 <footer>
 	<form id='colorToggle' action='' method='post'>
-		<p>Change color theme</p>
-	  <label>
-			<input type='checkbox' name='changeColor' value='' onChange='this.form.submit()'>
-	    <span class="slider round"></span>
-	  </label>
+		<input type="submit" name="changeColor" value="Change Color">
 	</form>
 
 	<p><a href="https://www.facebook.com/jacob.duvander?ref=br_rs" target="_blank">Life isn't about finding yourself. Life is about creating yourself.</a></p>

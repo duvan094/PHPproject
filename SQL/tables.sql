@@ -150,7 +150,7 @@ Insert into Admins (userId) values
 
 /*Example how to select all the admins*/
 Create View ShowAdmins AS
-Select Users.userId, Users.username
+Select Users.userId, Users.username, Users.password
 From Users
 Join Admins ON Admins.userId = Users.userId;
 

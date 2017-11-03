@@ -41,6 +41,9 @@ if ($_SESSION['userip'] !== $_SERVER['REMOTE_ADDR']){
           echo "<body>";
           echo "<nav>";
         }
+      }else{//If no cookie is set
+        echo "<body>";
+        echo "<nav>";
       }
     ?>
 

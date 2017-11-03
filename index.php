@@ -143,6 +143,8 @@
     }else{
       echo "<div id='nextPrevButtonsContainer'>";
     }
+  }else{
+    echo "<div id='nextPrevButtonsContainer'>";
   }
   ?>
 

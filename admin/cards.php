@@ -14,11 +14,11 @@
 			<th>ID</th>
 			<th>Title</th>
 			<th>Author</th>
-      <th>Added</th>
-      <th>Remove</th>
-    </tr>
+      		<th>Added</th>
+      		<th>Remove</th>
+    	</tr>
 
-		<?php
+	<?php
 		@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
 		/*Check for connection error*/
@@ -33,16 +33,16 @@
 		$stmt->bind_result($cardId, $title, $username, $dateAdded);
 		$stmt->execute();
 
-    while($stmt->fetch()){
+    	while($stmt->fetch()){
 			echo "<tr>";
-	    echo "<td>$cardId</td>";
-	    echo "<td>$title</td>";
-	    echo "<td>$username</td>";
-	    echo "<td>$dateAdded</td>";
-      echo "<td><a href='removeCards.php?cardId=$cardId'>Remove</a></td>";
-	  	echo "</tr>";
+	    	echo "<td>$cardId</td>";
+	    	echo "<td>$title</td>";
+		    echo "<td>$username</td>";
+		    echo "<td>$dateAdded</td>";
+      		echo "<td><a href='removeCards.php?cardId=$cardId'>Remove</a></td>";
+	  		echo "</tr>";
 		}
-		?>
+	?>
 
 	</table>
 

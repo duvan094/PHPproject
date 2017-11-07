@@ -10,14 +10,15 @@
 	    if ($db->connect_error) {
 	        echo "could not connect: " . $db->connect_error;
 	        printf("<br><a href=index.php>Return to home page </a>");
-	       exit();
+          exit();
 	    }
 
 
         $username = mysqli_real_escape_string($db,$_POST['username']);
         $password = mysqli_real_escape_string($db,$_POST['password1']);
+				$password = SHA1($password);
         $countryId = ($_POST['countrySelect']);
-        
+
 
 
         if(isset($_POST['countrySelect']) && $_POST['countrySelect'] !== ""){
@@ -25,13 +26,9 @@
         }else{
           $query = "INSERT INTO users(username, password, countryId) VALUES('{$username}','{$password}', NULL)";
         }
-         
+
         $stmt = $db->prepare($query);
         $stmt->execute();
-
-        echo "Sign Up Successful";
-        printf("<br><a href=index.php>Return to home page </a>");
-  
 
     @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
     /*@ $db = new mysqli($dbname, $dbuser, $dbpass, $dbserver);*/
@@ -50,13 +47,12 @@
 
       $stmt->fetch();
 
-
       session_start();
       $_SESSION['username'] = $username;
       $_SESSION['userId'] = $userId;
   }
 
 
-	
+
   header("location: index.php")
 ?>

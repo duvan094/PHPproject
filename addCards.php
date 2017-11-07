@@ -57,8 +57,32 @@
       echo "</div>";
 
     }
-  ?>
 
+    if(isset($_POST['title']) && isset($_POST['alt1']) && isset($_POST["alt2"]) && $_POST['categorySelect'] !== ""){
+      
+      include "config.php";
+
+      @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+      if ($db->connect_error) {
+          echo "could not connect: " . $db->connect_error;
+          printf("<br><a href=index.php>Return to home page </a>");
+          exit();
+      }
+
+      $title = mysqli_real_escape_string($db,$_POST['title']);
+      $alt1 = mysqli_real_escape_string($db,$_POST['alt1']);
+      $alt2 = mysqli_real_escape_string($db,$_POST['alt2']);
+      $categoryId = $_POST['categorySelect'];
+      $userId = $_SESSION['userId'];
+
+      $query = "INSERT INTO cards(title, alt1, alt2, userId, categoryId) VALUES('{$title}','{$alt1}','{$alt2}',{$userId},{$categoryId})";
+
+      $stmt = $db->prepare($query);
+      $stmt->execute();
+    }
+
+  ?>
 
 </main>
 

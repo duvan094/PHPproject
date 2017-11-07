@@ -785,6 +785,10 @@ main{
 	resize:both;
 }
 
+#list.commentTd{
+	table-layout: fixed;
+}
+
 #list>tBody>tr{
 	height: 44px;
 	background: #FFF;
@@ -792,6 +796,14 @@ main{
 	border: solid 1px #CCC;
 }
 
+<<<<<<< HEAD
+=======
+td.commentTd{
+	overflow-x:scroll;
+	white-space: nowrap;
+}
+
+>>>>>>> 9747f9f29496f2c4a9672ce384fa76fdfb152ebf
 #list>tBody>tr>td:first-child,#list>tBody>tr>th:first-child{
 	padding-left: 11px;
 	box-sizing: border-box;
@@ -958,16 +970,7 @@ main{
 	list-style: none;
 }
 
-main#userProfile>h1{
-	text-align: center;
-	color:#FFF;
-	font-size: 42px;
-	font-weight: 600;
-	text-shadow: 2px 2px 2px rgba(0,0,0,0.4);
-	margin:88px 0 44px 0;
-}
-
-main#logintoaddcards>h1{
+main>h1{
 	text-align: center;
 	color:#FFF;
 	font-size: 42px;

@@ -36,7 +36,7 @@
 
           $upass = htmlentities($_POST['password']);
           $upass = mysqli_real_escape_string($db, $upass);
-//          $upass = sha1($upass);
+          $upass = sha1($upass);
 
           #just to see what we are selecting, and we can use it to test in phpmyadmin/heidisql
 

@@ -282,7 +282,7 @@
       exit();
     }
 
-    $query = "select * from CardComments where cardId = " . $cardId;
+    $query = "select title,username,countryName,comment,dateAdded,cardId from CardComments where cardId = " . $cardId;
     $stmt = $db->prepare($query);
     $stmt->bind_result($title, $username, $countryName, $comment, $dateAdded, $cardId);
     $stmt->execute();

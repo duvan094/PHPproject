@@ -158,7 +158,7 @@ Join Countries ON Users.countryId = Countries.countryId;
 
 /*Example how you can select the info used for the comments on a specific card*/
 Create View CardComments AS
-Select Cards.title, Users.username, Countries.countryName, Comments.comment, Comments.dateAdded, Cards.cardId
+Select Cards.title, Users.username, Countries.countryName, Comments.comment, Comments.dateAdded, Cards.cardId, Comments.commentId
 from Cards
 Join Comments ON Cards.cardId = Comments.cardId
 Join Users ON Users.userId = Comments.userId

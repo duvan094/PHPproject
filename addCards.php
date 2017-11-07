@@ -18,7 +18,7 @@
         //FORM START - title, alternative x2, categories, submit button
         echo "<form action='' method='post'> <input type='text' name='title' maxlength='30'>";
 
-          echo "<h3><br>Would you rather?</h3>";
+          echo "<h3><br>Would you rather?</h3><br>";
 
           echo "<div class='card-container'>";
             echo "<div><textarea class='card' type='text' name='alt1' placeholder='Alternative One...' maxlength='100'></textarea></div>";
@@ -49,7 +49,7 @@
 
           echo "</select> <br> <br>";
 
-          echo "<input type='submit' name='submit' value='Submit Card'>";
+          echo "<input id='submitCards' type='submit' name='submit' value='Submit Card'>";
 
         //FORM END
         echo "</form>";

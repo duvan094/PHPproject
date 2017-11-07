@@ -609,12 +609,12 @@ main{
 }
 
 .upvote-container>li:first-child>.like-button::before{
-	content:"downvote";
+	content:"upvote";
 	margin-left: -32px;
 }
 
 .upvote-container>li:last-child>.like-button::before{
-	content:"upvote";
+	content:"downvote";
 }
 /* Hover color for the like button */
 .upvote-container>li:first-child>.like-button:hover>i{

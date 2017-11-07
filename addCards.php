@@ -80,6 +80,9 @@
 
       $stmt = $db->prepare($query);
       $stmt->execute();
+
+      unset($_POST);
+      echo "<script> window.location.href ='addCards.php';</script>";
     }
 
   ?>

@@ -67,6 +67,7 @@ Create table Cards(
 )engine = innodb;
 
 
+
 Insert into Cards (title,alt1,alt2,userId,categoryID) values
 ("Naughty Hitler","Kill Hitler","Slap Hitler",1,5),
 ("Fruity Dilemmas","Eat a Fruit","Don&#39;t",1,5),

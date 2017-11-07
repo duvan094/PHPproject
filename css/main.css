@@ -17,40 +17,10 @@ body {
 	height: 100%;
 	position: relative;
 }
-/* Light theme CSS */
 
 body.light{
 	background: #768CA2;
 }
-
-nav.light{
-	background: #768CA2;
-}
-
-/* Next and previous question color on light*/
-#nextPrevButtonsContainer.light{
-	background: #94aec7;
-}
-
-#nextPrevButtonsContainer.light>ul>li>a{
-	background: #94aec7;
-	color:#1A1A1C;
-}
-
-#nextPrevButtonsContainer.light>ul>li:first-child>a{
-	border-right:1px solid #768CA2;
-}
-
-#nextPrevButtonsContainer.light>ul>li>a:hover{
-	background: #768CA2;
-	color:#1A1A1C;
-}
-
-#nextPrevButtonsContainer.light>ul>li>a:active{
-	background: #768CA2;
-	color:#1A1A1C;
-}
-
 
 /*Hamburger menu*/
 #hamburgerButton{
@@ -191,6 +161,10 @@ nav>div>ul>li>.active:hover{
 nav>.navWrapper{
 	max-width: 960px;
 	margin:auto;
+}
+
+nav.light{
+	background: #768CA2;
 }
 
 #searchBar{
@@ -482,6 +456,10 @@ main{
 	box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.38);
 }
 
+#nextPrevButtonsContainer.light{
+	background: #94aec7;
+}
+
 #nextPrevButtonsContainer>ul{
 	max-width: 1280px;
 	margin: auto;
@@ -511,8 +489,18 @@ main{
 	transition: background 0.2s ease-in-out;
 }
 
+
+#nextPrevButtonsContainer.light>ul>li>a{
+	background: #94aec7;
+	color:#1A1A1C;
+}
+
 #nextPrevButtonsContainer>ul>li:first-child>a{
 	border-right:1px solid #4A4A4C;
+}
+
+#nextPrevButtonsContainer.light>ul>li:first-child>a{
+	border-right:1px solid #768CA2;
 }
 
 #nextPrevButtonsContainer>ul>li:first-last>a{
@@ -524,11 +512,22 @@ main{
 	color:#FFF;
 }
 
+
+#nextPrevButtonsContainer.light>ul>li>a:hover{
+	background: #768CA2;
+	color:#1A1A1C;
+}
+
 #nextPrevButtonsContainer>ul>li>a:active{
 	background: #0A0A0C;
 	color:#FFF;
 }
 
+
+#nextPrevButtonsContainer.light>ul>li>a:active{
+	background: #768CA2;
+	color:#1A1A1C;
+}
 .container{
 	background: #FFF;
 	-webkit-box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.38);
@@ -1100,8 +1099,8 @@ footer>#copyright{
 
 .addCardsContainer {
 	text-align: center;
-	padding-top: 20px;
 	color: white;
+	margin-top: 100px;
 }
 
 .addCardsContainer>form>input[type=text] {
@@ -1115,36 +1114,43 @@ footer>#copyright{
 	width: 400px;
 }
 
-textarea {
-	white-space: normal;
-	text-align: justify;
-	-moz-text-align-last: center; /* Firefox 12+ */
-    text-align-last: center;
+textarea.card {
+    text-align: center;
 }
 
 /* CHANGE PLACEHOLDER TEXT COLOUR - for all browsers */
-.addCardsContainer>.card>::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: white;
+.card::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
   opacity: 0.4;
   text-align: center;
 }
-.addCardsContainer>.card>::-moz-placeholder { /* Firefox 19+ */
-  color: white;
+.card::-moz-placeholder { /* Firefox 19+ */
+  color: #fff;
   opacity: 0.4;
   text-align: center;
 }
-.addCardsContainer>.card>:-ms-input-placeholder { /* IE 10+ */
-  color: white;
+.card:-ms-input-placeholder { /* IE 10+ */
+  color: #fff;
   opacity: 0.4;
   text-align: center;
 }
-.addCardsContainer>.card>:-moz-placeholder { /* Firefox 18- */
-  color: white;
+.card:-moz-placeholder { /* Firefox 18- */
+  color: #fff;
   opacity: 0.4;
   text-align: center;
 }
 
-.addCardsContainer>.card>input[type="submit"] {
+/* Placeholder disappears when clicking on the textarea */
+.card:focus::-webkit-input-placeholder { color:transparent; }
+.card:focus:-moz-placeholder { color:transparent; } /* Firefox 18- */
+.card:focus::-moz-placeholder { color:transparent; } /* Firefox 19+ */
+.card:focus:-ms-input-placeholder { color:transparent; } /* oldIE ;) */
+
+.card {
+	padding-top: 100px;
+}
+
+#submitCards {
 	margin-top: 11px;
 	padding:11px;
 	background:#FF5B44;
@@ -1155,7 +1161,10 @@ textarea {
 	color:#FFF;
 }
 
-
+#addCardsContainer{
+	max-width: 960px;
+	margin:auto;
+}
 
 #submitCards:hover {
 	background: #DF3B24;

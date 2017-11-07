@@ -20,10 +20,8 @@
 
       $password = mysqli_real_escape_string($db, $_POST['password']);
       $password = htmlentities($password);
-      //    $password = sha1($_POST['password']);
+      $password = SHA1($password);
 
-
-      echo "select userId From Users Where username = '{$username}' AND password = '{$password}'";
 
       $stmt = $db->prepare("select * From Users Where username = '{$username}' AND password ='{$password}'");
       $stmt->bind_result($userId,$username,$password,$country);

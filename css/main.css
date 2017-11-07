@@ -573,6 +573,10 @@ main{
 	color:#3A3A3C;
 }
 
+.like-button.voted>i{
+	color:#3A3A3C;
+}
+
 .like-button>i{
 	font-size: 22px;
 	color:#AAA;
@@ -605,12 +609,12 @@ main{
 }
 
 .upvote-container>li:first-child>.like-button::before{
-	content:"downvote";
+	content:"upvote";
 	margin-left: -32px;
 }
 
 .upvote-container>li:last-child>.like-button::before{
-	content:"upvote";
+	content:"downvote";
 }
 
 .upvote-container>li>.like-button:hover::before,.upvote-container>li>.like-button:hover::after{
@@ -754,14 +758,14 @@ main{
 }
 
 /*Top cards*/
-#topListContainer>h1{
+#listContainer>h1{
 	color:#FFF;
 	text-shadow: none;
 	padding-top: 22px;
 	text-align: center;
 }
 
-#topList{
+#list{
 	margin: 22px auto;
 	text-align: left;
   border-collapse: collapse;
@@ -773,37 +777,46 @@ main{
 	resize:both;
 }
 
-#topList>tBody>tr{
+#list.commentTd{
+	table-layout: fixed;
+}
+
+#list>tBody>tr{
 	height: 44px;
 	background: #FFF;
 	width: 100%;
 	border: solid 1px #CCC;
 }
 
-#topList>tBody>tr>td:first-child,#topList>tBody>tr>th:first-child{
+td.commentTd{
+	overflow-x:scroll;
+	white-space: nowrap;
+}
+
+#list>tBody>tr>td:first-child,#list>tBody>tr>th:first-child{
 	padding-left: 11px;
 	box-sizing: border-box;
 }
 
 
-#topList>tBody>tr>td:last-child,#topList>tBody>tr>th:last-child{
+#list>tBody>tr>td:last-child,#list>tBody>tr>th:last-child{
 	padding-right: 11px;
 	box-sizing: border-box;
 }
 
-#topList>tBody>tr>td>a{
+#list>tBody>tr>td>a{
 	text-decoration: none;
 	color:#5B9276;
 	font-weight: 600;
 }
 
-#topList>tBody>tr>td>a:hover{
+#list>tBody>tr>td>a:hover{
 	text-decoration: none;
 	color:#7BB296;
 	font-weight: 600;
 }
 
-#topList>tBody>tr:nth-child(2n+2){
+#list>tBody>tr:nth-child(2n+2){
 	background: #EEE;
 }
 
@@ -946,16 +959,7 @@ main{
 	list-style: none;
 }
 
-main#userProfile>h1{
-	text-align: center;
-	color:#FFF;
-	font-size: 42px;
-	font-weight: 600;
-	text-shadow: 2px 2px 2px rgba(0,0,0,0.4);
-	margin:88px 0 44px 0;
-}
-
-main#logintoaddcards>h1{
+main>h1{
 	text-align: center;
 	color:#FFF;
 	font-size: 42px;
@@ -1036,7 +1040,7 @@ footer>#copyright{
 }
 
 @media(min-width:420px){
-	#topListContainer{
+	#listContainer{
 		padding:0 22px;
 		box-sizing: border-box;
 		max-width: 960px;
@@ -1044,7 +1048,7 @@ footer>#copyright{
 
 	}
 
-	#topList{
+	#list{
 		width: 100%;
 		margin: 22px 0;
 	}

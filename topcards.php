@@ -1,9 +1,9 @@
 <?php include "header.php" ?>
 
-<main id="topListContainer">
+<main id="listContainer">
 
 	<h1>Top 10</h1>
-	<table id="topList">
+	<table id="list">
 		<tr>
 			<th>Rank</th>
 			<th>Title</th>

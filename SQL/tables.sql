@@ -43,10 +43,10 @@ Create table Users(
 )engine = innodb;
 
 Insert into Users (username,password,countryId) values
-("jacobi94","asdf","1"/*Sweden*/),
-("draggen93","1234","1"/*Sweden*/),
-("emmereck","asdf","2"/*Norway*/),
-("mirre95","asdf","1"/*Sweden*/)
+("jacobi94","3da541559918a808c2402bba5012f6c60b27661c"/*asdf*/,"1"/*Sweden*/),
+("draggen93","7110eda4d09e062aa5e4a390b0a572ac0d2c0220"/*1234*/,"1"/*Sweden*/),
+("emmereck","3da541559918a808c2402bba5012f6c60b27661c"/*asdf*/,"2"/*Norway*/),
+("mirre95","3da541559918a808c2402bba5012f6c60b27661c"/*asdf*/,"1"/*Sweden*/)
 ;
 
 Create table Cards(
@@ -91,15 +91,11 @@ Insert into Cards (title,alt1,alt2,userId,categoryID) values
 Create table CardsUsersRating(
   cardId INT NOT NULL,
   userId INT NOT NULL,
-  ratingVote INT DEFAULT 0/*-1,0,1*/,
+  vote INT DEFAULT 0,
   Foreign Key(cardId) References Cards(cardId),
   Foreign Key(userId) References Users(userId),
   Primary Key(cardId,userId)
 )engine = innodb;
-
-Insert into CardsUsersRating(cardId,userId,ratingVote) values
-(1,1,1);
-
 
 /*
 Create table UserCards(
@@ -149,7 +145,7 @@ Insert into Admins (userId) values
 /*Here beneath lies examples of different SQL-selections*/
 
 /*Example how to select all the admins*/
-Create View ShowAdmins AS
+Create View AdminView AS
 Select Users.userId, Users.username, Users.password
 From Users
 Join Admins ON Admins.userId = Users.userId;
@@ -162,7 +158,7 @@ Join Countries ON Users.countryId = Countries.countryId;
 
 /*Example how you can select the info used for the comments on a specific card*/
 Create View CardComments AS
-Select Cards.title, Users.username, Countries.countryName, Comments.comment, Comments.dateAdded, Cards.cardId
+Select Cards.title, Users.username, Countries.countryName, Comments.comment, Comments.dateAdded, Cards.cardId, Comments.commentId
 from Cards
 Join Comments ON Cards.cardId = Comments.cardId
 Join Users ON Users.userId = Comments.userId

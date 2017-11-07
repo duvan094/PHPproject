@@ -1114,31 +1114,32 @@ footer>#copyright{
 	width: 400px;
 }
 
-textarea {
-	white-space: normal;
-	text-align: justify;
-	-moz-text-align-last: center; /* Firefox 12+ */
-    text-align-last: center;
+textarea.card {
+	//white-space: normal;
+	//text-align: justify;
+	//-moz-text-align-last: center; /* Firefox 12+ */
+    //text-align-last: center;
+    text-align: center;
 }
 
 /* CHANGE PLACEHOLDER TEXT COLOUR - for all browsers */
-.addCardsContainer>.card>::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: white;
+.card::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
   opacity: 0.4;
   text-align: center;
 }
-.addCardsContainer>.card>::-moz-placeholder { /* Firefox 19+ */
-  color: white;
+.card::-moz-placeholder { /* Firefox 19+ */
+  color: #fff;
   opacity: 0.4;
   text-align: center;
 }
-.addCardsContainer>.card>:-ms-input-placeholder { /* IE 10+ */
-  color: white;
+.card:-ms-input-placeholder { /* IE 10+ */
+  color: #fff;
   opacity: 0.4;
   text-align: center;
 }
-.addCardsContainer>.card>:-moz-placeholder { /* Firefox 18- */
-  color: white;
+.card:-moz-placeholder { /* Firefox 18- */
+  color: #fff;
   opacity: 0.4;
   text-align: center;
 }
@@ -1153,7 +1154,6 @@ textarea {
 	border: none;
 	color:#FFF;
 }
-
 
 
 .addCardsContainer>input[type="submit"]:hover {

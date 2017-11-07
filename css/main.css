@@ -1122,28 +1122,28 @@ textarea {
 }
 
 /* CHANGE PLACEHOLDER TEXT COLOUR - for all browsers */
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.addCardsContainer>.card>::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: white;
   opacity: 0.4;
   text-align: center;
 }
-::-moz-placeholder { /* Firefox 19+ */
+.addCardsContainer>.card>::-moz-placeholder { /* Firefox 19+ */
   color: white;
   opacity: 0.4;
   text-align: center;
 }
-:-ms-input-placeholder { /* IE 10+ */
+.addCardsContainer>.card>:-ms-input-placeholder { /* IE 10+ */
   color: white;
   opacity: 0.4;
   text-align: center;
 }
-:-moz-placeholder { /* Firefox 18- */
+.addCardsContainer>.card>:-moz-placeholder { /* Firefox 18- */
   color: white;
   opacity: 0.4;
   text-align: center;
 }
 
-.addCardsContainer>input[type="submit"] {
+.addCardsContainer>.card>input[type="submit"] {
 	margin-top: 11px;
 	padding:11px;
 	background:#FF5B44;

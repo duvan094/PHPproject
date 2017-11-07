@@ -21,8 +21,8 @@
           echo "<h3><br>Would you rather?</h3><br>";
 
           echo "<div class='card-container'>";
-            echo "<div><textarea class='card' type='text' name='alt1' placeholder='Alternative One...' maxlength='100'></textarea></div>";
-            echo "<div><textarea class='card' type='text' name='alt2' placeholder='Alternative Two...' maxlength='100'></textarea></div>";
+            echo "<div><textarea class='card' type='text' name='alt1' placeholder='Alternative One...' maxlength='80'></textarea></div>";
+            echo "<div><textarea class='card' type='text' name='alt2' placeholder='Alternative Two...' maxlength='80'></textarea></div>";
           echo "</div>";
 
           echo "<h3><br>Select category:</h3>";

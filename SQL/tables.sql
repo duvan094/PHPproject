@@ -145,7 +145,7 @@ Insert into Admins (userId) values
 /*Here beneath lies examples of different SQL-selections*/
 
 /*Example how to select all the admins*/
-Create View ShowAdmins AS
+Create View AdminView AS
 Select Users.userId, Users.username, Users.password
 From Users
 Join Admins ON Admins.userId = Users.userId;

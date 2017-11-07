@@ -758,14 +758,14 @@ main{
 }
 
 /*Top cards*/
-#topListContainer>h1{
+#listContainer>h1{
 	color:#FFF;
 	text-shadow: none;
 	padding-top: 22px;
 	text-align: center;
 }
 
-#topList{
+#list{
 	margin: 22px auto;
 	text-align: left;
   border-collapse: collapse;
@@ -777,37 +777,37 @@ main{
 	resize:both;
 }
 
-#topList>tBody>tr{
+#list>tBody>tr{
 	height: 44px;
 	background: #FFF;
 	width: 100%;
 	border: solid 1px #CCC;
 }
 
-#topList>tBody>tr>td:first-child,#topList>tBody>tr>th:first-child{
+#list>tBody>tr>td:first-child,#list>tBody>tr>th:first-child{
 	padding-left: 11px;
 	box-sizing: border-box;
 }
 
 
-#topList>tBody>tr>td:last-child,#topList>tBody>tr>th:last-child{
+#list>tBody>tr>td:last-child,#list>tBody>tr>th:last-child{
 	padding-right: 11px;
 	box-sizing: border-box;
 }
 
-#topList>tBody>tr>td>a{
+#list>tBody>tr>td>a{
 	text-decoration: none;
 	color:#5B9276;
 	font-weight: 600;
 }
 
-#topList>tBody>tr>td>a:hover{
+#list>tBody>tr>td>a:hover{
 	text-decoration: none;
 	color:#7BB296;
 	font-weight: 600;
 }
 
-#topList>tBody>tr:nth-child(2n+2){
+#list>tBody>tr:nth-child(2n+2){
 	background: #EEE;
 }
 
@@ -1040,7 +1040,7 @@ footer>#copyright{
 }
 
 @media(min-width:420px){
-	#topListContainer{
+	#listContainer{
 		padding:0 22px;
 		box-sizing: border-box;
 		max-width: 960px;
@@ -1048,7 +1048,7 @@ footer>#copyright{
 
 	}
 
-	#topList{
+	#list{
 		width: 100%;
 		margin: 22px 0;
 	}

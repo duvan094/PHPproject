@@ -39,7 +39,7 @@
 	    echo "<td>$title</td>";
 	    echo "<td>$username</td>";
 	    echo "<td>$dateAdded</td>";
-      echo "<td><a href='remove.php?cardId=$cardId'>Remove</a></td>";
+      echo "<td><a href='removeCards.php?cardId=$cardId'>Remove</a></td>";
 	  	echo "</tr>";
 		}
 		?>

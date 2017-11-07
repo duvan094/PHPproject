@@ -30,7 +30,7 @@
     $stmt = $db->prepare("Delete From Cards Where cardId=$cardId");
     $stmt->execute();
 
-    header("location:removeCards.php");
+    header("location:cards.php");
     exit;
 
 ?>

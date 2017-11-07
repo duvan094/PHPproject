@@ -959,16 +959,7 @@ td.commentTd{
 	list-style: none;
 }
 
-main#userProfile>h1{
-	text-align: center;
-	color:#FFF;
-	font-size: 42px;
-	font-weight: 600;
-	text-shadow: 2px 2px 2px rgba(0,0,0,0.4);
-	margin:88px 0 44px 0;
-}
-
-main#logintoaddcards>h1{
+main>h1{
 	text-align: center;
 	color:#FFF;
 	font-size: 42px;

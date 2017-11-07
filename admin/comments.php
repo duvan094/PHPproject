@@ -11,7 +11,7 @@
 	<h1>Remove Comments</h1>
 	<table id="list" class="commentTd">
 		<tr>
-			<th>ID</th>
+			<th>CardID</th>
 			<th>Title</th>
 			<th>Username</th>
       <th>Comment</th>

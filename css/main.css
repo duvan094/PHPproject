@@ -609,12 +609,12 @@ main{
 }
 
 .upvote-container>li:first-child>.like-button::before{
-	content:"downvote";
+	content:"upvote";
 	margin-left: -32px;
 }
 
 .upvote-container>li:last-child>.like-button::before{
-	content:"upvote";
+	content:"downvote";
 }
 
 .upvote-container>li>.like-button:hover::before,.upvote-container>li>.like-button:hover::after{
@@ -782,6 +782,10 @@ main{
 	background: #FFF;
 	width: 100%;
 	border: solid 1px #CCC;
+}
+
+#list>tBody>tr>td{
+/*	overflow-x:scroll; */
 }
 
 #list>tBody>tr>td:first-child,#list>tBody>tr>th:first-child{

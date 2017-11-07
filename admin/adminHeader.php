@@ -29,6 +29,7 @@
             echo "<ul>";
             echo "<li><a href='logout.php'>Log&nbsp;Out</a></li>";
             echo "<li><a class='" . ($current_page == 'removeCards.php' ? 'active' : NULL) . "' href='removeCards.php'>Remove&nbsp;Cards</a></li>";
+            echo "<li><a class='" . ($current_page == 'removeComments.php' ? 'active' : NULL) . "' href='removeComments.php'>Remove&nbsp;Comments</a></li>";
             echo "</ul>";
         ?>
 

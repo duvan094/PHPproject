@@ -1155,6 +1155,10 @@ textarea.card {
 	color:#FFF;
 }
 
+#addCardsContainer{
+	max-width: 960px;
+	margin:auto;
+}
 
 .addCardsContainer>input[type="submit"]:hover {
 	background: #DF3B24;

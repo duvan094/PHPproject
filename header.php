@@ -106,3 +106,5 @@ if ($_SESSION['userip'] !== $_SERVER['REMOTE_ADDR']){
               document.querySelector("#hamburgerButton").classList.toggle("clicked");
       }, false);
     </script>
+    <!-- Cookie disclaimer bar -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?theme=grey"></script>

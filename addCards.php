@@ -1,6 +1,6 @@
 <?php include "header.php" ?>
 
-<main id="logintoaddcards">
+<main id="addCardsContainer">
 
   <?php
     if(!isset($_SESSION['username'])) {//Only include loginModule if logged in.
@@ -15,7 +15,7 @@
 
         echo "<h3>Title:</h3>";
 
-        //FORM START - title, alternative x2, categories, submit button 
+        //FORM START - title, alternative x2, categories, submit button
         echo "<form action='' method='post'> <input type='text' name='title' maxlength='30'>";
 
           echo "<h3><br>Would you rather?</h3>";
@@ -59,7 +59,7 @@
     }
 
     if(isset($_POST['title']) && isset($_POST['alt1']) && isset($_POST["alt2"]) && $_POST['categorySelect'] !== ""){
-      
+
       include "config.php";
 
       @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);

@@ -10,7 +10,7 @@
 	    if ($db->connect_error) {
 	        echo "could not connect: " . $db->connect_error;
 	        printf("<br><a href=index.php>Return to home page </a>");
-	       exit();
+          exit();
 	    }
 
 
@@ -28,9 +28,6 @@
          
         $stmt = $db->prepare($query);
         $stmt->execute();
-
-        echo "Sign Up Successful";
-        printf("<br><a href=index.php>Return to home page </a>");
   
 
     @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -49,7 +46,6 @@
       $stmt->execute();
 
       $stmt->fetch();
-
 
       session_start();
       $_SESSION['username'] = $username;

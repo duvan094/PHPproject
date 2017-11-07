@@ -1166,7 +1166,7 @@ textarea.card {
 	margin:auto;
 }
 
-.addCardsContainer>input[type="submit"]:hover {
+#submitCards:hover {
 	background: #DF3B24;
 	cursor:pointer;
 }

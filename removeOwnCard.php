@@ -23,10 +23,10 @@
         exit();
     }
 
-    $stmt = $db->prepare("Delete From Cards Where cardId=$cardId");
+    $stmt = $db->prepare("DELETE FROM Cards WHERE cardId=$cardId");
     $stmt->execute();
 
-    header("location: profile.php");
+    header("location: profile.php?");
     exit;
 
 ?>

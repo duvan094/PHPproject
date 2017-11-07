@@ -45,7 +45,8 @@
 		        echo "<div><input type='submit' name='altClicked' value='{$alt1}'></div>";
 		        echo "<div><input type='submit' name='altClicked' value='{$alt2}'></div>";
 		        echo "</form>";
-				echo "<a href='removeOwnCard.php?cardId=$cardId'>Remove</a>";
+				echo "<a href='removeOwnCard.php?cardId=$cardId'>Delete Card</a>";
+				//echo "<form action='removeOwnCard.php?cardId=$cardId' method='POST'><input id='deleteCard' type='submit' name='submit' value='Delete Card'></form>";
 		        echo  "<p class='textWithLink'><a class='cardLinkTitle' href='index.php?cardId=$cardId'>$title</a>, <a href='searchResults.php?category=$categoryName'>$categoryName</a><br>Made by <i class='fa fa-user' aria-hidden='true'></i> <a href='profile.php?username=$username'>$username</a>, $dateAdded, <b>$countryName.</b></p>";
 		        echo "</li>";
 

@@ -30,7 +30,7 @@ Create table Categories(
 )engine = innodb;
 
 Insert into Categories (categoryName) values
-("None"),("Adult"),("Serious"),("Friends & Family"),("Casual"),("Mixed"),("Dark"),("Party"),("Other")
+("Other"),("Adult"),("Serious"),("Friends & Family"),("Casual"),("Mixed"),("Dark"),("Party")
 ;
 
 Create table Users(
@@ -91,15 +91,11 @@ Insert into Cards (title,alt1,alt2,userId,categoryID) values
 Create table CardsUsersRating(
   cardId INT NOT NULL,
   userId INT NOT NULL,
-  ratingVote INT DEFAULT 0/*-1,0,1*/,
+  vote INT DEFAULT 0,
   Foreign Key(cardId) References Cards(cardId),
   Foreign Key(userId) References Users(userId),
   Primary Key(cardId,userId)
 )engine = innodb;
-
-Insert into CardsUsersRating(cardId,userId,ratingVote) values
-(1,1,1);
-
 
 /*
 Create table UserCards(

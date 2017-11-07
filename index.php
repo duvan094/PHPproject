@@ -170,19 +170,54 @@
 
         $cardId = $_GET['cardId'];
         $userId = $_SESSION['userId'];
-        $query = "";
 
-        if($_POST['vote'] == "upvote"){
-          $query = ("Update Cards SET rating = rating + 1 WHERE cardId={$cardId}");
-          $rating++;
-        }else if($_POST['vote'] == "downvote"){
-          $query = ("Update Cards SET rating = rating - 1 WHERE cardId={$cardId}");
-          $rating--;
-        }
-
+        /*Check if user exists in the CardsUsersRating table, which means they already voted*/
+        $query = "Select * From CardsUsersRating Where cardId ={$cardId} AND userId={$userId}";
         $stmt = $db->prepare($query);
         $stmt->execute();
+        $stmt->store_result();
 
+        if($stmt->num_rows() != 1){
+
+          /*Check for connection error*/
+          if ($db->connect_error) {
+            echo "could not connect: " . $db->connect_error;
+            printf("<br><a href=index.php>Return to home page </a>");
+            exit();
+          }
+
+          $cardId = $_GET['cardId'];
+          $userId = $_SESSION['userId'];
+          $query = "";
+
+          /*Add the vote to the Card rating*/
+          if($_POST['vote'] == "upvote"){
+            $query = ("Update Cards SET rating = rating + 1 WHERE cardId={$cardId}");
+            $rating++;
+            $vote = 1;
+          }else if($_POST['vote'] == "downvote"){
+            $query = ("Update Cards SET rating = rating - 1 WHERE cardId={$cardId}");
+            $rating--;
+            $vote = -1;
+          }
+
+          $stmt = $db->prepare($query);
+          $stmt->execute();
+
+          $voted = $vote;
+
+          /*Save that the user has voted a specific alternative*/
+          if ($db->connect_error) {
+            echo "could not connect: " . $db->connect_error;
+            printf("<br><a href=index.php>Return to home page </a>");
+            exit();
+          }
+
+          $query = "Insert INTO CardsUsersRating(cardId,userId,vote) values({$cardId},{$userId},{$vote})";
+          $stmt = $db->prepare($query);
+          $stmt->execute();
+
+        }
       }
     ?>
 
@@ -197,9 +232,9 @@
   ?>
   <?php
     echo "<ul class='upvote-container'>";
-    echo "<li><button type='submit' form='downvoteForm' class='like-button'><i class='fa fa-thumbs-down' aria-hidden='true'></i></button></li>";
+    echo "<li><button class='like-button' type='submit' form='downvoteForm'><i class='fa fa-thumbs-down' aria-hidden='true'></i></button></li>";
     echo "<li><p>$rating</p></li>";
-    echo "<li><button type='submit' form='upvoteForm' class='like-button'><i class='fa fa-thumbs-up' aria-hidden='true'></i></button></li>";
+    echo "<li><button class='like-button' type='submit' form='upvoteForm'><i class='fa fa-thumbs-up' aria-hidden='true'></i></button></li>";
     echo  "</ul>";
     echo  "<p class='textWithLink'><a class='cardLinkTitle' href='index.php?cardId=$cardId'>$title</a>, <a href='searchResults.php?category=$categoryName'>$categoryName</a><br>Made by <i class='fa fa-user' aria-hidden='true'></i> <a href='profile.php?username=$username'>$username</a>, $dateAdded, <b>$countryName</b>.</p>";
 

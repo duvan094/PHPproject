@@ -573,6 +573,10 @@ main{
 	color:#3A3A3C;
 }
 
+.like-button.voted>i{
+	color:#3A3A3C;
+}
+
 .like-button>i{
 	font-size: 22px;
 	color:#AAA;

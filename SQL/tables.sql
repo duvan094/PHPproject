@@ -30,7 +30,7 @@ Create table Categories(
 )engine = innodb;
 
 Insert into Categories (categoryName) values
-("Other"),("Adult"),("Serious"),("Friends & Family"),("Casual"),("Mixed"),("Dark"),("Party")
+("Other"),("Adult"),("Serious"),("Friends and Family"),("Casual"),("Mixed"),("Dark"),("Party")
 ;
 
 Create table Users(
@@ -47,6 +47,7 @@ Insert into Users (username,password,countryId) values
 ("draggen93","7110eda4d09e062aa5e4a390b0a572ac0d2c0220"/*1234*/,"1"/*Sweden*/),
 ("emmereck","3da541559918a808c2402bba5012f6c60b27661c"/*asdf*/,"2"/*Norway*/),
 ("mirre95","3da541559918a808c2402bba5012f6c60b27661c"/*asdf*/,"1"/*Sweden*/)
+("partypooper","6b796500ce69a53b4b7ab3d05c3266df8270a209"/*baloney*/,"1"/*Sweden*/)
 ;
 
 Create table Cards(

@@ -796,14 +796,11 @@ main{
 	border: solid 1px #CCC;
 }
 
-<<<<<<< HEAD
-=======
 td.commentTd{
 	overflow-x:scroll;
 	white-space: nowrap;
 }
 
->>>>>>> 9747f9f29496f2c4a9672ce384fa76fdfb152ebf
 #list>tBody>tr>td:first-child,#list>tBody>tr>th:first-child{
 	padding-left: 11px;
 	box-sizing: border-box;

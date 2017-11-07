@@ -43,10 +43,10 @@ Create table Users(
 )engine = innodb;
 
 Insert into Users (username,password,countryId) values
-("jacobi94","asdf","1"/*Sweden*/),
-("draggen93","1234","1"/*Sweden*/),
-("emmereck","asdf","2"/*Norway*/),
-("mirre95","asdf","1"/*Sweden*/)
+("jacobi94","3da541559918a808c2402bba5012f6c60b27661c"/*asdf*/,"1"/*Sweden*/),
+("draggen93","7110eda4d09e062aa5e4a390b0a572ac0d2c0220"/*1234*/,"1"/*Sweden*/),
+("emmereck","3da541559918a808c2402bba5012f6c60b27661c"/*asdf*/,"2"/*Norway*/),
+("mirre95","3da541559918a808c2402bba5012f6c60b27661c"/*asdf*/,"1"/*Sweden*/)
 ;
 
 Create table Cards(

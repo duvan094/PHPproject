@@ -6,7 +6,8 @@
       $_SESSION['cardsClicked'] = array();
   }
 ?>
-
+<!-- Cookie disclaimer bar -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?theme=grey"></script>
 
 <main>
   <?php include "functions/displayCard.php" ?>

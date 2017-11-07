@@ -19,7 +19,7 @@ body {
 }
 
 body.light{
-	background: #7F7F7F;
+	background: #768CA2;
 }
 
 /*Hamburger menu*/
@@ -164,7 +164,7 @@ nav>.navWrapper{
 }
 
 nav.light{
-	background: #7F7F7F;
+	background: #768CA2;
 }
 
 #searchBar{
@@ -457,7 +457,7 @@ main{
 }
 
 #nextPrevButtonsContainer.light{
-	background: #C2C2C2;
+	background: #94aec7;
 }
 
 #nextPrevButtonsContainer>ul{
@@ -491,7 +491,7 @@ main{
 
 
 #nextPrevButtonsContainer.light>ul>li>a{
-	background: #C2C2C2;
+	background: #94aec7;
 	color:#1A1A1C;
 }
 
@@ -500,7 +500,7 @@ main{
 }
 
 #nextPrevButtonsContainer.light>ul>li:first-child>a{
-	border-right:1px solid #7F7F7F;
+	border-right:1px solid #768CA2;
 }
 
 #nextPrevButtonsContainer>ul>li:first-last>a{
@@ -514,7 +514,7 @@ main{
 
 
 #nextPrevButtonsContainer.light>ul>li>a:hover{
-	background: #7F7F7F;
+	background: #768CA2;
 	color:#1A1A1C;
 }
 
@@ -525,7 +525,7 @@ main{
 
 
 #nextPrevButtonsContainer.light>ul>li>a:active{
-	background: #7F7F7F;
+	background: #768CA2;
 	color:#1A1A1C;
 }
 .container{
@@ -609,12 +609,20 @@ main{
 }
 
 .upvote-container>li:first-child>.like-button::before{
-	content:"upvote";
+	content:"downvote";
 	margin-left: -32px;
 }
 
 .upvote-container>li:last-child>.like-button::before{
-	content:"downvote";
+	content:"upvote";
+}
+/* Hover color for the like button */
+.upvote-container>li:first-child>.like-button:hover>i{
+	color:#7BB296;
+}
+/* Hover color for the dislike button */
+.upvote-container>li:last-child>.like-button:hover>i{
+	color:#FF5B44;
 }
 
 .upvote-container>li>.like-button:hover::before,.upvote-container>li>.like-button:hover::after{
@@ -782,10 +790,6 @@ main{
 	background: #FFF;
 	width: 100%;
 	border: solid 1px #CCC;
-}
-
-#list>tBody>tr>td{
-/*	overflow-x:scroll; */
 }
 
 #list>tBody>tr>td:first-child,#list>tBody>tr>th:first-child{

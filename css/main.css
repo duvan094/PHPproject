@@ -1099,8 +1099,8 @@ footer>#copyright{
 
 .addCardsContainer {
 	text-align: center;
-	padding-top: 20px;
 	color: white;
+	margin-top: 100px;
 }
 
 .addCardsContainer>form>input[type=text] {
@@ -1115,10 +1115,6 @@ footer>#copyright{
 }
 
 textarea.card {
-	//white-space: normal;
-	//text-align: justify;
-	//-moz-text-align-last: center; /* Firefox 12+ */
-    //text-align-last: center;
     text-align: center;
 }
 
@@ -1144,7 +1140,17 @@ textarea.card {
   text-align: center;
 }
 
-.addCardsContainer>.card>input[type="submit"] {
+/* Placeholder disappears when clicking on the textarea */
+.card:focus::-webkit-input-placeholder { color:transparent; }
+.card:focus:-moz-placeholder { color:transparent; } /* Firefox 18- */
+.card:focus::-moz-placeholder { color:transparent; } /* Firefox 19+ */
+.card:focus:-ms-input-placeholder { color:transparent; } /* oldIE ;) */
+
+.card {
+	padding-top: 100px;
+}
+
+#submitCards {
 	margin-top: 11px;
 	padding:11px;
 	background:#FF5B44;
@@ -1160,7 +1166,7 @@ textarea.card {
 	margin:auto;
 }
 
-.addCardsContainer>input[type="submit"]:hover {
+#submitCards:hover {
 	background: #DF3B24;
 	cursor:pointer;
 }

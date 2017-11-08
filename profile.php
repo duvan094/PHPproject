@@ -38,18 +38,21 @@
 
 					echo "<h1>" . $username . "</h1>";
 					echo "<ul>";
-
 					while($stmt->fetch()){
 						echo "<li>";
 		        echo "<form class='card-container' action='index.php?cardId={$cardId}' method='post'>";
 		        echo "<div><input type='submit' name='altClicked' value='{$alt1}'></div>";
 		        echo "<div><input type='submit' name='altClicked' value='{$alt2}'></div>";
 		        echo "</form>";
-				echo "<ul id='deleteCard'>
-						<li>
-							<a href='removeOwnCard.php?cardId=$cardId'>Delete Card</a>
-						</li>
-					</ul>";
+						if(isset($_SESSION['username'])){//Check if session is set
+							if($_SESSION['username'] == $_GET['username']){//Check if the user is at their profile page.
+								echo "<ul id='deleteCard'>
+												<li>
+													<a href='removeOwnCard.php?cardId=$cardId'>Delete Card</a>
+												</li>
+											</ul>";
+								}
+						}
 				//echo "<form action='removeOwnCard.php?cardId=$cardId' method='POST'><input id='deleteCard' type='submit' name='submit' value='Delete Card'></form>";
 		        echo  "<p class='textWithLink'><a class='cardLinkTitle' href='index.php?cardId=$cardId'>$title</a>, <a href='searchResults.php?category=$categoryName'>$categoryName</a><br>Made by <i class='fa fa-user' aria-hidden='true'></i> <a href='profile.php?username=$username'>$username</a>, $dateAdded, <b>$countryName.</b></p>";
 		        echo "</li>";

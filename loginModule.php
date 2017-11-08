@@ -13,7 +13,6 @@
 
     if (isset($_POST['username'], $_POST['password'])) {
 
-
       $username = mysqli_real_escape_string($db, $_POST['username']);
       //Make everything you write into a string... Can't change code with html entitites. Same for password.
       $username = htmlentities($username);
@@ -111,14 +110,6 @@
 
 
 <script>
-
-  /*
-  //Don't reload the page when clicking submit.
-  document.getElementById("loginSubmit").addEventListener("click", function(event) {
-    event.preventDefault();
-  });
-  */
-
 
   //Makes it possible to close the modal by clicking on the transparent area.
   document.querySelector("#signupWrapper").addEventListener("click", function(event){

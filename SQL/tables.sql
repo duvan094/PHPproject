@@ -99,16 +99,6 @@ Create table CardsUsersRating(
   Primary Key(cardId,userId)
 )engine = innodb;
 
-/*
-Create table UserCards(
-  cardId INT NOT NULL,
-  userId INT NOT NULL,
-  Foreign Key (cardId) References Cards(cardId),
-  Foreign Key (userId) References Users(userId),
-  Primary Key(cardId,userId)
-)engine = innodb;
-*/
-
 Create table Comments(
   commentId INT NOT NULL AUTO_INCREMENT,
   cardId INT NOT NULL,

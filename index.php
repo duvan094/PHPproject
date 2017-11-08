@@ -1,8 +1,10 @@
 <?php
   include "header.php";
-  $cardIdGlobal = "";
 
-  if (isset($_SESSION['cardsClicked']) === false){//Creates an empty array
+  $cardIdGlobal = "";//A variable to keep track on which card is currently displayed
+
+  /*Create an array to keep track on which cards has been clicked*/
+  if (isset($_SESSION['cardsClicked']) === false){
       $_SESSION['cardsClicked'] = array();
   }
 ?>

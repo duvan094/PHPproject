@@ -1,5 +1,5 @@
 <?php
-  /*Connect to the database to insert the comment*/
+  /*Check if vote button is pressed and user is logged in.*/
   if (isset($_POST['vote']) && isset($_SESSION['userId'])) {
     @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 

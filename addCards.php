@@ -3,9 +3,8 @@
 <main id="addCardsContainer">
 
   <?php
-    if(!isset($_SESSION['username'])) {//Only include loginModule if logged in.
+    if(!isset($_SESSION['username'])) {//Check if logged in
       echo "<h1>You have to Log in to create cards</h1>";
-
     } else {
 
       echo "<div class='addCardsContainer'>";

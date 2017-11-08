@@ -13,7 +13,7 @@
         exit();
     }
 
-    $stmt = $db->prepare("Delete From Comments Where cardId=$cardId");
+    $stmt = $db->prepare("DELETE FROM Comments WHERE cardId=$cardId");
     $stmt->execute();
 
 
@@ -26,7 +26,7 @@
     $stmt = $db->prepare("DELETE FROM Cards WHERE cardId=$cardId");
     $stmt->execute();
 
-    header("location: profile.php?username=$_SESSION['username']");
+    header("location: profile.php");
     exit;
 
 ?>

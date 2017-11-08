@@ -1171,6 +1171,33 @@ textarea.card {
 	cursor:pointer;
 }
 
+#deleteCard>p{
+	color:#000;
+	font-size: 16px;
+	font-weight: 400;
+	margin:5px;
+}
+
+#deleteCard>li{
+	float:right;
+	list-style-type: none;
+}
+
+#deleteCard>li>a{
+	text-decoration: none;
+	color:#FFF;
+	display: block;
+	padding:5px 8px;
+	background:#7BB296;
+	margin:5px;
+	border-radius: 2px;
+	font-size: 14px;
+}
+
+#deleteCard>li>a:hover{
+	background:#5B9276;
+}
+
 /*ADD CARDS END*/
 
 

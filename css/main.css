@@ -1188,14 +1188,22 @@ textarea.card {
 	color:#FFF;
 	display: block;
 	padding:5px 8px;
-	background:#7BB296;
+	background:#CF3B24;
 	margin:5px;
 	border-radius: 2px;
-	font-size: 14px;
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 400;
+}
+
+
+#deleteCard>li>a>i{
+	font-size: 16px;
+	line-height: 16px;
 }
 
 #deleteCard>li>a:hover{
-	background:#5B9276;
+	background:#BF2B14;
 }
 
 /*ADD CARDS END*/

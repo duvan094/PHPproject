@@ -48,7 +48,7 @@
 							if($_SESSION['username'] == $_GET['username']){//Check if the user is at their profile page.
 								echo "<ul id='deleteCard'>
 												<li>
-													<a href='removeOwnCard.php?cardId=$cardId'>Delete Card</a>
+													<a href='removeOwnCard.php?cardId=$cardId'><i class='fa fa-trash-o' aria-hidden='true'></i> Delete Card</a>
 												</li>
 											</ul>";
 								}

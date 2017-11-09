@@ -69,24 +69,26 @@ Create table Cards(
 
 
 Insert into Cards (title,alt1,alt2,userId,categoryID) values
-("Naughty Hitler","Kill Hitler","Slap Hitler",1,5),
-("Fruity Dilemmas","Eat a Fruit","Don&#39;t",1,5),
+("Naughty Hitler","Kill Hitler","Slap Hitler",1,4),
+("Fruity Dilemmas","Eat a Fruit","Don&#39;t",1,1),
 ("Drink Preference","Beer","Wine",1,5),
-("Love Hurts","Loved and lost","Never loved at all",1,5),
-("Easy Choices","Be a Nickleback fan","Die an early death",1,5),
-("Math is hard","Get $100 today","Get $1 a day for 200 days",1,5),
-("Project Management","Be a project Manager","Be a project Owner",1,5),
-("Banana Phone","Live without a phone","Live without genitals",2,5),
-("Time Travel","Live 500 years ago","Live 500 years in the future",2,5),
-("Useless Superpowes?","Be able to smell like anything","Make someone sneeze",3,5),
-("The Cake Is A Lie","Sit on a cake and eat dick","Sit on a dick and eat cake",4,2),
-("9/11 or Harambe","Revive Harambe","Prevent 9/11",4,7),
-("Trust Fall","Fail to save someone during a trust fall","Have someone fail to save you during a trust fall",4,7),
-("Alcoholic Dilemmas","RedBull Vodka","Gin & Tonic",4,8),
-("Deadly Knowledge","Know how you will die","Know when you will die",4,8),
-("Tequila or Lonliness","Tequila Shots at 2 AM","Go home alone",4,8),
-("Mexican or Russian","Tequila without salt & lemon","Just Vodka",4,8),
-("Awkward or Sad","Bring a girl to a boys night","Go to the movies alone",4,8)
+("Love Hurts","Loved and lost","Never loved at all",1,3),
+("Easy Choices","Be a Nickleback fan","Die an early death",1,4),
+("Math is hard","Get $100 today","Get $1 a day for 200 days",1,3),
+("Project Management","Be a project Manager","Be a project Owner",1,1),
+("Banana Phone","Live without a phone","Live without genitals",2,1),
+("Time Travel","Live 500 years ago","Live 500 years in the future",2,3),
+("Useless Superpowes?","Be able to smell like anything","Make someone sneeze",3,3),
+("The Cake Is A Lie","Sit on a cake and eat dick","Sit on a dick and eat cake",4,5),
+("9/11 or Harambe","Revive Harambe","Prevent 9/11",4,4),
+("Alcoholic Dilemmas","RedBull Vodka","Gin & Tonic",4,5),
+("Deadly Knowledge","Know how you will die","Know when you will die",4,4),
+("Tequila or Lonliness","Tequila Shots at 2 AM","Go home alone",4,5),
+("Mexican or Russian","Tequila without salt & lemon","Just Vodka",4,5),
+("A Cup Of What","Coffee","Tea",4,5),
+("Superpower","Never need to sleep","Be able to teleport",4,1),
+("Pick Your Poison","Explode","Implode",1,4),
+("Movie Night","Lord of the Rings","Harry Potter",4,5),
 ;
 
 /*A table to keep track on which card a user has voted for.*/

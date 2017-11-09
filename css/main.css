@@ -423,10 +423,6 @@ main{
 	color:rgba(255,255,255,0.8);
 }
 
-.card {
-	height: 250px;
-}
-
 .card-container>div:first-child>input[type=submit], .card-container>div:first-child>textarea, .card-container>div:first-child>div{
 	background: #7BB296;
 }
@@ -1047,53 +1043,6 @@ footer>#copyright{
 	background: #5B9276;
 }
 
-@media(min-width:420px){
-	#listContainer{
-		padding:0 22px;
-		box-sizing: border-box;
-		max-width: 960px;
-		margin:66px auto;
-
-	}
-
-	#list{
-		width: 100%;
-		margin: 22px 0;
-	}
-
-	.card-container>li,.card-container>div{
-		float:left;
-		width:50%;
-	}
-
-	.card-container>div>input[type=submit],.card-container>div>div{
-		height:300px;
-	}
-
-	nav>div>ul>li>a,#toggleBtn>input{
-			text-align: center;
-	}
-
-	#searchBarLarge>input[type=text]{
-		width:340px;
-	}
-
-	.card-container>div>div>h3{
-		font-size: 62px;
-		margin-top: 44px;
-	}
-
-	.card-container>div>div>h5{
-		margin-top: 11px;
-		font-size: 18px
-	}
-
-	.card-container>div>div>p{
-		font-size: 18px;
-	}
-
-}
-
 
 /*ADD CARDS*/
 
@@ -1101,6 +1050,8 @@ footer>#copyright{
 	text-align: center;
 	color: white;
 	margin-top: 100px;
+	padding:5px;
+	box-sizing: border-box;
 }
 
 .addCardsContainer>form>input[type=text] {
@@ -1110,12 +1061,14 @@ footer>#copyright{
 	background: #3A3A3C;
 	font-size: 14px;
 	line-height: 18px;
-	width: 400px;
-	color: #FFF
+	width: 100%;
+	color: #FFF;
+	box-sizing: border-box;
 }
 
 textarea.card {
     text-align: center;
+		display: block;
 }
 
 /* CHANGE PLACEHOLDER TEXT COLOUR - for all browsers */
@@ -1147,7 +1100,7 @@ textarea.card {
 .card:focus:-ms-input-placeholder { color:transparent; } /* oldIE ;) */
 
 .card {
-	padding-top: 100px;
+	padding-top: 50px;
 }
 
 #submitCards {
@@ -1213,6 +1166,64 @@ textarea.card {
 
 /*ADD CARDS END*/
 
+
+
+@media(min-width:420px){
+	#listContainer{
+		padding:0 22px;
+		box-sizing: border-box;
+		max-width: 960px;
+		margin:66px auto;
+
+	}
+
+	#list{
+		width: 100%;
+		margin: 22px 0;
+	}
+
+	.card-container>li,.card-container>div{
+		float:left;
+		width:50%;
+	}
+
+	.card-container>div>input[type=submit],.card-container>div>div{
+		height:300px;
+	}
+
+	.card {
+		height: 250px;
+		padding-top: 100px;
+	}
+
+	.addCardsContainer>form>input[type=text] {
+		width: 400px;
+	}
+
+
+	nav>div>ul>li>a,#toggleBtn>input{
+			text-align: center;
+	}
+
+	#searchBarLarge>input[type=text]{
+		width:340px;
+	}
+
+	.card-container>div>div>h3{
+		font-size: 62px;
+		margin-top: 44px;
+	}
+
+	.card-container>div>div>h5{
+		margin-top: 11px;
+		font-size: 18px
+	}
+
+	.card-container>div>div>p{
+		font-size: 18px;
+	}
+
+}
 
 @media(min-width:835px){
 

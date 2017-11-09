@@ -21,11 +21,41 @@
     echo "<div id='nextPrevButtonsContainer'>";
   }
   ?>
+  <?php
+    echo "<ul>";
 
-    <ul>
-      <li><a href="index.php?cardId=<?php echo $cardId-1;?>">Previous Question</a></li>
-      <li><a href="index.php?cardId=<?php echo $cardId+1;?>">Next Question</a></li>
-    </ul>
+    @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+    /*Check for connection error*/
+    if ($db->connect_error) {
+      echo "could not connect: " . $db->connect_error;
+      printf("<br><a href=index.php>Return to home page </a>");
+      exit();
+    }
+
+    $query = "select cardId AS previousCard from Cards Where cardId < {$cardId} Order by cardId DESC limit 1";
+    $stmt = $db->prepare($query);
+    $stmt->bind_result($previousCard);
+    $stmt->execute();
+    $stmt->fetch();
+    echo "<li><a href='index.php?cardId={$previousCard}'>Previous Question</a></li>";
+
+    @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+    /*Check for connection error*/
+    if ($db->connect_error) {
+      echo "could not connect: " . $db->connect_error;
+      printf("<br><a href=index.php>Return to home page </a>");
+      exit();
+    }
+    $query = "select cardId AS nextCard from Cards Where cardId > {$cardId} Order by cardId ASC limit 1";
+    $stmt = $db->prepare($query);
+    $stmt->bind_result($nextCard);
+    $stmt->execute();
+    $stmt->fetch();
+    echo "<li><a href='index.php?cardId={$nextCard}'>Next Question</a></li>";
+    echo "</ul>";
+  ?>
   </div>
   <div class="container">
      <div><!-- a wrapper -->

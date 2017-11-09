@@ -1,7 +1,7 @@
-# PHPproject
+# PHP project
 This is our project for the course Applied Web Architechture. We are doing our own version of the party game *Would You Rather*. 
 
-**Installation**
+## Installation
 
 To run the project it must be run on a server. When creating the database it should be named '*wouldYouRatherDB*' in PHPmyAdmin.
 To access PHPmyAdmin us the username 'root' and password '' (Though these should be changed to something more secure).

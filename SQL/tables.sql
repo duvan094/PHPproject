@@ -88,7 +88,7 @@ Insert into Cards (title,alt1,alt2,userId,categoryID) values
 ("A Cup Of What","Coffee","Tea",4,5),
 ("Superpower","Never need to sleep","Be able to teleport",4,1),
 ("Pick Your Poison","Explode","Implode",1,4),
-("Movie Night","Lord of the Rings","Harry Potter",4,5),
+("Movie Night","Lord of the Rings","Harry Potter",4,5)
 ;
 
 /*A table to keep track on which card a user has voted for.*/

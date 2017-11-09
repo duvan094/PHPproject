@@ -19,7 +19,7 @@ body {
 }
 
 body.light{
-	background: #768CA2;
+	background: #474C57;
 }
 
 /*Hamburger menu*/
@@ -164,7 +164,7 @@ nav>.navWrapper{
 }
 
 nav.light{
-	background: #768CA2;
+	background: #474C57;
 }
 
 #searchBar{
@@ -457,7 +457,7 @@ main{
 }
 
 #nextPrevButtonsContainer.light{
-	background: #94aec7;
+	background: #363636;
 }
 
 #nextPrevButtonsContainer>ul{
@@ -491,8 +491,8 @@ main{
 
 
 #nextPrevButtonsContainer.light>ul>li>a{
-	background: #94aec7;
-	color:#1A1A1C;
+	background: #363636;
+
 }
 
 #nextPrevButtonsContainer>ul>li:first-child>a{
@@ -500,7 +500,7 @@ main{
 }
 
 #nextPrevButtonsContainer.light>ul>li:first-child>a{
-	border-right:1px solid #768CA2;
+	border-right:1px solid #474C57;
 }
 
 #nextPrevButtonsContainer>ul>li:first-last>a{
@@ -514,8 +514,8 @@ main{
 
 
 #nextPrevButtonsContainer.light>ul>li>a:hover{
-	background: #768CA2;
-	color:#1A1A1C;
+	background: #474C57;
+	color:#EFF5FD;
 }
 
 #nextPrevButtonsContainer>ul>li>a:active{
@@ -525,8 +525,8 @@ main{
 
 
 #nextPrevButtonsContainer.light>ul>li>a:active{
-	background: #768CA2;
-	color:#1A1A1C;
+	background: #474C57;
+	color:#EFF5FD;
 }
 .container{
 	background: #FFF;
@@ -1104,11 +1104,10 @@ footer>#copyright{
 }
 
 .addCardsContainer>form>input[type=text] {
-	border: #1A1A1c 1px solid;
-	border-radius: 5px;
+	border: none;
 	padding: 11px 11px;
 	margin-right: 5px;
-	background: #4A4A4c;
+	background: #3A3A3C;
 	font-size: 14px;
 	line-height: 18px;
 	width: 400px;

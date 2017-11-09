@@ -30,7 +30,7 @@ Create table Categories(
 )engine = innodb;
 
 Insert into Categories (categoryName) values
-("Other"),("Adult"),("Serious"),("Friends and Family"),("Casual"),("Mixed"),("Dark"),("Party")
+("Other"),("Adult"),("Friends and Family"),("Dark"),("Party")
 ;
 
 Create table Users(

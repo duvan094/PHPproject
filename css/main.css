@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,800');
 
 *{
 	padding:0;
@@ -389,7 +389,7 @@ main{
 	color:#FFF;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 22px;
-	font-weight: 400;
+	font-weight: 500;
 	transition: 0.2s font-size ease-in-out, 0.2s box-shadow ease-in-out;
 	position: relative;
 	padding: 22px;
@@ -1111,6 +1111,7 @@ footer>#copyright{
 	font-size: 14px;
 	line-height: 18px;
 	width: 400px;
+	color: #FFF
 }
 
 textarea.card {
@@ -1151,13 +1152,18 @@ textarea.card {
 
 #submitCards {
 	margin-top: 11px;
-	padding:11px;
+	margin-bottom: 22px;
+	padding:22px 44px;
 	background:#FF5B44;
 	-webkit-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
 	-moz-box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
 	box-shadow: inset 0px 50px 149px 0px rgba(255,255,255,0.05);
 	border: none;
 	color:#FFF;
+	font-size: medium;
+	-webkit-box-shadow: 0px 12px 0px -6px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 12px 0px -6px rgba(0,0,0,0.5);
+    box-shadow: 0px 12px 0px -6px rgba(0,0,0,0.5);
 }
 
 #addCardsContainer{

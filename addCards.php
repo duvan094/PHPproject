@@ -72,6 +72,11 @@
       $title = mysqli_real_escape_string($db,$_POST['title']);
       $alt1 = mysqli_real_escape_string($db,$_POST['alt1']);
       $alt2 = mysqli_real_escape_string($db,$_POST['alt2']);
+      $title = htmlentities($title);
+      $alt1 = htmlentities($alt1);
+      $alt2 = htmlentities($alt2);
+
+
       $categoryId = $_POST['categorySelect'];
       $userId = $_SESSION['userId'];
 

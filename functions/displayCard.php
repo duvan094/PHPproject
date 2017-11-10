@@ -95,6 +95,7 @@
     }
     echo "</div>";
 
+  /*Else if no card has been clicked, check if it has been clicked before.*/
   }else if(array_key_exists($cardId,$_SESSION['cardsClicked'])){//Check if card has been clicked before
     echo "<div class='card-container'>";
     if($_SESSION['cardsClicked'][$cardId] == $alt1){/*If altClicked == alt1, it means that the first alternative was clicked*/

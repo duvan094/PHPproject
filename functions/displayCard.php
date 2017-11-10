@@ -29,7 +29,7 @@
       /*If no specific card is requested from the GET, a random card is selected*/
     $query = "select * from RandomList";
 
-    if(isset($_GET['categoryName']) && !empty($_GET['categoryName'])){
+    if(isset($_GET['categoryName']) && !empty($_GET['categoryName'])){//Check if a specific category is requested
       $query = $query . " Where categoryName='".$_GET['categoryName']."'";
     }
 
@@ -40,14 +40,15 @@
 
   $stmt->fetch();
 
+    /*Here we save the clicked alternative into an array.*/
     if(isset($_POST['altClicked']) && !empty($_POST['altClicked'])){  //Check if an alternative has been clicked
       if (isset($_SESSION['cardsClicked']) === false){//If array storing clicked cards don't exist
           $altClickedArr = array($cardId => $_POST['altClicked']);  //Add cardId to array
           $_SESSION['cardsClicked'] = $altClickedArr; //Which is then stored in a Session
       }else{  //If the array already exists in session the value is
-        $altClickedArr = $_SESSION['cardsClicked'];
-        $altClickedArr[$cardId]=$_POST['altClicked'];
-        $_SESSION['cardsClicked'] = $altClickedArr;
+        $altClickedArr = $_SESSION['cardsClicked']; //Save the session array into a temp variable
+        $altClickedArr[$cardId]=$_POST['altClicked']; //Save the clicked alternative into the array
+        $_SESSION['cardsClicked'] = $altClickedArr; //Save the temp array into the session
       }
     }
 
@@ -68,7 +69,7 @@
     if($_POST['altClicked'] == $alt1 || $_SESSION['cardsClicked'][$cardId] == $alt1){/*If altClicked == alt1, it means that the first alternative was clicked*/
       /*Increase the card for the selected card*/
       if(isset($_POST['altClicked'])){//Only update if clicked the first time
-        $query = ("Update Cards SET alt1Count = alt1Count + 1 WHERE cardId={$cardId}");
+        $query = ("UPDATE Cards SET alt1Count = alt1Count + 1 WHERE cardId={$cardId}");
         $stmt = $db->prepare($query);
         $stmt->execute();
         $alt1Count = $alt1Count+1;/*Since alt1Count is the value before the Update operation we increase it by 1*/

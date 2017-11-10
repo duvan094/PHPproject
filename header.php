@@ -1,10 +1,14 @@
 <?php
+#first measurement is to change the settings in phpini which is not usually touched
+#we change the 'session.cookie_httponly' to true, saying that the cookie can only be accessed via PHP
+#this will prevent any Javascript attacks getting the cookie
 ini_set('session.cookie_httponly', true);
 
 session_start ();
 
 include "setcookie.php";
 
+/*Prevent session hijacking*/
 if (isset($_SESSION['userip']) === false){
     #here we store the IP into the session 'userip'
     $_SESSION['userip'] = $_SERVER['REMOTE_ADDR'];
@@ -33,7 +37,7 @@ if ($_SESSION['userip'] !== $_SERVER['REMOTE_ADDR']){
 
 
   <?php
-    if(isset($_COOKIE['color_mode'])){
+    if(isset($_COOKIE['color_mode'])){//Check if cookie is set, and set respective color theme.
         if($_COOKIE['color_mode'] == "light"){
           echo "<body class='light'>";
           echo "<nav class='light'>";
@@ -93,7 +97,7 @@ if ($_SESSION['userip'] !== $_SERVER['REMOTE_ADDR']){
     </nav>
 
     <?php
-      if(!isset($_SESSION['username'])) {//Only include loginModule if logged in.
+      if(!isset($_SESSION['username'])) {//Only include loginModule if not logged in.
         include "loginModule.php";
       }
     ?>

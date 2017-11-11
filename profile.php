@@ -16,7 +16,7 @@
 					exit();
 			}
 
-	      $query = "select * from CardsView Where username='" . $username . "'";
+	      $query = "SELECT * from CardsView Where username='" . $username . "'";
 	      $stmt = $db->prepare($query);
 	      $stmt->bind_result($title, $alt1, $alt2, $alt1Count, $alt2Count, $rating, $categoryName,$username,$countryName,$dateAdded,$cardId);
 			  $stmt->execute();
@@ -28,10 +28,10 @@
 					if(isset($_SESSION['username'])){
 						if($_SESSION['username'] == $username){
 							echo "<p class='profileError'>You have not created any cards yet.</p>";
-						}else{
+						}else{//If logged in but visiting another users empty page.
 							echo "<p class='profileError'>This user has not created any cards yet.</p>";
 						}
-					}else{
+					}else{//If user is not logged in and visiting another users empty page.
 						echo "<p class='profileError'>This user has not created any cards yet.</p>";
 					}
 		    }else{
@@ -39,10 +39,10 @@
 					echo "<ul>";
 					while($stmt->fetch()){//Fetch all the users cards
 						echo "<li>";
-		        echo "<form class='card-container' action='index.php?cardId={$cardId}' method='post'>";
-		        echo "<div><input type='submit' name='altClicked' value='{$alt1}'></div>";
-		        echo "<div><input type='submit' name='altClicked' value='{$alt2}'></div>";
-		        echo "</form>";
+				        echo "<form class='card-container' action='index.php?cardId={$cardId}' method='post'>";
+				        echo "<div><input type='submit' name='altClicked' value='{$alt1}'></div>";
+				        echo "<div><input type='submit' name='altClicked' value='{$alt2}'></div>";
+				        echo "</form>";
 
 						/*Only add the delete button if the user is at their own profile page*/
 						if(isset($_SESSION['username'])){//Check if session is set
@@ -54,6 +54,7 @@
 											</ul>";
 								}
 						}
+				//the information under the title of each card.
 		        echo  "<p class='textWithLink'><a class='cardLinkTitle' href='index.php?cardId=$cardId'>$title</a>, <a href='searchResults.php?category=$categoryName'>$categoryName</a><br>Made by <i class='fa fa-user' aria-hidden='true'></i> <a href='profile.php?username=$username'>$username</a>, $dateAdded, <b>$countryName.</b></p>";
 		        echo "</li>";
 					}//end while

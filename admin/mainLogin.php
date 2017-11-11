@@ -41,7 +41,7 @@
           #just to see what we are selecting, and we can use it to test in phpmyadmin/heidisql
 
           echo "SELECT * FROM AdminView WHERE username = '" . $username . "' AND password = '" . $upass . "'";
-          $query = "select * from AdminView where username = '" . $username . "' AND password = '" . $upass . "'";
+          $query = "SELECT * from AdminView where username = '" . $username . "' AND password = '" . $upass . "'";
 
           $stmt = $db->prepare($query);
           $stmt->execute();

@@ -28,15 +28,12 @@
 
 		$i = 1;
 		while($stmt->fetch()){
-			if($i>10){//Exit loop so no more than 10 results are displayed.
-				break;
-			}
 			echo "<tr>";
 			echo "<td>$i</td>";
-	    echo "<td><a href='index.php?cardId=$cardId'>$title</a></td>";
-	    echo "<td><a href='profile.php?username=$username'>$username</a></td>";
-	    echo "<td>$rating</td>";
-	  	echo "</tr>";
+		    echo "<td><a href='index.php?cardId=$cardId'>$title</a></td>";
+		    echo "<td><a href='profile.php?username=$username'>$username</a></td>";
+		    echo "<td>$rating</td>";
+		  	echo "</tr>";
 			$i++;
 		}
 		?>

@@ -13,7 +13,7 @@
 		}
 
 		/*Check if username already exists in the database*/
-		$stmt = $db->prepare("select * From Users Where username = '{$_POST['username']}'");
+		$stmt = $db->prepare("SELECT * From Users Where username = '{$_POST['username']}'");
 		$stmt->bind_result($userId,$username,$password,$country);
 		$stmt->execute();
 		$stmt->store_result();
@@ -29,7 +29,7 @@
 
 	    $username = mysqli_real_escape_string($db,$_POST['username']);
 	    $password = mysqli_real_escape_string($db,$_POST['password1']);
-			$password = SHA1($password);
+		$password = SHA1($password);
 	    $countryId = ($_POST['countrySelect']);
 
 	    if(isset($_POST['countrySelect']) && $_POST['countrySelect'] !== ""){
@@ -49,12 +49,12 @@
 	     	exit();
 	    }
 
-	    $query = "select userId From Users Where username = '{$username}'";
+	    $query = "SELECT userId From Users Where username = '{$username}'";
 
 	    $stmt = $db->prepare("$query");
 	    $stmt->bind_result($userId);
 	    $stmt->execute();
-			$stmt->fetch();
+		$stmt->fetch();
 
 	    session_start();
 	    $_SESSION['username'] = $username;

@@ -29,7 +29,7 @@
 			exit();
 		}
 
-		$query = "select cardId,commentId,title,username,comment,dateAdded from cardcomments ORDER BY dateAdded DESC";
+		$query = "SELECT cardId,commentId,title,username,comment,dateAdded from cardcomments ORDER BY dateAdded DESC";
 		$stmt = $db->prepare($query);
 		$stmt->bind_result($cardId, $commentId, $title, $username,$comment,$dateAdded);
 		$stmt->execute();

@@ -17,7 +17,7 @@
         exit();
     }
 
-    $stmt = $db->prepare("Delete From Comments Where cardId=$cardId");
+    $stmt = $db->prepare("DELETE From Comments Where cardId=$cardId");
     $stmt->execute();
 
     @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -28,7 +28,7 @@
           exit();
       }
 
-      $stmt = $db->prepare("Delete From CardsUsersRating Where cardId=$cardId");
+      $stmt = $db->prepare("DELETE From CardsUsersRating Where cardId=$cardId");
       $stmt->execute();
 
     if ($db->connect_error) {
@@ -37,7 +37,7 @@
         exit();
     }
 
-    $stmt = $db->prepare("Delete From Cards Where cardId=$cardId");
+    $stmt = $db->prepare("DELETE From Cards Where cardId=$cardId");
     $stmt->execute();
 
     header("location:cards.php");

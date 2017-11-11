@@ -22,7 +22,7 @@
       $password = SHA1($password);
 
 
-      $stmt = $db->prepare("select * From Users Where username = '{$username}' AND password ='{$password}'");
+      $stmt = $db->prepare("SELECT * From Users Where username = '{$username}' AND password ='{$password}'");
       $stmt->bind_result($userId,$username,$password,$country);
       $stmt->execute();
       $stmt->store_result();
@@ -33,7 +33,7 @@
 
       if (isset($totalcount)) {
         if ($totalcount == 0) {
-          echo '<h2>Wrong username or password, try again!</h2>';
+          //Nothing happens when wrong password is typed.
         } else {
             //What's going to happen when you press SUBMIT:
             $_SESSION['username'] = $username;

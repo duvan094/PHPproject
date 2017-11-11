@@ -29,7 +29,7 @@
         exit();
     }
 
-    $stmt = $db->prepare("Select * From CardsView Where cardId={$cardId} AND username='{$_SESSION['username']}'");
+    $stmt = $db->prepare("SELECT * From CardsView Where cardId={$cardId} AND username='{$_SESSION['username']}'");
     $stmt->execute();
     $stmt->store_result();
 
@@ -53,7 +53,7 @@
               exit();
           }
 
-          $stmt = $db->prepare("Delete From CardsUsersRating Where cardId=$cardId");
+          $stmt = $db->prepare("DELETE From CardsUsersRating Where cardId=$cardId");
           $stmt->execute();
 
 
@@ -63,7 +63,7 @@
             exit();
         }
 
-        $stmt = $db->prepare("Delete From Cards Where cardId=$cardId");
+        $stmt = $db->prepare("DELETE From Cards Where cardId=$cardId");
         $stmt->execute();
 
         header("location: profile.php?username={$_SESSION['username']}");

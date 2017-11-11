@@ -17,7 +17,7 @@ $commentId = addslashes($commentId);
       exit();
   }
 
-  $stmt = $db->prepare("Delete From Comments Where commentId=$commentId");
+  $stmt = $db->prepare("DELETE From Comments Where commentId=$commentId");
   $stmt->execute();
 
   header("location:comments.php");

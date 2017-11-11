@@ -19,7 +19,7 @@
       if(isset($_POST['searchVariant']) && $_POST['searchVariant'] == 'Users'){//If users is selected
         $searchVariable =  mysqli_real_escape_string($db, $_GET['searchField']);
         $searchVariable = htmlentities($searchVariable);
-        $query = "select username from Users Where username LIKE '%" . $searchVariable . "%'";
+        $query = "SELECT username from Users Where username LIKE '%" . $searchVariable . "%'";
         $stmt = $db->prepare($query);
         $stmt->bind_result($username);
       }else{
@@ -27,11 +27,12 @@
         if(isset($_GET['category']) && !empty($_GET['category'])){
           $searchVariable =  mysqli_real_escape_string($db, $_GET['category']);
           $searchVariable = htmlentities($searchVariable);
-          $query = "select * from CardsView Where categoryName='" . $searchVariable . "'";
-        }else{
+          $query = "SELECT * from CardsView Where categoryName='" . $searchVariable . "'";
+        }else{//if the serach is a general search
           $searchVariable =  mysqli_real_escape_string($db, $_GET['searchField']);
           $searchVariable = htmlentities($searchVariable);
-          $query = "select * from CardsView Where title LIKE'%" .  $searchVariable . "%' OR alt1 LIKE'%" . $searchVariable . "%' OR alt2 LIKE'%" . $searchVariable . "%' OR username LIKE'%" . $searchVariable . "%'";
+          //Searches for everything that could be relevant when searching a card.
+          $query = "SELECT * from CardsView Where title LIKE'%" .  $searchVariable . "%' OR alt1 LIKE'%" . $searchVariable . "%' OR alt2 LIKE'%" . $searchVariable . "%' OR username LIKE'%" . $searchVariable . "%'";
         }
 
         $stmt = $db->prepare($query);

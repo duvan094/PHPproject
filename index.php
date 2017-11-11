@@ -24,6 +24,7 @@
   <?php
     echo "<ul>";
 
+    /*Here we chose which cardId the next and previous buttons should link to.*/
     @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
     /*Check for connection error*/
@@ -33,7 +34,7 @@
       exit();
     }
 
-    $query = "select cardId AS previousCard from Cards Where cardId < {$cardId} Order by cardId DESC limit 1";
+    $query = "SELECT cardId AS previousCard from Cards Where cardId < {$cardId} Order by cardId DESC limit 1";//PRevious card ID
     $stmt = $db->prepare($query);
     $stmt->bind_result($previousCard);
     $stmt->execute();
@@ -48,7 +49,7 @@
       printf("<br><a href=index.php>Return to home page </a>");
       exit();
     }
-    $query = "select cardId AS nextCard from Cards Where cardId > {$cardId} Order by cardId ASC limit 1";
+    $query = "SELECT cardId AS nextCard from Cards Where cardId > {$cardId} Order by cardId ASC limit 1";//Next card ID
     $stmt = $db->prepare($query);
     $stmt->bind_result($nextCard);
     $stmt->execute();

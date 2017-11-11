@@ -9,7 +9,7 @@
     exit();
   }
 
-  $query = "select title,username,countryName,comment,dateAdded,cardId from CardComments where cardId = " . $cardId;
+  $query = "SELECT title,username,countryName,comment,dateAdded,cardId from CardComments where cardId = " . $cardId;
   $stmt = $db->prepare($query);
   $stmt->bind_result($title, $username, $countryName, $comment, $dateAdded, $cardId);
   $stmt->execute();
@@ -17,7 +17,7 @@
   $nbrOfComments = $stmt->num_rows();
 
     echo "<ul id='commentContainer'>";
-//  }
+
   echo "<li><h4>$nbrOfComments comments</h4></li>";
   while ($stmt->fetch()) {
     echo "<li class='commentField'>";

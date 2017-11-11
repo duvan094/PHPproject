@@ -1,4 +1,5 @@
 <?php
+
   /*Check if vote button is pressed and user is logged in.*/
   if (isset($_POST['vote']) && isset($_SESSION['userId'])) {
     @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -14,12 +15,14 @@
     $userId = $_SESSION['userId'];
 
     /*Check if user exists in the CardsUsersRating table, which means they already voted*/
-    $query = "Select * From CardsUsersRating Where cardId ={$cardId} AND userId={$userId}";
+    $query = "SELECT * From CardsUsersRating Where cardId ={$cardId} AND userId={$userId}";
     $stmt = $db->prepare($query);
     $stmt->execute();
     $stmt->store_result();
 
     if($stmt->num_rows() != 1){
+
+      @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
       /*Check for connection error*/
       if ($db->connect_error) {
@@ -28,17 +31,15 @@
         exit();
       }
 
-      $cardId = $_GET['cardId'];
-      $userId = $_SESSION['userId'];
       $query = "";
 
       /*Add the vote to the Card rating*/
       if($_POST['vote'] == "upvote"){
-        $query = ("Update Cards SET rating = rating + 1 WHERE cardId={$cardId}");
-        $rating++;
+        $query = ("UPDATE Cards SET rating = rating + 1 WHERE cardId={$cardId}");
+        $rating++;//add the rating while on the page, since the update cards will only update next time on page reload.
         $vote = 1;
       }else if($_POST['vote'] == "downvote"){
-        $query = ("Update Cards SET rating = rating - 1 WHERE cardId={$cardId}");
+        $query = ("UPDATE Cards SET rating = rating - 1 WHERE cardId={$cardId}");
         $rating--;
         $vote = -1;
       }
@@ -55,7 +56,7 @@
         exit();
       }
 
-      $query = "Insert INTO CardsUsersRating(cardId,userId,vote) values({$cardId},{$userId},{$vote})";
+      $query = "INSERT INTO CardsUsersRating(cardId,userId,vote) values({$cardId},{$userId},{$vote})";
       $stmt = $db->prepare($query);
       $stmt->execute();
 

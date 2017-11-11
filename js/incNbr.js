@@ -4,6 +4,7 @@ var speed = 10;
 /* Call this function with a string containing the ID name to
  * the element containing the number you want to do a count animation on.
  * E.g incEltNbr("element");*/
+
 function incEltNbr(id){
   elt = document.getElementById(id);
   endNbr = Number(document.getElementById(id).innerHTML);

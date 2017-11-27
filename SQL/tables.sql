@@ -212,7 +212,7 @@ Join Users ON Users.userId = Cards.userId
 ORDER BY Cards.rating DESC
 LIMIT 10;/*Remove this if you want more than one row*/
 
-
+/*
 Create View HighestCard AS
 select cardId AS highestId from cards
 ORDER BY cardID Desc
@@ -222,3 +222,4 @@ Create View LowestCard AS
 select cardId AS lowestId from cards
 ORDER BY cardID
 Asc Limit 1;
+*/
